@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zohar Latinoamérica — Cabalá, Calendario Hebreo, Torá y Tradición</title>
+<meta name="description" content="Plataforma integral de Zohar Latinoamérica: el ensayo Sefarad como Pardés Invertido, el Gran Ciclo Hebreo (2.192.942 días · AM 1–6004), la herramienta Zivug, biblioteca cabalística y la escuela.">
+<meta property="og:title" content="Zohar Latinoamérica — Cabalá, Calendario Hebreo, Torá y Tradición">
+<meta property="og:description" content="El ensayo fuente de la película, el calendario hebreo de 6.004 años, Zivug y la biblioteca cabalística en español. Todo bajo un mismo techo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zoharlatinoamerica.site/">
+<meta property="og:image" content="https://img.youtube.com/vi/pfRQjh97G7o/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --tinta:      #0e0b07;
+  --pergamino:  #f7f2e8;
+  --oro:        #b8922a;
+  --oro-claro:  #d4aa4a;
+  --carmesi:    #7a1e1e;
+  --azul:       #1a2340;
+  --azul-osc:   #12182e;
+  --hueso:      #ede8dc;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--pergamino);
+  color: var(--tinta);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(17px, 2vw, 19px);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--carmesi); }
+
+/* ---------- NAV ---------- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .8rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(18,24,46,.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,146,42,.25);
+}
+.nav-marca {
+  font-family: 'Cinzel', serif; font-weight: 700;
+  font-size: .95rem; letter-spacing: .12em;
+  color: #fff; text-decoration: none; white-space: nowrap;
+}
+.nav-marca span { color: var(--oro-claro); }
+.nav-links { display: flex; gap: clamp(.8rem, 2.5vw, 1.8rem); flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a {
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.75); text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--oro-claro); }
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--azul);
+  position: relative; overflow: hidden;
+  padding: 7rem 2rem 5rem; text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,146,42,.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-glosa {
+  font-style: italic; font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,.55); margin-bottom: 1.4rem; letter-spacing: .04em;
+}
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 6vw, 4.2rem); font-weight: 700;
+  color: #fff; line-height: 1.12; letter-spacing: .02em;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 40px rgba(0,0,0,.5);
+}
+.hero-sub {
+  font-style: italic; font-size: clamp(1.02rem, 2.2vw, 1.35rem);
+  color: rgba(255,255,255,.72); max-width: 680px;
+  margin: 0 auto 2.4rem; line-height: 1.55;
+}
+.hero-linea {
+  width: 100px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--oro), transparent);
+  margin: 0 auto 2.2rem;
+}
+.hero-botones { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.btn {
+  display: inline-block; text-decoration: none;
+  font-family: 'Source Sans 3', sans-serif; font-weight: 600;
+  font-size: .82rem; letter-spacing: .14em; text-transform: uppercase;
+  padding: .95rem 2.1rem; border-radius: 2px;
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.btn-oro {
+  background: var(--oro); color: var(--azul-osc);
+  box-shadow: 0 4px 24px rgba(184,146,42,.35);
+}
+.btn-oro:hover { background: var(--oro-claro); transform: translateY(-2px); }
+.btn-linea {
+  border: 1px solid rgba(255,255,255,.35); color: #fff;
+}
+.btn-linea:hover { border-color: var(--oro-claro); color: var(--oro-claro); }
+.hero-meta {
+  margin-top: 3rem;
+  font-family: 'Source Sans 3', sans-serif; font-size: .72rem;
+  color: rgba(255,255,255,.4); letter-spacing: .16em; text-transform: uppercase;
+}
+
+/* ---------- SECCIONES ---------- */
+section { padding: clamp(3.5rem, 8vw, 6rem) clamp(1.2rem, 5vw, 3rem); }
+.contenedor { max-width: 1080px; margin: 0 auto; }
+.kicker {
+  font-family: 'Source Sans 3', sans-serif; font-size: .72rem; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase; color: var(--oro);
+  margin-bottom: .9rem;
+}
+.seccion-titulo {
+  font-family: 'Cinzel', serif; font-weight: 600;
+  font-size: clamp(1.5rem, 3.6vw, 2.3rem); line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.seccion-intro { max-width: 720px; font-size: 1.05em; margin-bottom: 2.5rem; }
+
+/* ---------- VIDEO ---------- */
+.s-video { background: var(--azul-osc); color: var(--hueso); }
+.s-video .seccion-titulo { color: #fff; }
+.video-marco {
+  position: relative; width: 100%; max-width: 900px; margin: 0 auto;
+  aspect-ratio: 16 / 9; border: 1px solid rgba(184,146,42,.4);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  background: #000;
+}
+.video-marco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-nota {
+  text-align: center; margin-top: 1.4rem; font-style: italic;
+  color: rgba(237,232,220,.6); font-size: .95em;
+}
+.video-nota a { color: var(--oro-claro); }
+
+/* ---------- ENSAYO DESTACADO ---------- */
+.ensayo-card {
+  background: #fffdf8;
+  border: 1px solid rgba(184,146,42,.35);
+  border-top: 3px solid var(--oro);
+  box-shadow: 0 12px 40px rgba(14,11,7,.08);
+  padding: clamp(1.8rem, 5vw, 3.2rem);
+  display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+}
+.ensayo-card h3 {
+  font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2; margin-bottom: .4rem;
+}
+.ensayo-card .glosa { font-style: italic; color: var(--carmesi); margin-bottom: .8rem; }
+.capitulos {
+  columns: 2; column-gap: 2.5rem;
+  font-size: .92em; list-style: none;
+}
+.capitulos li {
+  padding: .34rem 0; border-bottom: 1px dotted rgba(184,146,42,.4);
+  break-inside: avoid;
+}
+.capitulos li::before { content: '◆ '; color: var(--oro); font-size: .7em; }
+@media (max-width: 640px) { .capitulos { columns: 1; } }
+
+/* ---------- HERRAMIENTAS ---------- */
+.s-herramientas { background: var(--hueso); }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.6rem; }
+.tarjeta {
+  background: #fffdf8; border: 1px solid rgba(14,11,7,.1);
+  border-top: 3px solid var(--azul);
+  padding: 2rem 1.8rem;
+  display: flex; flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
+}
+.tarjeta:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(14,11,7,.12); }
+.tarjeta .icono { font-size: 2rem; margin-bottom: 1rem; }
+.tarjeta h3 { font-family: 'Cinzel', serif; font-size: 1.15rem; margin-bottom: .6rem; }
+.tarjeta p { font-size: .93em; flex: 1; margin-bottom: 1.4rem; }
+.tarjeta .cifra {
+  font-family: 'Source Sans 3', sans-serif; font-size: .75rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--oro);
+  margin-bottom: .5rem;
+}
+.tarjeta a.accion {
+  font-family: 'Source Sans 3', sans-serif; font-weight: 600;
+  font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--carmesi); text-decoration: none;
+}
+.tarjeta a.accion:hover { color: var(--oro); }
+
+/* ---------- COMUNIDAD ---------- */
+.s-comunidad { background: var(--azul); color: rgba(255,255,255,.85); text-align: center; }
+.s-comunidad .seccion-titulo { color: #fff; }
+.s-comunidad .seccion-intro { margin-left: auto; margin-right: auto; }
+.redes { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--azul-osc); color: rgba(255,255,255,.5);
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  letter-spacing: .06em; text-align: center;
+  padding: 2.2rem 1.5rem;
+}
+footer a { color: rgba(212,170,74,.8); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-marca" href="/" style="display:flex;align-items:center;gap:.6rem;">
+    <img src="/assets/logo-jai.png" alt="חי — Zohar Latinoamérica" style="height:30px;width:30px;">
+    ZOHAR <span>LATINOAMÉRICA</span>
+  </a>
+  <div class="nav-links">
+    <a href="#ensayo">Ensayo</a>
+    <a href="#pelicula">La Película</a>
+    <a href="#herramientas">Herramientas</a>
+    <a href="/biblioteca/">Biblioteca</a>
+    <a href="#comunidad">Escuela</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="/assets/logo-jai.png" alt="חי" style="height:74px;width:74px;margin-bottom:1.6rem;position:relative;filter:drop-shadow(0 0 24px rgba(212,170,74,.45));">
+  <p class="hero-glosa">וְגָלֻת יְרוּשָׁלַ֗יִם אֲשֶׁ֥ר בִּסְפָרַ֖ד</p>
+  <h1>Zohar Latinoamérica</h1>
+  <p class="hero-sub">Cabalá, calendario hebreo, Torá y tradición sefaradí — el estudio del Sod en lengua española, bajo un mismo techo.</p>
+  <div class="hero-linea"></div>
+  <div class="hero-botones">
+    <a class="btn btn-oro" href="/ensayo/">Leer el ensayo completo</a>
+    <a class="btn btn-linea" href="#pelicula">Ver la película</a>
+  </div>
+  <p class="hero-meta">Ensayo · Calendario de 6.004 años · Zivug · Biblioteca · Escuela</p>
+</header>
+
+<section class="s-video" id="pelicula">
+  <div class="contenedor">
+    <p class="kicker">La Película</p>
+    <h2 class="seccion-titulo">El Secreto del Sagrado Libro del Zohar</h2>
+    <p class="seccion-intro">Si llegaste aquí desde la película, estás en el lugar correcto: esta plataforma reúne el artículo fuente completo, las herramientas y la biblioteca que la acompañan.</p>
+    <div class="video-marco">
+      <iframe src="https://www.youtube-nocookie.com/embed/pfRQjh97G7o" title="El Secreto del Sagrado Libro del Zohar (LA PELÍCULA)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p class="video-nota">¿Prefieres verla en YouTube? <a href="https://youtu.be/pfRQjh97G7o" target="_blank" rel="noopener">Abrir en el canal @zoharlatinoamerica</a> — suscríbete para no perderte los próximos estudios.</p>
+  </div>
+</section>
+
+<section id="ensayo">
+  <div class="contenedor">
+    <p class="kicker">Documento fuente · Ensayo crítico</p>
+    <h2 class="seccion-titulo">Sefarad como Pardés Invertido</h2>
+    <p class="seccion-intro">El artículo de referencia de la película, completo y sin cortes. Roma, Persia, derecho de antigüedad y el nombre-dato de la redención en la última generación.</p>
+    <div class="ensayo-card">
+      <div>
+        <h3>Sefarad como Pardés Invertido</h3>
+        <p class="glosa">«Y los exiliados de Jerusalén que están en Sefarad…» — Ovadiá 1:20</p>
+        <p style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#8a7a55;">17 de junio de 2026 · 2 de Tamuz 5786 · 14 capítulos</p>
+      </div>
+      <ul class="capitulos">
+        <li>La historia como campo de revelación</li>
+        <li>Israel romanizado y Sefarad como memoria correctiva</li>
+        <li>La cueva de Macpelá y el primer acto jurídico de la Torá</li>
+        <li>Roma y Persia como reinos que llegan hasta el Mesías</li>
+        <li>La romanización del Estado moderno de Israel</li>
+        <li>Entre el derecho ancestral y la trampa de la supremacía racial</li>
+        <li>Sefarad como exilio de Jerusalén y repositorio del Sod</li>
+        <li>Los Carvajal y el Sod enterrado bajo nombres ibéricos</li>
+        <li>PaRDeS → SeFaRaD: el secreto pasa del final al principio</li>
+        <li>Rashbi, el Arí y Ashlag: la instrucción de la última generación</li>
+        <li>Yeshúa como nombre-dato: salvación sin cierre cristológico</li>
+        <li>Roma, Persia e Israel en la guerra de 2026</li>
+        <li>La Ley española 12/2015 y la herida admitida</li>
+        <li>Jacob no se levanta por supremacía: se levanta por rectificación</li>
+      </ul>
+      <div>
+        <a class="btn btn-oro" href="/ensayo/">Leer el ensayo completo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-herramientas" id="herramientas">
+  <div class="contenedor">
+    <p class="kicker">Herramientas de estudio</p>
+    <h2 class="seccion-titulo">Instrumentos del tiempo y del alma</h2>
+    <p class="seccion-intro">Herramientas interactivas construidas sobre la base de datos calendárica hebrea más completa en formato digital: 2.192.942 días, del AM 1 al AM 6004.</p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="icono">📅</div>
+        <p class="cifra">2.192.942 días · AM 1 – 6004</p>
+        <h3>Gran Ciclo Hebreo</h3>
+        <p>Calendario interactivo de 6.004 años: 316 ciclos de intercalación, fases lunares, ciclo metónico de 19 años, festividades, eclipses y eventos históricos. Busca cualquier día desde el 3761 AEC hasta el 2243 EC.</p>
+        <a class="accion" href="https://calendar-app-eight-eta.vercel.app" target="_blank" rel="noopener">Abrir el calendario →</a>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">✨</div>
+        <p class="cifra">10 dimensiones · Ciclo metónico</p>
+        <h3>Zivug — Consulta personal</h3>
+        <p>Herramienta de consulta natal: tu posición en el ciclo de 19 años, el carácter temporal de tu fecha de nacimiento y un análisis en 10 dimensiones inspirado en el Árbol de la Vida.</p>
+        <a class="accion" href="https://frontend-beige-phi-95.vercel.app" target="_blank" rel="noopener">Consultar mi carta →</a>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">📜</div>
+        <p class="cifra">Zohar · Tanaj · Midrash · Talmud</p>
+        <h3>Biblioteca cabalística</h3>
+        <p>Las parashiot del Zohar organizadas por libro, el Tanaj completo, Midrash, Talmud y obras cabalísticas — con acceso directo a las fuentes y textos en español donde existen ediciones libres.</p>
+        <a class="accion" href="/biblioteca/">Entrar a la biblioteca →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-comunidad" id="comunidad">
+  <div class="contenedor">
+    <p class="kicker">La Escuela</p>
+    <h2 class="seccion-titulo">Únete a la comunidad</h2>
+    <p class="seccion-intro">Zohar Latinoamérica es una escuela viva: estudios en video, artículos y herramientas para la última generación. Síguenos donde publicamos.</p>
+    <div class="redes">
+      <a class="btn btn-oro" href="https://www.youtube.com/channel/UCxBItTOHMtkunnfBugXFtAg?sub_confirmation=1" target="_blank" rel="noopener">YouTube · Suscribirse</a>
+      <a class="btn btn-linea" href="https://www.facebook.com/Zoharlatinoamericaescuela" target="_blank" rel="noopener">Facebook · Seguir</a>
+      <a class="btn btn-linea" href="https://www.facebook.com/share/g/1GfNPSLi3k/" target="_blank" rel="noopener">Grupo de estudio · Unirse</a>
+      <a class="btn btn-linea" href="https://wa.me/528114202112?text=Shalom%2C%20llego%20desde%20zoharlatinoamerica.site" target="_blank" rel="noopener">WhatsApp · Escribir</a>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div id="newsletter" style="max-width:560px;margin:3.5rem auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(184,146,42,.35);padding:2rem 1.8rem;">
+      <p class="kicker" style="color:#d4aa4a;">Boletín de la escuela</p>
+      <p style="font-family:'Cinzel',serif;font-size:1.15rem;color:#fff;margin-bottom:.6rem;">Recibe la parashá y los nuevos estudios</p>
+      <p style="font-size:.92em;color:rgba(255,255,255,.65);margin-bottom:1.2rem;">Ensayos, videos y el comentario semanal, directo a tu correo. Sin ruido.</p>
+      <!-- Formulario vía FormSubmit: cada suscripción llega a zoharlatinoamerica@gmail.com.
+           (La primera vez que alguien se suscriba, FormSubmit enviará un correo de activación
+           a ese Gmail — hay que hacer clic en "Activate" una sola vez.)
+           Cuando el boletín crezca, migrar a Brevo: crear formulario allí y reemplazar el action. -->
+      <form action="https://formsubmit.co/zoharlatinoamerica@gmail.com" method="POST" style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;">
+        <input type="hidden" name="_subject" value="Nueva suscripción al boletín — zoharlatinoamerica.site">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://zoharlatinoamerica.site/?suscrito=1#newsletter">
+        <input type="email" name="email" required placeholder="tu@correo.com" style="flex:1;min-width:220px;padding:.85rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.9rem;background:rgba(255,255,255,.92);border:1px solid rgba(184,146,42,.5);border-radius:2px;color:#0e0b07;">
+        <button type="submit" class="btn btn-oro" style="border:0;cursor:pointer;">Suscribirme</button>
+      </form>
+      <p id="gracias-suscripcion" style="display:none;font-size:.85em;color:#d4aa4a;margin-top:.8rem;font-family:'Source Sans 3',sans-serif;">✓ ¡Gracias! Tu suscripción fue recibida.</p>
+      <p style="font-size:.75em;color:rgba(255,255,255,.4);margin-top:.8rem;font-family:'Source Sans 3',sans-serif;">También puedes unirte al grupo de estudio o escribirnos por WhatsApp.</p>
+      <script>
+        if (new URLSearchParams(location.search).get('suscrito') === '1') {
+          document.getElementById('gracias-suscripcion').style.display = 'block';
+        }
+      </script>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Zohar Latinoamérica · <a href="https://zoharlatinoamerica.site">zoharlatinoamerica.site</a> · 5786</p>
+  <p style="margin-top:.4rem;">Ensayo · Calendario · Zivug · Biblioteca · Escuela</p>
+  <p style="margin-top:.6rem;"><a href="mailto:zoharlatinoamerica@gmail.com">zoharlatinoamerica@gmail.com</a> · <a href="https://wa.me/528114202112">WhatsApp +52 81 1420 2112</a></p>
+</footer>
+
+<!-- Analítica: Vercel Web Analytics (activar "Analytics" en el dashboard del proyecto) -->
+<script defer src="/_vercel/insights/script.js"></script>
+
+<!-- Analítica de visitantes ·······················································
+     Opción B: Google Analytics 4 (se integra con YouTube/Google).
+     Crea una propiedad GA4, reemplaza G-XXXXXXXXXX y descomenta:
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ············································································ -->
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca Cabalística — Zohar Latinoamérica</title>
+<meta name="description" content="Las parashiot del Zohar organizadas por libro, el Tanaj, Midrash, Talmud y obras cabalísticas — biblioteca digital de Zohar Latinoamérica con acceso a las fuentes.">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600&display=swap');
+
+:root {
+  --tinta:      #0e0b07;
+  --pergamino:  #f7f2e8;
+  --oro:        #b8922a;
+  --oro-claro:  #d4aa4a;
+  --carmesi:    #7a1e1e;
+  --azul:       #1a2340;
+  --azul-osc:   #12182e;
+  --hueso:      #ede8dc;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--pergamino); color: var(--tinta);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(17px, 2vw, 19px); line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--carmesi); }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .8rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(18,24,46,.92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,146,42,.25);
+}
+.nav-marca {
+  font-family: 'Cinzel', serif; font-weight: 700; font-size: .95rem;
+  letter-spacing: .12em; color: #fff; text-decoration: none;
+}
+.nav-marca span { color: var(--oro-claro); }
+.nav-links a {
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.75); text-decoration: none; margin-left: 1.4rem;
+}
+.nav-links a:hover { color: var(--oro-claro); }
+
+header {
+  background: var(--azul); text-align: center;
+  padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
+}
+header::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,146,42,.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.kicker {
+  font-family: 'Source Sans 3', sans-serif; font-size: .72rem; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase; color: var(--oro-claro);
+  margin-bottom: 1rem;
+}
+header h1 {
+  font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 5vw, 3.2rem);
+  color: #fff; font-weight: 700; margin-bottom: .8rem;
+}
+header p.sub {
+  font-style: italic; color: rgba(255,255,255,.65); max-width: 640px; margin: 0 auto;
+}
+
+main { max-width: 1080px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.2rem, 5vw, 3rem); }
+
+.seccion { margin-bottom: 4rem; }
+.seccion h2 {
+  font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 600; margin-bottom: .4rem;
+}
+.seccion .heb { font-size: 1.15em; color: var(--carmesi); margin-bottom: 1rem; }
+.seccion > p.intro { max-width: 760px; margin-bottom: 1.6rem; }
+
+.libro {
+  background: #fffdf8; border: 1px solid rgba(184,146,42,.3);
+  border-left: 3px solid var(--oro); padding: 1.4rem 1.6rem; margin-bottom: 1.2rem;
+}
+.libro h3 {
+  font-family: 'Cinzel', serif; font-size: 1.05rem; margin-bottom: .8rem;
+}
+.libro h3 small { font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic; color: #6a5c40; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chips a {
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem; font-weight: 600;
+  letter-spacing: .04em; text-decoration: none; color: var(--azul);
+  background: var(--hueso); border: 1px solid rgba(26,35,64,.18);
+  padding: .32rem .8rem; border-radius: 2rem;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.chips a:hover { background: var(--azul); color: var(--oro-claro); border-color: var(--azul); }
+
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+.tarjeta {
+  background: #fffdf8; border: 1px solid rgba(14,11,7,.1); border-top: 3px solid var(--azul);
+  padding: 1.7rem 1.5rem; display: flex; flex-direction: column;
+}
+.tarjeta h3 { font-family: 'Cinzel', serif; font-size: 1.05rem; margin-bottom: .5rem; }
+.tarjeta p { font-size: .92em; flex: 1; margin-bottom: 1rem; }
+.tarjeta a {
+  font-family: 'Source Sans 3', sans-serif; font-weight: 600; font-size: .76rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--carmesi); text-decoration: none;
+}
+.tarjeta a:hover { color: var(--oro); }
+.tarjeta a + a { margin-top: .35rem; }
+
+.aviso {
+  background: var(--hueso); border-left: 3px solid var(--carmesi);
+  padding: 1.3rem 1.6rem; font-size: .93em; margin-top: 2.5rem;
+}
+.aviso strong { font-family: 'Source Sans 3', sans-serif; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--carmesi); display: block; margin-bottom: .4rem; }
+
+footer {
+  background: var(--azul-osc); color: rgba(255,255,255,.5);
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  text-align: center; padding: 2.2rem 1.5rem;
+}
+footer a { color: rgba(212,170,74,.8); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-marca" href="/" style="display:flex;align-items:center;gap:.6rem;">
+    <img src="/assets/logo-jai.png" alt="חי — Zohar Latinoamérica" style="height:30px;width:30px;">
+    ZOHAR <span>LATINOAMÉRICA</span>
+  </a>
+  <div class="nav-links">
+    <a href="/ensayo/">Ensayo</a>
+    <a href="/#herramientas">Herramientas</a>
+    <a href="/#comunidad">Escuela</a>
+  </div>
+</nav>
+
+<header>
+  <p class="kicker">Biblioteca Cabalística</p>
+  <h1>El Arca de los Textos</h1>
+  <p class="sub">Las parashiot del Zohar organizadas por libro, el Tanaj, Midrash, Talmud y las obras de la Cabalá — con acceso directo a las fuentes originales.</p>
+</header>
+
+<main>
+
+  <section class="seccion" id="zohar">
+    <h2>Séfer HaZohar</h2>
+    <p class="heb">סֵפֶר הַזֹּהַר — El Libro del Esplendor</p>
+    <p class="intro">El Zohar comenta la Torá parashá por parashá. Cada enlace abre el texto original (arameo con traducción) en Sefaria, la biblioteca judía abierta. Las traducciones propias al español de la escuela se irán publicando aquí, parashá por parashá.</p>
+
+    <div class="libro">
+      <h3>Bereshit — Génesis <small>· בראשית</small></h3>
+      <div class="chips">
+        <a href="https://www.sefaria.org/search?q=Zohar%20Bereshit" target="_blank" rel="noopener">Bereshit</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Noach" target="_blank" rel="noopener">Nóaj</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Lech%20Lecha" target="_blank" rel="noopener">Lej Lejá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayera" target="_blank" rel="noopener">Vayerá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Chayei%20Sarah" target="_blank" rel="noopener">Jayei Sará</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Toldot" target="_blank" rel="noopener">Toldot</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayetzei" target="_blank" rel="noopener">Vayetzé</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayishlach" target="_blank" rel="noopener">Vayishlaj</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayeshev" target="_blank" rel="noopener">Vayéshev</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Miketz" target="_blank" rel="noopener">Miketz</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayigash" target="_blank" rel="noopener">Vayigash</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayechi" target="_blank" rel="noopener">Vayejí</a>
+      </div>
+    </div>
+
+    <div class="libro">
+      <h3>Shemot — Éxodo <small>· שמות</small></h3>
+      <div class="chips">
+        <a href="https://www.sefaria.org/search?q=Zohar%20Shemot" target="_blank" rel="noopener">Shemot</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vaera" target="_blank" rel="noopener">Vaerá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Bo" target="_blank" rel="noopener">Bo</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Beshalach" target="_blank" rel="noopener">Beshalaj</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Yitro" target="_blank" rel="noopener">Yitró</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Mishpatim" target="_blank" rel="noopener">Mishpatim</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Terumah" target="_blank" rel="noopener">Terumá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Tetzaveh" target="_blank" rel="noopener">Tetzavé</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Ki%20Tisa" target="_blank" rel="noopener">Ki Tisá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayakhel" target="_blank" rel="noopener">Vayakhel</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Pekudei" target="_blank" rel="noopener">Pekudei</a>
+      </div>
+    </div>
+
+    <div class="libro">
+      <h3>Vayikrá — Levítico <small>· ויקרא</small></h3>
+      <div class="chips">
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayikra" target="_blank" rel="noopener">Vayikrá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Tzav" target="_blank" rel="noopener">Tzav</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Shemini" target="_blank" rel="noopener">Sheminí</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Tazria" target="_blank" rel="noopener">Tazría</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Metzora" target="_blank" rel="noopener">Metzorá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Acharei%20Mot" target="_blank" rel="noopener">Ajarei Mot</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Kedoshim" target="_blank" rel="noopener">Kedoshim</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Emor" target="_blank" rel="noopener">Emor</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Behar" target="_blank" rel="noopener">Behar</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Bechukotai" target="_blank" rel="noopener">Bejukotai</a>
+      </div>
+    </div>
+
+    <div class="libro">
+      <h3>Bamidbar — Números <small>· במדבר</small></h3>
+      <div class="chips">
+        <a href="https://www.sefaria.org/search?q=Zohar%20Bamidbar" target="_blank" rel="noopener">Bamidbar</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Naso" target="_blank" rel="noopener">Nasó</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Behaalotecha" target="_blank" rel="noopener">Behaalotjá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Shelach" target="_blank" rel="noopener">Shelaj Lejá</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Korach" target="_blank" rel="noopener">Kóraj</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Chukat" target="_blank" rel="noopener">Jukat</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Balak" target="_blank" rel="noopener">Balak</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Pinchas" target="_blank" rel="noopener">Pinjás</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Matot" target="_blank" rel="noopener">Matot</a>
+      </div>
+    </div>
+
+    <div class="libro">
+      <h3>Devarim — Deuteronomio <small>· דברים</small></h3>
+      <div class="chips">
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vaetchanan" target="_blank" rel="noopener">Vaetjanán</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Ki%20Tetzei" target="_blank" rel="noopener">Ki Tetzé</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Vayelech" target="_blank" rel="noopener">Vayélej</a>
+        <a href="https://www.sefaria.org/search?q=Zohar%20Haazinu" target="_blank" rel="noopener">Haazinu · Idra Zuta</a>
+      </div>
+    </div>
+
+    <div class="chips" style="margin-top:1rem;">
+      <a href="https://www.sefaria.org/texts/Kabbalah/Zohar" target="_blank" rel="noopener" style="background:#1a2340;color:#d4aa4a;border-color:#1a2340;">📖 Índice completo del Zohar en Sefaria →</a>
+    </div>
+  </section>
+
+  <section class="seccion" id="fuentes">
+    <h2>Tanaj, Midrash, Talmud y obras cabalísticas</h2>
+    <p class="heb">תנ״ך · מדרש · תלמוד · קבלה</p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <h3>📜 Tanaj completo</h3>
+        <p>Torá, Neviím y Ketuvim — hebreo con traducciones. Sefaria incluye traducciones al español en varios libros.</p>
+        <a href="https://www.sefaria.org/texts/Tanakh" target="_blank" rel="noopener">Abrir el Tanaj en Sefaria →</a>
+        <a href="https://mechon-mamre.org/i/t/t0.htm" target="_blank" rel="noopener">Hebreo · Mechon Mamre →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>🕎 Talmud Bavli</h3>
+        <p>Los 37 tratados del Talmud de Babilonia, con la traducción William Davidson de acceso libre y comentarios enlazados.</p>
+        <a href="https://www.sefaria.org/texts/Talmud" target="_blank" rel="noopener">Abrir el Talmud en Sefaria →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>✍️ Midrash</h3>
+        <p>Midrash Rabá, Tanjuma, Pirkei DeRabí Eliezer y la literatura midráshica completa, organizada por obra.</p>
+        <a href="https://www.sefaria.org/texts/Midrash" target="_blank" rel="noopener">Abrir el Midrash en Sefaria →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>🌳 Obras cabalísticas</h3>
+        <p>Séfer Yetzirá, Etz Jaim del Arí, Pardés Rimonim, Tanya, las obras de Ramjal y del Rav Ashlag (HaSulam).</p>
+        <a href="https://www.sefaria.org/texts/Kabbalah" target="_blank" rel="noopener">Sección Cabalá en Sefaria →</a>
+        <a href="https://www.chabad.org/library/tanya/tanya_cdo/aid/1028862/jewish/Lessons-in-Tanya.htm" target="_blank" rel="noopener">Tanya (Chabad) →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>🇪🇸 Fuentes en español</h3>
+        <p>Torá con Rashi y estudios en español: Chabad en español y la biblioteca de Sefaria filtrada por traducciones castellanas.</p>
+        <a href="https://es.chabad.org/library/article_cdo/aid/2266958/jewish/Tor-con-Rash.htm" target="_blank" rel="noopener">Torá en español · Chabad →</a>
+        <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria (elige «Español») →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>📅 Parashá de la semana</h3>
+        <p>Calendario de lecturas: qué parashá corresponde a cada Shabat, con fechas hebreas y gregorianas.</p>
+        <a href="https://www.hebcal.com/sedrot/" target="_blank" rel="noopener">Ciclo de lecturas · Hebcal →</a>
+        <a href="https://calendar-app-eight-eta.vercel.app" target="_blank" rel="noopener">Gran Ciclo Hebreo →</a>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <strong>Nota sobre las ediciones en español</strong>
+      Las traducciones completas del Zohar al español (ediciones del Centro de Cabalá, Bnei Baruj y otras) están protegidas por derechos de autor y no pueden reproducirse aquí. Esta biblioteca enlaza a las fuentes originales de acceso libre (arameo/hebreo y traducciones abiertas). Las traducciones y comentarios propios de Zohar Latinoamérica se publicarán en esta sección, parashá por parashá, como material original de la escuela.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Zohar Latinoamérica · <a href="https://zoharlatinoamerica.site">zoharlatinoamerica.site</a> · 5786</p>
+</footer>
+
+</body>
+</html>
