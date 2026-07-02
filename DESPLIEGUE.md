@@ -1,5 +1,25 @@
 # Despliegue de zoharlatinoamerica.site
 
+## ✅ Estado actual (2 de julio de 2026)
+
+- **Desplegado en producción**: https://zoharlatinoamerica-site.vercel.app
+- **Repositorio**: https://github.com/zoharmx/zoharlatinoamerica-site (push a `main` = deploy automático)
+- **Dominios agregados al proyecto Vercel**: `zoharlatinoamerica.site` y `www.zoharlatinoamerica.site`
+  — pendientes SOLO del cambio de DNS en Hostinger (ver abajo).
+
+### Único paso manual pendiente: DNS en Hostinger
+
+1. Entra a **hpanel.hostinger.com** → Dominios → `zoharlatinoamerica.site` → **DNS / Nameservers**.
+2. En la zona DNS, edita/crea estos dos registros:
+   - Tipo `A` · Nombre `@` · Valor `76.76.21.21` (borra el registro A actual que apunta al builder)
+   - Tipo `CNAME` · Nombre `www` · Valor `cname.vercel-dns.com`
+3. Guarda. La propagación tarda de minutos a unas horas; Vercel verifica solo y emite el SSL.
+
+⚠️ Esto reemplaza la web actual del builder de Hostinger por la nueva plataforma (es el objetivo).
+El correo no se afecta (no hay registros MX personalizados que tocar; si Hostinger te muestra
+registros MX, NO los borres).
+
+
 La plataforma está en esta carpeta (`plataforma/`) como sitio estático listo para Vercel.
 No requiere build: es HTML puro, carga instantánea, SEO completo.
 
