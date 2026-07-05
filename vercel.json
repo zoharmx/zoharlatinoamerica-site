@@ -3,12 +3,19 @@
   "trailingSlash": true,
   "redirects": [
     { "source": "/sefarad", "destination": "/ensayo/", "permanent": true },
+    { "source": "/sefarad/", "destination": "/ensayo/", "permanent": true },
     { "source": "/sefarad-pardes-invertido", "destination": "/ensayo/", "permanent": true },
+    { "source": "/sefarad-pardes-invertido/", "destination": "/ensayo/", "permanent": true },
     { "source": "/pelicula", "destination": "/#pelicula", "permanent": false },
+    { "source": "/pelicula/", "destination": "/#pelicula", "permanent": false },
     { "source": "/youtube", "destination": "https://www.youtube.com/channel/UCxBItTOHMtkunnfBugXFtAg", "permanent": false },
+    { "source": "/youtube/", "destination": "https://www.youtube.com/channel/UCxBItTOHMtkunnfBugXFtAg", "permanent": false },
     { "source": "/facebook", "destination": "https://www.facebook.com/Zoharlatinoamericaescuela", "permanent": false },
+    { "source": "/facebook/", "destination": "https://www.facebook.com/Zoharlatinoamericaescuela", "permanent": false },
     { "source": "/calendario", "destination": "https://calendar-app-eight-eta.vercel.app", "permanent": false },
-    { "source": "/zivug", "destination": "https://calendar-app-eight-eta.vercel.app/mazal", "permanent": false }
+    { "source": "/calendario/", "destination": "https://calendar-app-eight-eta.vercel.app", "permanent": false },
+    { "source": "/zivug", "destination": "https://calendar-app-eight-eta.vercel.app/mazal", "permanent": false },
+    { "source": "/zivug/", "destination": "https://calendar-app-eight-eta.vercel.app/mazal", "permanent": false }
   ],
   "headers": [
     {
