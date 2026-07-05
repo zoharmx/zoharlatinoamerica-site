@@ -50,6 +50,33 @@ nav {
 }
 .nav-links a:hover { color: var(--oro-claro); }
 
+.nav-toggle {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 30px; height: 30px; background: none; border: none; cursor: pointer;
+  padding: 0; flex-shrink: 0;
+}
+.nav-toggle span {
+  display: block; width: 100%; height: 2px; background: #fff; border-radius: 1px;
+  transition: transform .25s, opacity .2s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none; flex-direction: column; align-items: flex-end;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(14,18,36,.98); backdrop-filter: blur(8px);
+    padding: 1.2rem clamp(1rem, 4vw, 2.5rem) 1.6rem;
+    border-bottom: 1px solid rgba(184,146,42,.25);
+    gap: 1.1rem;
+  }
+  .nav-links.abierto { display: flex; }
+  .nav-links a { margin-left: 0; font-size: .85rem; }
+}
+
 header {
   background: var(--azul); text-align: center;
   padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
@@ -135,12 +162,33 @@ footer a { color: rgba(212,170,74,.8); text-decoration: none; }
     <img src="/assets/logo-jai.png" alt="חי — Zohar Latinoamérica" style="height:30px;width:30px;">
     ZOHAR <span>LATINOAMÉRICA</span>
   </a>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="/ensayo/">Ensayo</a>
     <a href="/#herramientas">Herramientas</a>
     <a href="/#comunidad">Escuela</a>
   </div>
 </nav>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    var abierto = links.classList.toggle('abierto');
+    toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      links.classList.remove('abierto');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 <header>
   <p class="kicker">Biblioteca Cabalística</p>
