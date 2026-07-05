@@ -8,7 +8,7 @@
     { "source": "/youtube", "destination": "https://www.youtube.com/channel/UCxBItTOHMtkunnfBugXFtAg", "permanent": false },
     { "source": "/facebook", "destination": "https://www.facebook.com/Zoharlatinoamericaescuela", "permanent": false },
     { "source": "/calendario", "destination": "https://calendar-app-eight-eta.vercel.app", "permanent": false },
-    { "source": "/zivug", "destination": "https://frontend-beige-phi-95.vercel.app", "permanent": false }
+    { "source": "/zivug", "destination": "https://calendar-app-eight-eta.vercel.app/mazal", "permanent": false }
   ],
   "headers": [
     {
