@@ -345,7 +345,7 @@ footer a { color: rgba(212,170,74,.8); text-decoration: none; }
         <p class="cifra">10 dimensiones · Ciclo metónico</p>
         <h3>Zivug — Consulta personal</h3>
         <p>Herramienta de consulta natal: tu posición en el ciclo de 19 años, el carácter temporal de tu fecha de nacimiento y un análisis en 10 dimensiones inspirado en el Árbol de la Vida.</p>
-        <a class="accion" href="https://calendar-app-eight-eta.vercel.app/mazal" target="_blank" rel="noopener">Consultar mi carta →</a>
+        <a class="accion" href="#carta-natal">Consultar mi carta →</a>
       </div>
       <div class="tarjeta">
         <div class="icono">📜</div>
@@ -355,6 +355,32 @@ footer a { color: rgba(212,170,74,.8); text-decoration: none; }
         <a class="accion" href="/biblioteca/">Entrar a la biblioteca →</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="carta-natal" style="background:var(--azul-osc);color:var(--hueso);">
+  <div class="contenedor">
+    <p class="kicker" style="color:#d4aa4a;">Consulta personal</p>
+    <h2 class="seccion-titulo" style="color:#fff;">Tu Carta Natal Hebrea</h2>
+    <p class="seccion-intro" style="color:rgba(237,232,220,.72);">
+      Ingresa tu fecha, hora y lugar de nacimiento. El sistema calcula tu fecha hebrea real
+      —con la corrección del atardecer de Jerusalén—, tu Mazal y la Sefirá que rige tu alma según
+      las correspondencias del Zohar HaKadosh, y genera una interpretación personal.
+    </p>
+    <div style="max-width:820px;margin:0 auto;border:1px solid rgba(184,146,42,.4);border-radius:4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#070714;">
+      <iframe
+        id="mazal-frame"
+        src="https://calendar-app-eight-eta.vercel.app/mazal?embed=1"
+        title="Carta Natal Hebrea"
+        loading="lazy"
+        style="width:100%;height:720px;border:0;display:block;"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+    <p style="text-align:center;margin-top:1.2rem;font-size:.85rem;">
+      <a href="https://calendar-app-eight-eta.vercel.app/mazal" target="_blank" rel="noopener" style="color:var(--oro-claro);">
+        ¿Prefieres pantalla completa? Abrir la carta en una pestaña nueva →
+      </a>
+    </p>
   </div>
 </section>
 
@@ -411,6 +437,20 @@ footer a { color: rgba(212,170,74,.8); text-decoration: none; }
       links.classList.remove('abierto');
       toggle.setAttribute('aria-expanded', 'false');
     });
+  });
+})();
+
+// Auto-resize del iframe de la Carta Natal (escucha la altura reportada por /mazal?embed=1)
+(function () {
+  var frame = document.getElementById('mazal-frame');
+  if (!frame) return;
+  var ALLOWED = 'https://calendar-app-eight-eta.vercel.app';
+  window.addEventListener('message', function (e) {
+    if (e.origin !== ALLOWED) return;
+    var d = e.data;
+    if (d && d.type === 'mazal-embed-height' && typeof d.height === 'number') {
+      frame.style.height = Math.max(400, Math.ceil(d.height)) + 'px';
+    }
   });
 })();
 </script>
