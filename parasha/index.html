@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parashat Devarim — La Parashá de la Semana | Zohar Latinoamérica</title>
+<meta name="description" content="Devarim 5786 · Shabat Jazón: cuando el que no tenía palabras se convirtió en la palabra. Comentario semanal de la parashá desde el Zohar, Rashi y el Midrash, en español.">
+<meta property="og:title" content="Parashat Devarim — cuando el que no tenía palabras se convirtió en la palabra">
+<meta property="og:description" content="El comentario semanal de la parashá de Zohar Latinoamérica: Devarim, Shabat Jazón y el mes de Av. Desde el Zohar, Rashi y el Midrash, en español.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zoharlatinoamerica.site/parasha/">
+<meta property="og:image" content="https://img.youtube.com/vi/pfRQjh97G7o/maxresdefault.jpg">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --tinta:      #0e0b07;
+  --pergamino:  #f7f2e8;
+  --oro:        #b8922a;
+  --oro-claro:  #d4aa4a;
+  --carmesi:    #7a1e1e;
+  --azul:       #1a2340;
+  --azul-osc:   #12182e;
+  --hueso:      #ede8dc;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--pergamino); color: var(--tinta);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(17px, 2vw, 19px); line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--carmesi); }
+.barra {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .7rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(18,24,46,.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,146,42,.25);
+  font-family: 'Source Sans 3', sans-serif;
+}
+.barra a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.barra a:hover { color: var(--oro-claro); }
+.barra .marca { font-family: 'Cinzel', serif; font-weight: 700; color: #fff; letter-spacing: .12em; font-size: .9rem; }
+.barra .marca span { color: var(--oro-claro); }
+
+header.cabecera {
+  background: var(--azul); color: #fff; text-align: center;
+  padding: clamp(3.5rem, 9vw, 6rem) 1.5rem clamp(3rem, 7vw, 5rem);
+  position: relative; overflow: hidden;
+}
+header.cabecera::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 40%, rgba(184,146,42,.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.kicker {
+  font-family: 'Source Sans 3', sans-serif; font-size: .72rem; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase; color: var(--oro-claro);
+  margin-bottom: 1rem;
+}
+header.cabecera h1 {
+  font-family: 'Cinzel', serif; font-size: clamp(1.7rem, 5vw, 3.2rem);
+  line-height: 1.15; max-width: 900px; margin: 0 auto .9rem; position: relative;
+}
+.hebreo-grande { font-size: clamp(1.4rem, 4vw, 2.2rem); color: var(--oro-claro); margin-bottom: 1.2rem; }
+.meta-linea {
+  font-family: 'Source Sans 3', sans-serif; font-size: .8rem;
+  letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55);
+}
+article { max-width: 760px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.2rem, 5vw, 2rem); }
+article h2 {
+  font-family: 'Cinzel', serif; font-size: clamp(1.25rem, 3vw, 1.7rem);
+  margin: 2.6rem 0 1rem; line-height: 1.25;
+}
+article p { margin-bottom: 1.25rem; }
+article blockquote {
+  margin: 1.8rem 0; padding: 1.2rem 1.6rem;
+  border-left: 3px solid var(--oro); background: #fffdf8;
+  font-style: italic; font-size: 1.04em;
+}
+article blockquote .fuente { display: block; margin-top: .6rem; font-style: normal; font-size: .82em; font-family: 'Source Sans 3', sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #8a7a55; }
+.dato-ciclo {
+  margin: 2rem 0; padding: 1.4rem 1.6rem;
+  background: var(--azul-osc); color: var(--hueso);
+  border: 1px solid rgba(184,146,42,.4); font-size: .95em;
+}
+.dato-ciclo .etiqueta { font-family: 'Source Sans 3', sans-serif; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--oro-claro); margin-bottom: .5rem; }
+.cta-membresia {
+  margin: 3rem 0 1rem; padding: 2.2rem clamp(1.4rem, 4vw, 2.4rem);
+  background: #fffdf8; border: 1px solid rgba(184,146,42,.4); border-top: 3px solid var(--oro);
+  text-align: center;
+}
+.cta-membresia h3 { font-family: 'Cinzel', serif; font-size: 1.25rem; margin-bottom: .7rem; }
+.cta-membresia p { font-size: .95em; max-width: 560px; margin: 0 auto 1.4rem; }
+.btn {
+  display: inline-block; text-decoration: none;
+  font-family: 'Source Sans 3', sans-serif; font-weight: 600;
+  font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+  padding: .9rem 2rem; border-radius: 2px; margin: .3rem;
+  transition: transform .2s, background .2s;
+}
+.btn-oro { background: var(--oro); color: var(--azul-osc); }
+.btn-oro:hover { background: var(--oro-claro); transform: translateY(-2px); }
+.btn-linea { border: 1px solid var(--oro); color: var(--carmesi); }
+.btn-linea:hover { border-color: var(--oro-claro); }
+footer {
+  background: var(--azul-osc); color: rgba(255,255,255,.5);
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  letter-spacing: .06em; text-align: center; padding: 2.2rem 1.5rem; margin-top: 3rem;
+}
+footer a { color: rgba(212,170,74,.8); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <a class="marca" href="/">ZOHAR <span>LATINOAMÉRICA</span></a>
+  <div style="display:flex;gap:1.4rem;flex-wrap:wrap;">
+    <a href="/#tiempo">El tiempo, hoy</a>
+    <a href="/biblioteca/">Biblioteca</a>
+    <a href="/#sosten">Sostén</a>
+  </div>
+</div>
+
+<header class="cabecera">
+  <p class="kicker">La Parashá de la Semana · Comentario de la Escuela</p>
+  <p class="hebreo-grande">פָּרָשַׁת דְּבָרִים</p>
+  <h1>Devarim: cuando el que no tenía palabras se convirtió en la palabra</h1>
+  <p class="meta-linea">Shabat Jazón · 4 de Av 5786 · 18 de julio 2026 · Devarim 1:1 – 3:22 · Haftará: Yeshayahu 1:1–27</p>
+</header>
+
+<article>
+
+  <p>El quinto libro de la Torá se abre con una frase que, leída con atención, es casi un escándalo:</p>
+
+  <blockquote>
+    «Éstas son las palabras — <em>éleh hadevarim</em> — que habló Moshé a todo Israel, al otro lado del Jordán…»
+    <span class="fuente">Devarim 1:1</span>
+  </blockquote>
+
+  <p>¿Por qué escándalo? Porque el hombre que pronuncia «éstas son las palabras» es el mismo que cuarenta años antes, ante la zarza ardiente, se declaró incapacitado precisamente para eso:</p>
+
+  <blockquote>
+    «Te ruego, Señor: yo no soy hombre de palabras — <em>lo ish devarim anojí</em> —… pesado de boca y pesado de lengua soy yo.»
+    <span class="fuente">Shemot 4:10</span>
+  </blockquote>
+
+  <p>El libro entero de Devarim es la respuesta a esa declaración. El que no era «hombre de palabras» termina su vida pronunciando el libro de las Palabras. ¿Qué ocurrió en medio? Ocurrió la Torá. El Zohar llama a Moshé <em>Raaiá Mehemná</em>, el Pastor Fiel, y enseña que la Presencia divina hablaba a través de su garganta: la Shejiná «habla desde la garganta de Moshé» (cf. Zohar III, Pinjás; Tikunei Zohar). Devarim es la demostración viviente de esa enseñanza: cuando una persona se convierte en canal — cuando deja de defender su propia incapacidad y se pone al servicio de la luz — hasta su defecto más íntimo se transforma en el instrumento de la revelación. La boca pesada se vuelve el libro que Israel lee hasta hoy.</p>
+
+  <h2>La reprensión que no humilla</h2>
+
+  <p>Rashi, sobre el primer versículo, revela el segundo secreto de la parashá. La lista de lugares que abre el libro — «en el desierto, en la Aravá, frente a Suf… y Di Zahav» — no es geografía: es memoria cifrada. Cada nombre alude a una caída de Israel en el desierto. <em>Di Zahav</em>, «suficiente oro», susurra el becerro de oro sin nombrarlo.</p>
+
+  <blockquote>
+    «Por el honor de Israel, mencionó los lugares donde provocaron, solo por alusión.»
+    <span class="fuente">Rashi sobre Devarim 1:1, según el Sifrei</span>
+  </blockquote>
+
+  <p>Moshé, en el último mes de su vida, corrige a todo un pueblo sin exhibir a nadie. La <em>tojajá</em> — la reprensión — se envuelve en nombres de lugares para que el que sabe, entienda, y el que no, no sea avergonzado. Ésta es la instrucción para la última generación: la corrección que humilla no corrige — endurece. La palabra que repara llega con la misma delicadeza con la que Moshé nombró desiertos en lugar de pecados.</p>
+
+  <h2>El quinto libro y el secreto de Maljut</h2>
+
+  <p>En el mapa sefirótico de los cinco libros, Devarim corresponde a Maljut — el Reino, la última Sefirá, la luna que no tiene luz propia y sin embargo gobierna la noche. Por eso la tradición lo llama <em>Mishné Torá</em>, la «repetición» de la Torá: Moshé no añade una revelación nueva — <em>explica</em> la recibida: «consintió Moshé en explicar — <em>be'er</em> — esta Torá» (Devarim 1:5). Aquí está la semilla de toda la Torá Oral: la luz de arriba hecha habitable abajo, el manantial traducido en pozo del que un pueblo entero puede beber.</p>
+
+  <p>Ése es también el trabajo de nuestra generación: no recibir luces nuevas, sino construir los vasos donde las ya recibidas puedan vivir — en lengua española, en América, en la casa de cada estudiante.</p>
+
+  <div class="dato-ciclo">
+    <p class="etiqueta">La posición en el Gran Ciclo · sólo aquí</p>
+    <p>Esta lectura de Devarim cae en el año 5786, posición <strong>10 de 19</strong> del ciclo de intercalación #305 — un año <em>consolidante</em>: el ciclo no pide iniciar sino afianzar. La luna de Av está creciendo apenas (día 4 de 30) y camina hacia el 9 de Av. El cielo y el calendario dicen lo mismo que la parashá: éste es un tiempo de revisar el camino andado — como Moshé en la llanura de Moav — y de reconstruir desde la palabra.</p>
+  </div>
+
+  <h2>Shabat Jazón: la visión antes de la ruina</h2>
+
+  <p>Este Shabat es <em>Shabat Jazón</em>, el «Shabat de la Visión», por la haftará de Yeshayahu que se lee antes del 9 de Av: «Visión de Yeshayahu ben Amotz…» (Yeshayahu 1:1). La tradición jasídica — en nombre de Rabí Leví Yitzjak de Berditchev — enseña que en este Shabat a cada alma se le muestra, desde lejos, el Templo futuro: no como consuelo, sino como plano de obra. Se nos muestra lo que existe ya en los mundos superiores para que sepamos qué estamos reconstruyendo aquí abajo.</p>
+
+  <p>Devarim se lee siempre en la antesala de la destrucción — y ése es el punto. Las palabras de Moshé, la reprensión que no humilla, la Torá explicada: éstas son las herramientas con las que se reconstruye lo que el odio gratuito derribó. La Casa cayó por palabras que destruyen; se levanta por palabras que explican, corrigen con amor y hacen habitable la luz.</p>
+
+  <p style="font-style:italic;color:#6b5d3f;">Shabat Shalom. Que la visión de este Shabat encuentre en nosotros vasos dispuestos.</p>
+
+  <div class="cta-membresia">
+    <h3>La guía completa de Devarim, en tu correo</h3>
+    <p>Los miembros de la Escuela reciben cada semana la <strong>guía de estudio completa</strong>: el comentario íntegro con sus fuentes, las preguntas de estudio para trabajar solo o en jevruta, y la práctica de la semana. Todo el contenido del portal sigue siendo gratuito — el miembro sostiene la obra.</p>
+    <a class="btn btn-oro" href="https://buy.stripe.com/cNi14nalYbms2Bb9od2cg01" target="_blank" rel="noopener">Ser miembro · $5 USD/mes</a>
+    <a class="btn btn-linea" href="/#newsletter">Recibir el boletín gratuito</a>
+  </div>
+
+  <p style="text-align:center;font-size:.85em;font-family:'Source Sans 3',sans-serif;color:#8a7a55;">
+    Fuentes de esta entrega: Devarim 1:1–3:22 · Shemot 4:10 · Rashi y Sifrei sobre Devarim 1:1 · Zohar III (Pinjás) y Tikunei Zohar sobre la Shejiná y la voz de Moshé · Yeshayahu 1:1–27 · tradición de R. Leví Yitzjak de Berditchev sobre Shabat Jazón.<br>
+    Estudia los textos originales en la <a href="/biblioteca/">Biblioteca</a>.
+  </p>
+
+</article>
+
+<footer>
+  <p>Zohar Latinoamérica · <a href="https://zoharlatinoamerica.site">zoharlatinoamerica.site</a> · 5786</p>
+  <p style="margin-top:.4rem;"><a href="/">Portal</a> · <a href="/ensayo/">Ensayo</a> · <a href="/biblioteca/">Biblioteca</a> · <a href="/#sosten">Sostén</a></p>
+</footer>
+
+</body>
+</html>
