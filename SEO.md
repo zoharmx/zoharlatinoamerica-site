@@ -2,15 +2,29 @@
 
 ## El diagnóstico (17 julio 2026)
 
-El sitio está vivo y bien construido, pero **Google no lo tiene indexado**:
-`site:zoharlatinoamerica.site` devuelve cero resultados. No es que posicione mal —
-es que Google no sabe que existe. El dominio es nuevo y no tiene enlaces entrantes
-que lo hagan descubrible.
+`site:zoharlatinoamerica.site` devuelve cero resultados: el sitio **no está indexado**.
+
+La primera hipótesis era que Google no sabía que el sitio existía. **Era falsa.**
+Search Console lo desmiente:
+
+| URL | Estado en Google |
+|---|---|
+| `/` | **Rastreada: actualmente sin indexar** — último rastreo 17 jul 2026, 5:51 |
+| `/ensayo/`, `/biblioteca/`, `/parasha/` | **Descubierta: actualmente sin indexar** — nunca rastreadas |
+
+Google **rastreó la home el mismo día** y decidió no indexarla. La detectó por el
+sitemap y como páginas de referencia el video de YouTube y la página de Facebook.
+Es decir: el descubrimiento funciona; lo que falla es que Google **no considera el
+sitio suficientemente valioso para indexarlo todavía**.
+
+Esto es lo normal en un dominio nuevo sin autoridad, y es importante entenderlo bien:
+ningún ajuste técnico lo fuerza. "Rastreada: actualmente sin indexar" se resuelve con
+señales de calidad y autoridad — contenido con sustancia propia y enlaces entrantes
+genuinos — no con más metadatos.
 
 Buscar "Zohar Latinoamérica" hoy devuelve kabbalah.info, Kabbalah Centre y Amazon.
-Ninguno de ellos compite por ese nombre exacto: es tu marca. Una vez indexado, esa
-consulta es muy ganable. "Zohar" a secas es otra historia — ahí hay competidores con
-años de autoridad y no existe atajo técnico.
+Ninguno compite por ese nombre exacto: es tu marca, y una vez indexado es muy ganable.
+"Zohar" a secas es otra historia: competidores con años de autoridad, sin atajo técnico.
 
 ## Hecho
 
@@ -25,34 +39,14 @@ años de autoridad y no existe atajo técnico.
 - **`sitemap.xml`** con `lastmod` real.
 - **IndexNow**: clave publicada y las 4 URLs enviadas a Bing/Edge/Yandex (HTTP 200).
   Esto no requiere cuenta.
+- **Google Search Console**: propiedad de **Dominio** `sc-domain:zoharlatinoamerica.site`
+  verificada por DNS, bajo `zoharlatinoamerica@gmail.com`. Sitemap enviado (4 páginas
+  descubiertas; el anterior, del builder de Hostinger, era de enero 2025 y descubría 0).
+  Las 4 URLs enviadas a la cola de rastreo prioritaria.
 
-## Pendiente — requiere tu login
+## Pendiente
 
-### 1. Google Search Console (lo que de verdad destraba Google)
-
-1. Entra a https://search.google.com/search-console con **zoharlatinoamerica@gmail.com**.
-2. Añadir propiedad → elige **Dominio** e introduce `zoharlatinoamerica.site`.
-   (Dominio es mejor que "Prefijo de URL": cubre `www`, `http`/`https` y los futuros
-   subdominios `calendario.` y `zivug.` de una sola vez.)
-3. Google te dará un registro **TXT**. Cópialo.
-4. Ve a **hpanel.hostinger.com** → Dominios → `zoharlatinoamerica.site` → DNS.
-   Añade: Tipo `TXT` · Nombre `@` · Valor `google-site-verification=...`
-5. Vuelve a Search Console → **Verificar**. (Si falla, espera y reintenta: el DNS
-   tarda de minutos a unas horas.)
-6. Ya dentro: **Sitemaps** → añade `sitemap.xml` → Enviar.
-7. **Inspección de URLs** → pega `https://zoharlatinoamerica.site/` → **Solicitar indexación**.
-   Repite para `/ensayo/`, `/biblioteca/` y `/parasha/`.
-
-> Si prefieres no tocar el DNS: elige "Prefijo de URL" con `https://zoharlatinoamerica.site/`,
-> método **etiqueta HTML**, y pega aquí el meta tag que te dé — se añade a `index.html`
-> y se despliega. Funciona igual pero no cubre subdominios.
-
-### 2. Bing Webmaster Tools (opcional)
-
-IndexNow ya está notificando a Bing, así que esto es para ver informes, no para indexar.
-https://www.bing.com/webmasters → importar directamente desde Search Console.
-
-### 3. Google Analytics 4
+### 1. Google Analytics 4
 
 `index.html` tiene el bloque GA4 comentado con el placeholder `G-XXXXXXXXXX`.
 Crea la propiedad en analytics.google.com, sustituye el ID y descomenta.
@@ -86,7 +80,10 @@ exactamente lo que construye el `sameAs` del JSON-LD, más Search Console verifi
 
 ## Expectativas realistas
 
-- **Indexación**: días o semanas tras Search Console. Sin él, indefinido.
+- **Indexación**: días o semanas. Pero ojo — solicitar indexación **pide** una revisión,
+  no la garantiza. Como la home ya estaba en "Rastreada: actualmente sin indexar",
+  Google ya la evaluó una vez y dijo que no. Si en 2-3 semanas sigue fuera, el problema
+  no es técnico y no se arregla reenviando: es de autoridad y contenido.
 - **"Zohar Latinoamérica"** → primer puesto es muy alcanzable: es tu marca.
 - **"Zohar", "Cábala en español"** → competencia real y establecida. No hay atajo:
   eso se gana con contenido sostenido (la parashá semanal es la mejor apuesta) y
@@ -94,3 +91,20 @@ exactamente lo que construye el `sameAs` del JSON-LD, más Search Console verifi
 - **El video**: 117 vistas en 2 semanas con 1.75 K suscriptores. La descripción ya
   enlaza al sitio, que es correcto. Los enlaces de YouTube son `nofollow` (no pasan
   autoridad de posicionamiento) pero sí traen tráfico real y sirven de vía de descubrimiento.
+
+## Lo que de verdad movería la aguja ahora
+
+El techo ya no es técnico — el andamiaje está puesto. Lo que falta es lo que Google
+premia y hoy no encuentra:
+
+1. **Contenido propio y sustancial, publicado con constancia.** La parashá semanal es
+   la mejor apuesta: es original, tiene fecha, y nadie más la escribe así en español.
+   Una página nueva por semana durante unos meses cambia el perfil del dominio.
+2. **La biblioteca no puede ser solo enlaces.** Una página que remite a fuentes externas
+   es exactamente lo que Google clasifica como de bajo valor. Cada obra necesita texto
+   propio: introducción, contexto, comentario.
+3. **Enlaces entrantes reales.** Los de YouTube y Facebook son `nofollow`. Hace falta
+   que otros sitios citen el ensayo — foros de estudio, blogs de cabalá, universidades.
+   Uno bueno vale más que cien de directorios.
+4. **El ensayo es el activo más fuerte**: 14 capítulos originales. Merece ser lo que
+   se comparte y se cita, no solo lo que se enlaza desde un video.
