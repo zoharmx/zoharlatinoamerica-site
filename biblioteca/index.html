@@ -3,25 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biblioteca Cabalística — Zohar Latinoamérica</title>
-<meta name="description" content="Las parashiot del Zohar organizadas por libro, el Tanaj, Midrash, Talmud y obras cabalísticas — biblioteca digital de Zohar Latinoamérica con acceso a las fuentes.">
+<title>Biblioteca Cabalística — Cómo leer el Zohar | Zohar Latinoamérica</title>
+<meta name="description" content="Guía de lectura del Zohar en español: cómo está construido, por dónde empezar, qué son las Idrot y el Sifra diTzniuta, y las 48 parashot que el Zohar comenta. Con acceso directo a las fuentes.">
 <link rel="icon" href="/assets/logo.png" type="image/png">
 <link rel="canonical" href="https://zoharlatinoamerica.site/biblioteca/">
-<meta property="og:title" content="Biblioteca Cabalística — Zohar Latinoamérica">
-<meta property="og:description" content="Las parashiot del Zohar organizadas por libro, el Tanaj, Midrash, Talmud y obras cabalísticas — biblioteca digital de Zohar Latinoamérica.">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Cómo leer el Zohar — Biblioteca de Zohar Latinoamérica">
+<meta property="og:description" content="El Zohar no se lee de principio a fin. Guía en español de su estructura, sus estratos y su orden de lectura, con acceso directo a las fuentes.">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://zoharlatinoamerica.site/biblioteca/">
+<meta property="og:image" content="https://img.youtube.com/vi/pfRQjh97G7o/maxresdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://zoharlatinoamerica.site/biblioteca/#biblioteca",
-  "name": "Biblioteca Cabalística",
-  "description": "Las parashiot del Zohar organizadas por libro, el Tanaj, Midrash, Talmud y obras cabalísticas en español.",
-  "url": "https://zoharlatinoamerica.site/biblioteca/",
-  "inLanguage": "es",
-  "isPartOf": { "@id": "https://zoharlatinoamerica.site/#sitio" },
-  "publisher": { "@id": "https://zoharlatinoamerica.site/#organizacion" }
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://zoharlatinoamerica.site/biblioteca/#articulo",
+      "headline": "Cómo leer el Zohar: estructura, estratos y orden de lectura",
+      "description": "Guía en español de la arquitectura del Zohar — sus secciones, las Idrot, el Sifra diTzniuta, las 48 parashot que comenta y las seis que no.",
+      "inLanguage": "es",
+      "url": "https://zoharlatinoamerica.site/biblioteca/",
+      "datePublished": "2026-07-17",
+      "author": { "@type": "Organization", "name": "Zohar Latinoamérica", "url": "https://zoharlatinoamerica.site/" },
+      "publisher": { "@id": "https://zoharlatinoamerica.site/#organizacion" },
+      "mainEntityOfPage": "https://zoharlatinoamerica.site/biblioteca/"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://zoharlatinoamerica.site/biblioteca/#biblioteca",
+      "name": "Biblioteca Cabalística",
+      "url": "https://zoharlatinoamerica.site/biblioteca/",
+      "inLanguage": "es",
+      "isPartOf": { "@id": "https://zoharlatinoamerica.site/#sitio" },
+      "publisher": { "@id": "https://zoharlatinoamerica.site/#organizacion" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://zoharlatinoamerica.site/biblioteca/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿En qué idioma está escrito el Zohar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "En arameo — un arameo literario que no coincide exactamente con ningún dialecto hablado conocido. Es una de las razones por las que su origen se discute. Las partes tardías, como el Ra'aya Meheimna y el Tikunei Zohar, mezclan arameo y hebreo." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por dónde se empieza a leer el Zohar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No por el principio del Génesis. La tradición de Ashlag empieza por la Hakdamat Séfer HaZohar (la Introducción), que reúne pasajes escogidos como puerta de entrada. Otra vía es seguir la parashá de la semana, que da un ritmo y un contexto." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El Zohar comenta todas las parashot de la Torá?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. En la edición estándar comenta 48 de las 54. Sin sección propia quedan Devarim, Masei, Re'eh, Ki Tavó, Nitzavim y Vezot HaBerajá." }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién escribió el Zohar?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La tradición lo atribuye a Rabí Shimón bar Yojai (Rashbi), del siglo II en la Galilea. El libro aparece en Castilla a finales del siglo XIII, difundido por Moshé de León. La investigación académica, desde Gershom Scholem, sostiene que fue compuesto entonces; Yehuda Liebes propuso que fue obra de un círculo y no de una sola mano." }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <style>
@@ -112,9 +155,11 @@ header::before {
 header h1 {
   font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 5vw, 3.2rem);
   color: #fff; font-weight: 700; margin-bottom: .8rem;
+  position: relative;
 }
 header p.sub {
   font-style: italic; color: rgba(255,255,255,.65); max-width: 640px; margin: 0 auto;
+  position: relative;
 }
 
 main { max-width: 1080px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.2rem, 5vw, 3rem); }
@@ -125,16 +170,35 @@ main { max-width: 1080px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) cl
   font-weight: 600; margin-bottom: .4rem;
 }
 .seccion .heb { font-size: 1.15em; color: var(--carmesi); margin-bottom: 1rem; }
-.seccion > p.intro { max-width: 760px; margin-bottom: 1.6rem; }
+.seccion > p { max-width: 760px; margin-bottom: 1.1rem; }
+.seccion h3.sub {
+  font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 600;
+  margin: 2rem 0 .7rem;
+}
+
+.prosa { max-width: 760px; }
+.prosa p { margin-bottom: 1.1rem; }
+
+blockquote {
+  border-left: 3px solid var(--oro); background: #fffdf8;
+  padding: 1rem 1.4rem; margin: 1.6rem 0; max-width: 760px;
+  font-style: italic; color: #4a3f28;
+}
+blockquote cite {
+  display: block; margin-top: .5rem; font-style: normal;
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  letter-spacing: .1em; text-transform: uppercase; color: #8a7a55;
+}
 
 .libro {
   background: #fffdf8; border: 1px solid rgba(184,146,42,.3);
   border-left: 3px solid var(--oro); padding: 1.4rem 1.6rem; margin-bottom: 1.2rem;
 }
 .libro h3 {
-  font-family: 'Cinzel', serif; font-size: 1.05rem; margin-bottom: .8rem;
+  font-family: 'Cinzel', serif; font-size: 1.05rem; margin-bottom: .35rem;
 }
 .libro h3 small { font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic; color: #6a5c40; }
+.libro p.nota { font-size: .89em; color: #5c5140; margin-bottom: .8rem; }
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
 .chips a {
   font-family: 'Source Sans 3', sans-serif; font-size: .78rem; font-weight: 600;
@@ -144,6 +208,24 @@ main { max-width: 1080px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) cl
   transition: background .2s, color .2s, border-color .2s;
 }
 .chips a:hover { background: var(--azul); color: var(--oro-claro); border-color: var(--azul); }
+.chips a.joya { background: #fff6df; border-color: var(--oro); color: #6d5410; }
+.chips a.joya:hover { background: var(--oro); color: #fff; }
+
+.hito {
+  background: #fffdf8; border: 1px solid rgba(184,146,42,.3);
+  border-top: 3px solid var(--carmesi); padding: 1.5rem 1.7rem; margin-bottom: 1.2rem;
+}
+.hito h3 { font-family: 'Cinzel', serif; font-size: 1.08rem; margin-bottom: .2rem; }
+.hito .meta {
+  font-family: 'Source Sans 3', sans-serif; font-size: .74rem;
+  letter-spacing: .1em; text-transform: uppercase; color: #8a7a55; margin-bottom: .7rem;
+}
+.hito p { font-size: .95em; margin-bottom: .9rem; }
+.hito a.accion {
+  font-family: 'Source Sans 3', sans-serif; font-weight: 600; font-size: .76rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--carmesi); text-decoration: none;
+}
+.hito a.accion:hover { color: var(--oro); }
 
 .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
 .tarjeta {
@@ -158,6 +240,19 @@ main { max-width: 1080px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4.5rem) cl
 }
 .tarjeta a:hover { color: var(--oro); }
 .tarjeta a + a { margin-top: .35rem; }
+
+.faq { max-width: 760px; }
+.faq details {
+  border-bottom: 1px dotted rgba(184,146,42,.5); padding: .9rem 0;
+}
+.faq summary {
+  font-family: 'Cinzel', serif; font-size: 1rem; cursor: pointer;
+  list-style: none; display: flex; justify-content: space-between; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; color: var(--oro); font-size: 1.3rem; }
+.faq details[open] summary::after { content: '−'; }
+.faq details p { margin-top: .7rem; font-size: .95em; }
 
 .aviso {
   background: var(--hueso); border-left: 3px solid var(--carmesi);
@@ -185,6 +280,7 @@ footer a { color: rgba(212,170,74,.8); text-decoration: none; }
   </button>
   <div class="nav-links">
     <a href="/ensayo/">Ensayo</a>
+    <a href="/parasha/">Parashá</a>
     <a href="/#herramientas">Herramientas</a>
     <a href="/#comunidad">Escuela</a>
   </div>
@@ -210,143 +306,353 @@ footer a { color: rgba(212,170,74,.8); text-decoration: none; }
 
 <header>
   <p class="kicker">Biblioteca Cabalística</p>
-  <h1>El Arca de los Textos</h1>
-  <p class="sub">Las parashiot del Zohar organizadas por libro, el Tanaj, Midrash, Talmud y las obras de la Cabalá — con acceso directo a las fuentes originales.</p>
+  <h1>Cómo leer el Zohar</h1>
+  <p class="sub">Nadie abre el Zohar por la primera página y llega a la última. Este es el mapa que hubiéramos querido tener el primer día.</p>
 </header>
 
 <main>
 
-  <section class="seccion" id="zohar">
-    <h2>Séfer HaZohar</h2>
+  <section class="seccion" id="que-es">
+    <h2>Qué es el Zohar, y qué no es</h2>
     <p class="heb">סֵפֶר הַזֹּהַר — El Libro del Esplendor</p>
-    <p class="intro">El Zohar comenta la Torá parashá por parashá. Cada enlace abre el texto original (arameo con traducción) en Sefaria, la biblioteca judía abierta. Las traducciones propias al español de la escuela se irán publicando aquí, parashá por parashá.</p>
+    <div class="prosa">
+      <p>El Zohar no es un tratado. No abre planteando una tesis ni cierra demostrándola. Es un comentario sobre la Torá que avanza parashá por parashá, y dentro de cada una se mueve como una conversación: un versículo enciende una pregunta, la pregunta abre un relato, el relato desemboca en un pasaje que parece no tener relación con el punto de partida — y sí la tiene, pero varias páginas después.</p>
+      <p>Está escrito en arameo. No en el arameo del Talmud ni en ningún dialecto hablado que conozcamos con exactitud, sino en un arameo literario, de vocabulario propio, que a veces inventa palabras. Ese detalle lingüístico es una de las razones por las que su origen se discute desde hace siglos.</p>
+      <p>Y no es un libro único: es una <strong>biblioteca de estratos</strong> compuestos en momentos distintos y con voces distintas, encuadernados juntos por la costumbre. Confundir esos estratos es el error más común del principiante — leer el <em>Sifra diTzniuta</em> con la expectativa de encontrar una narración es garantía de abandonar en la segunda página.</p>
+    </div>
+
+    <h3 class="sub">La cuestión del autor, dicha sin adornos</h3>
+    <div class="prosa">
+      <p>La tradición atribuye el Zohar a <strong>Rabí Shimón bar Yojai</strong> (Rashbi), del siglo II en la Galilea, y esa es la voz que el propio libro pone en el centro: Rashbi enseña, sus compañeros preguntan, el mundo se sostiene mientras él habla.</p>
+      <p>El libro aparece documentado en <strong>Castilla, a finales del siglo XIII</strong>, difundido por <strong>Moshé de León</strong> (m. 1305). Desde Gershom Scholem, la investigación académica sostiene que fue compuesto en ese momento y en ese lugar; Yehuda Liebes matizó después que no sería obra de una sola mano sino de un círculo.</p>
+      <p>Aquí no zanjamos la cuestión, y conviene decir por qué: quien estudia el Zohar para transformarse no necesita el veredicto, y quien lo estudia como historiador no lo obtiene del propio libro. Las dos lecturas son legítimas y no se anulan. Lo que sí conviene es saber que la discusión existe, y que quien la oculta —en cualquiera de las dos direcciones— está vendiendo algo.</p>
+    </div>
+  </section>
+
+  <section class="seccion" id="como-empezar">
+    <h2>Por dónde empezar</h2>
+    <p>Tres puertas de entrada, según el tiempo del que dispongas y para qué vengas.</p>
+
+    <div class="hito">
+      <h3>1. La Hakdamá — la puerta que abrió Ashlag</h3>
+      <p class="meta">Hakdamat Séfer HaZohar · הקדמת ספר הזהר</p>
+      <p>La <em>Introducción al Séfer HaZohar</em> no es un prólogo escrito por un editor: es una sección propia del Zohar, una antología de pasajes que la tradición colocó al frente como umbral. Es el punto de partida que enseña la escuela de Rav Yehuda Ashlag, y sigue siendo el mejor consejo que puede darse a alguien que llega hoy: no empieces por «En el principio», empieza por aquí.</p>
+      <a class="accion" href="https://www.sefaria.org/Zohar,_Introduction" target="_blank" rel="noopener">Abrir la Hakdamá →</a>
+    </div>
+
+    <div class="hito">
+      <h3>2. La parashá de la semana — el ritmo</h3>
+      <p class="meta">El calendario como maestro</p>
+      <p>La otra vía no elige: deja que el calendario elija. Cada Shabat el mundo judío lee una porción, y el Zohar tiene algo que decir sobre casi todas. Leer así impone un ritmo, evita la parálisis del índice y —esto es lo que nadie te dice— te da algo que otros están leyendo el mismo día que tú.</p>
+      <a class="accion" href="/parasha/">El comentario de esta semana →</a>
+    </div>
+
+    <div class="hito">
+      <h3>3. Las Idrot — si quieres saber de qué se trata todo esto</h3>
+      <p class="meta">Idra Rabba · Idra Zuta</p>
+      <p>Si tu pregunta es «¿qué tiene este libro que justifique tanto?», la respuesta está en las dos asambleas. No son fáciles, pero son el corazón: allí el Zohar deja de comentar versículos y se pone a describir la estructura de lo divino directamente.</p>
+      <a class="accion" href="#idrot">Ir a las Idrot ↓</a>
+    </div>
+  </section>
+
+  <section class="seccion" id="estratos">
+    <h2>Los estratos: qué estás leyendo cuando lees</h2>
+    <p>Estas secciones están intercaladas entre las parashot en las ediciones impresas. Saber cuál estás abriendo cambia por completo lo que puedes esperar de ella.</p>
+
+    <div class="hito" id="idrot">
+      <h3>Sifra diTzniuta — El Libro del Ocultamiento</h3>
+      <p class="meta">Cinco capítulos · dentro de Terumá · ספרא דצניעותא</p>
+      <p>El texto más breve y más difícil del Zohar. Cinco capítulos de una densidad casi ilegible, escritos como quien deja constancia sin explicar. Hace honor a su nombre: oculta más de lo que muestra. Las dos Idrot existen, en buena medida, para desplegar lo que aquí queda comprimido. No se lee primero — se vuelve a él.</p>
+      <a class="accion" href="https://www.sefaria.org/Zohar,_Sifra_DiTzniuta" target="_blank" rel="noopener">Abrir el Sifra diTzniuta →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Idra Rabba — La Gran Asamblea</h3>
+      <p class="meta">Dentro de Nasó · האדרא רבא</p>
+      <p>Rashbi convoca a sus compañeros en un campo y expone la estructura de los rostros divinos, los <em>partzufim</em>. Es la exposición más sostenida y más audaz del libro. El relato no termina bien, y el propio Zohar no lo esconde: según el texto, tres de los compañeros no salen vivos de la asamblea. El Zohar cuenta eso sin dramatismo, casi como una nota al margen, y ahí está buena parte de su fuerza.</p>
+      <a class="accion" href="https://www.sefaria.org/Zohar,_Idra_Rabba" target="_blank" rel="noopener">Abrir la Idra Rabba →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Idra Zuta — La Pequeña Asamblea</h3>
+      <p class="meta">Dentro de Haazinu · האדרא זוטא</p>
+      <p>La última enseñanza de Rashbi y su partida. Si la Idra Rabba es la exposición, esta es el cierre: el maestro habla mientras se va, y el texto se detiene en el instante exacto. Se lee tradicionalmente en Lag BaÓmer. Es el final del libro en un sentido que no es solo el del orden de las páginas.</p>
+      <a class="accion" href="https://www.sefaria.org/Zohar,_Idra_Zuta" target="_blank" rel="noopener">Abrir la Idra Zuta →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Ra'aya Meheimna — El Pastor Fiel</h3>
+      <p class="meta">Estrato tardío · intercalado en las ediciones impresas · רעיא מהימנא</p>
+      <p>Un estrato posterior al cuerpo principal, centrado en las <em>mitzvot</em> y protagonizado por Moshé como «pastor fiel». Cambia el idioma (mezcla hebreo con el arameo), cambia el tono y cambia el propósito. No aparece como sección independiente: está cosido dentro de las parashot, lo que despista a quien no sabe que existe. Se le asocia con la misma mano que el Tikunei Zohar.</p>
+    </div>
+  </section>
+
+  <section class="seccion" id="parashot">
+    <h2>El Zohar sobre la Torá</h2>
+    <p>Cuarenta y ocho parashot, en el orden de la Torá. Cada enlace abre el texto en Sefaria — arameo con traducción al inglés, de acceso libre.</p>
 
     <div class="libro">
       <h3>Bereshit — Génesis <small>· בראשית</small></h3>
+      <p class="nota">Doce de doce. El Génesis es el libro más comentado del Zohar, con diferencia.</p>
       <div class="chips">
-        <a href="https://www.sefaria.org/search?q=Zohar%20Bereshit" target="_blank" rel="noopener">Bereshit</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Noach" target="_blank" rel="noopener">Nóaj</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Lech%20Lecha" target="_blank" rel="noopener">Lej Lejá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayera" target="_blank" rel="noopener">Vayerá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Chayei%20Sarah" target="_blank" rel="noopener">Jayei Sará</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Toldot" target="_blank" rel="noopener">Toldot</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayetzei" target="_blank" rel="noopener">Vayetzé</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayishlach" target="_blank" rel="noopener">Vayishlaj</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayeshev" target="_blank" rel="noopener">Vayéshev</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Miketz" target="_blank" rel="noopener">Miketz</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayigash" target="_blank" rel="noopener">Vayigash</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayechi" target="_blank" rel="noopener">Vayejí</a>
+        <a href="https://www.sefaria.org/Zohar,_Introduction" target="_blank" rel="noopener" class="joya">✦ Hakdamá (Introducción)</a>
+        <a href="https://www.sefaria.org/Zohar,_Bereshit" target="_blank" rel="noopener">Bereshit</a>
+        <a href="https://www.sefaria.org/Zohar,_Noach" target="_blank" rel="noopener">Nóaj</a>
+        <a href="https://www.sefaria.org/Zohar,_Lech_Lecha" target="_blank" rel="noopener">Lej Lejá</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayera" target="_blank" rel="noopener">Vayerá</a>
+        <a href="https://www.sefaria.org/Zohar,_Chayei_Sara" target="_blank" rel="noopener">Jayei Sará</a>
+        <a href="https://www.sefaria.org/Zohar,_Toldot" target="_blank" rel="noopener">Toldot</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayetzei" target="_blank" rel="noopener">Vayetzé</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayishlach" target="_blank" rel="noopener">Vayishlaj</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayeshev" target="_blank" rel="noopener">Vayéshev</a>
+        <a href="https://www.sefaria.org/Zohar,_Miketz" target="_blank" rel="noopener">Miketz</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayigash" target="_blank" rel="noopener">Vayigash</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayechi" target="_blank" rel="noopener">Vayejí</a>
       </div>
     </div>
 
     <div class="libro">
       <h3>Shemot — Éxodo <small>· שמות</small></h3>
+      <p class="nota">Once de once. El Sifra diTzniuta se intercala aquí, en el entorno de Terumá.</p>
       <div class="chips">
-        <a href="https://www.sefaria.org/search?q=Zohar%20Shemot" target="_blank" rel="noopener">Shemot</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vaera" target="_blank" rel="noopener">Vaerá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Bo" target="_blank" rel="noopener">Bo</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Beshalach" target="_blank" rel="noopener">Beshalaj</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Yitro" target="_blank" rel="noopener">Yitró</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Mishpatim" target="_blank" rel="noopener">Mishpatim</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Terumah" target="_blank" rel="noopener">Terumá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Tetzaveh" target="_blank" rel="noopener">Tetzavé</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Ki%20Tisa" target="_blank" rel="noopener">Ki Tisá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayakhel" target="_blank" rel="noopener">Vayakhel</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Pekudei" target="_blank" rel="noopener">Pekudei</a>
+        <a href="https://www.sefaria.org/Zohar,_Shemot" target="_blank" rel="noopener">Shemot</a>
+        <a href="https://www.sefaria.org/Zohar,_Vaera" target="_blank" rel="noopener">Vaerá</a>
+        <a href="https://www.sefaria.org/Zohar,_Bo" target="_blank" rel="noopener">Bo</a>
+        <a href="https://www.sefaria.org/Zohar,_Beshalach" target="_blank" rel="noopener">Beshalaj</a>
+        <a href="https://www.sefaria.org/Zohar,_Yitro" target="_blank" rel="noopener">Yitró</a>
+        <a href="https://www.sefaria.org/Zohar,_Mishpatim" target="_blank" rel="noopener">Mishpatim</a>
+        <a href="https://www.sefaria.org/Zohar,_Terumah" target="_blank" rel="noopener">Terumá</a>
+        <a href="https://www.sefaria.org/Zohar,_Sifra_DiTzniuta" target="_blank" rel="noopener" class="joya">✦ Sifra diTzniuta</a>
+        <a href="https://www.sefaria.org/Zohar,_Tetzaveh" target="_blank" rel="noopener">Tetzavé</a>
+        <a href="https://www.sefaria.org/Zohar,_Ki_Tisa" target="_blank" rel="noopener">Ki Tisá</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayakhel" target="_blank" rel="noopener">Vayakhel</a>
+        <a href="https://www.sefaria.org/Zohar,_Pekudei" target="_blank" rel="noopener">Pekudei</a>
       </div>
     </div>
 
     <div class="libro">
       <h3>Vayikrá — Levítico <small>· ויקרא</small></h3>
+      <p class="nota">Diez de diez.</p>
       <div class="chips">
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayikra" target="_blank" rel="noopener">Vayikrá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Tzav" target="_blank" rel="noopener">Tzav</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Shemini" target="_blank" rel="noopener">Sheminí</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Tazria" target="_blank" rel="noopener">Tazría</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Metzora" target="_blank" rel="noopener">Metzorá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Acharei%20Mot" target="_blank" rel="noopener">Ajarei Mot</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Kedoshim" target="_blank" rel="noopener">Kedoshim</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Emor" target="_blank" rel="noopener">Emor</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Behar" target="_blank" rel="noopener">Behar</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Bechukotai" target="_blank" rel="noopener">Bejukotai</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayikra" target="_blank" rel="noopener">Vayikrá</a>
+        <a href="https://www.sefaria.org/Zohar,_Tzav" target="_blank" rel="noopener">Tzav</a>
+        <a href="https://www.sefaria.org/Zohar,_Shmini" target="_blank" rel="noopener">Sheminí</a>
+        <a href="https://www.sefaria.org/Zohar,_Tazria" target="_blank" rel="noopener">Tazría</a>
+        <a href="https://www.sefaria.org/Zohar,_Metzora" target="_blank" rel="noopener">Metzorá</a>
+        <a href="https://www.sefaria.org/Zohar,_Achrei_Mot" target="_blank" rel="noopener">Ajarei Mot</a>
+        <a href="https://www.sefaria.org/Zohar,_Kedoshim" target="_blank" rel="noopener">Kedoshim</a>
+        <a href="https://www.sefaria.org/Zohar,_Emor" target="_blank" rel="noopener">Emor</a>
+        <a href="https://www.sefaria.org/Zohar,_Behar" target="_blank" rel="noopener">Behar</a>
+        <a href="https://www.sefaria.org/Zohar,_Bechukotai" target="_blank" rel="noopener">Bejukotai</a>
       </div>
     </div>
 
     <div class="libro">
       <h3>Bamidbar — Números <small>· במדבר</small></h3>
+      <p class="nota">Nueve de diez — Masei no tiene sección propia. La Idra Rabba está aquí, después de Nasó.</p>
       <div class="chips">
-        <a href="https://www.sefaria.org/search?q=Zohar%20Bamidbar" target="_blank" rel="noopener">Bamidbar</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Naso" target="_blank" rel="noopener">Nasó</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Behaalotecha" target="_blank" rel="noopener">Behaalotjá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Shelach" target="_blank" rel="noopener">Shelaj Lejá</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Korach" target="_blank" rel="noopener">Kóraj</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Chukat" target="_blank" rel="noopener">Jukat</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Balak" target="_blank" rel="noopener">Balak</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Pinchas" target="_blank" rel="noopener">Pinjás</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Matot" target="_blank" rel="noopener">Matot</a>
+        <a href="https://www.sefaria.org/Zohar,_Bamidbar" target="_blank" rel="noopener">Bamidbar</a>
+        <a href="https://www.sefaria.org/Zohar,_Nasso" target="_blank" rel="noopener">Nasó</a>
+        <a href="https://www.sefaria.org/Zohar,_Idra_Rabba" target="_blank" rel="noopener" class="joya">✦ Idra Rabba</a>
+        <a href="https://www.sefaria.org/Zohar,_Beha'alotcha" target="_blank" rel="noopener">Behaalotjá</a>
+        <a href="https://www.sefaria.org/Zohar,_Sh'lach" target="_blank" rel="noopener">Shelaj Lejá</a>
+        <a href="https://www.sefaria.org/Zohar,_Korach" target="_blank" rel="noopener">Kóraj</a>
+        <a href="https://www.sefaria.org/Zohar,_Chukat" target="_blank" rel="noopener">Jukat</a>
+        <a href="https://www.sefaria.org/Zohar,_Balak" target="_blank" rel="noopener">Balak</a>
+        <a href="https://www.sefaria.org/Zohar,_Pinchas" target="_blank" rel="noopener">Pinjás</a>
+        <a href="https://www.sefaria.org/Zohar,_Matot" target="_blank" rel="noopener">Matot</a>
       </div>
     </div>
 
     <div class="libro">
       <h3>Devarim — Deuteronomio <small>· דברים</small></h3>
+      <p class="nota">Solo seis de once. El Deuteronomio es el libro que el Zohar menos comenta, y el que cierra con la Idra Zuta.</p>
       <div class="chips">
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vaetchanan" target="_blank" rel="noopener">Vaetjanán</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Ki%20Tetzei" target="_blank" rel="noopener">Ki Tetzé</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Vayelech" target="_blank" rel="noopener">Vayélej</a>
-        <a href="https://www.sefaria.org/search?q=Zohar%20Haazinu" target="_blank" rel="noopener">Haazinu · Idra Zuta</a>
+        <a href="https://www.sefaria.org/Zohar,_Vaetchanan" target="_blank" rel="noopener">Vaetjanán</a>
+        <a href="https://www.sefaria.org/Zohar,_Eikev" target="_blank" rel="noopener">Ékev</a>
+        <a href="https://www.sefaria.org/Zohar,_Shoftim" target="_blank" rel="noopener">Shoftim</a>
+        <a href="https://www.sefaria.org/Zohar,_Ki_Teitzei" target="_blank" rel="noopener">Ki Tetzé</a>
+        <a href="https://www.sefaria.org/Zohar,_Vayeilech" target="_blank" rel="noopener">Vayélej</a>
+        <a href="https://www.sefaria.org/Zohar,_Ha'Azinu" target="_blank" rel="noopener">Haazinu</a>
+        <a href="https://www.sefaria.org/Zohar,_Idra_Zuta" target="_blank" rel="noopener" class="joya">✦ Idra Zuta</a>
       </div>
     </div>
 
-    <div class="chips" style="margin-top:1rem;">
-      <a href="https://www.sefaria.org/texts/Kabbalah/Zohar" target="_blank" rel="noopener" style="background:#1a2340;color:#d4aa4a;border-color:#1a2340;">📖 Índice completo del Zohar en Sefaria →</a>
+    <div class="libro">
+      <h3>Tosafot — Adiciones <small>· תוספות</small></h3>
+      <p class="nota">Material añadido que no encajó en el orden de las parashot.</p>
+      <div class="chips">
+        <a href="https://www.sefaria.org/Zohar,_Addenda" target="_blank" rel="noopener">Tosafot</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="sin-zohar">
+    <h2>Las seis parashot sin Zohar</h2>
+    <div class="prosa">
+      <p>La Torá tiene 54 parashot. El Zohar comenta 48. Seis se quedan sin sección propia en la edición estándar:</p>
+    </div>
+    <div class="chips" style="margin-bottom:1.4rem;">
+      <a style="pointer-events:none;background:#f0e6e6;border-color:#c9a0a0;color:#7a1e1e;">Devarim</a>
+      <a style="pointer-events:none;background:#f0e6e6;border-color:#c9a0a0;color:#7a1e1e;">Masei</a>
+      <a style="pointer-events:none;background:#f0e6e6;border-color:#c9a0a0;color:#7a1e1e;">Re'é</a>
+      <a style="pointer-events:none;background:#f0e6e6;border-color:#c9a0a0;color:#7a1e1e;">Ki Tavó</a>
+      <a style="pointer-events:none;background:#f0e6e6;border-color:#c9a0a0;color:#7a1e1e;">Nitzavim</a>
+      <a style="pointer-events:none;background:#f0e6e6;border-color:#c9a0a0;color:#7a1e1e;">Vezot HaBerajá</a>
+    </div>
+    <div class="prosa">
+      <p>El dato parece menor y no lo es. Cinco de las seis están en Deuteronomio, el libro donde Moshé repite y recapitula — donde la Torá se explica a sí misma. Puede leerse como accidente de la transmisión: cuadernos perdidos, secciones que nunca se escribieron. Puede leerse de otro modo: allí donde el texto ya se está interpretando a sí mismo, el Sod calla.</p>
+      <p>No sostenemos aquí ninguna de las dos lecturas. Señalamos el hueco, que es lo que un mapa honesto debe hacer.</p>
+    </div>
+    <blockquote>
+      Quien busque el Zohar de Parashat Devarim no lo va a encontrar. La parashá con la que se abre el Deuteronomio, la que se lee en el Shabat anterior al 9 de Av, es una de las seis que el Zohar no comenta.
+      <cite>Ver nuestro comentario de la semana</cite>
+    </blockquote>
+    <p><a href="/parasha/" style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;">Leer la parashá de esta semana →</a></p>
+  </section>
+
+  <section class="seccion" id="otros-volumenes">
+    <h2>Los otros dos volúmenes</h2>
+    <p>Lo que se llama «el Zohar» en la conversación corriente es el comentario sobre la Torá. Pero el corpus tiene dos obras más, y ninguna es un apéndice.</p>
+
+    <div class="hito">
+      <h3>Tikunei Zohar</h3>
+      <p class="meta">Setenta tikunim · תיקוני הזהר</p>
+      <p>Setenta interpretaciones de una sola palabra: <em>Bereshit</em>, la primera de la Torá. Setenta modos de leer las mismas seis letras. Es un estrato posterior, con lengua y preocupaciones propias, y una demostración de método: si la primera palabra soporta setenta lecturas, ninguna lectura agota el texto.</p>
+      <a class="accion" href="https://www.sefaria.org/Tikkunei_Zohar" target="_blank" rel="noopener">Abrir el Tikunei Zohar →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Zohar Jadash</h3>
+      <p class="meta">«El Zohar nuevo» · זהר חדש</p>
+      <p>No es nuevo: es lo que no entró. Material zohárico reunido a partir de manuscritos que no formaban parte de las ediciones impresas, recopilado en Safed en el siglo XVI. Incluye comentarios sobre libros que el Zohar principal no toca, como Rut, Ejá y el Cantar de los Cantares.</p>
+      <a class="accion" href="https://www.sefaria.org/Zohar_Chadash" target="_blank" rel="noopener">Abrir el Zohar Jadash →</a>
+    </div>
+  </section>
+
+  <section class="seccion" id="sulam">
+    <h2>El Sulam: la escalera de Ashlag</h2>
+    <div class="prosa">
+      <p>Durante seiscientos años el Zohar fue ilegible para casi todos: arameo cerrado, sin puntuación, sin explicación. <strong>Rav Yehuda Ashlag</strong> (1885–1954) hizo lo que nadie había hecho — tradujo el texto entero al hebreo y lo comentó línea por línea. Llamó a su comentario <em>HaSulam</em>, «La Escalera», y el nombre es la tesis: el libro no es un objeto que se contempla, es un instrumento para subir.</p>
+      <p>Es la razón por la que hoy existe el estudio masivo del Zohar. También es la puerta por la que entra la mayor parte de lo que se enseña en español, para bien y para mal.</p>
+    </div>
+    <div class="chips">
+      <a href="https://www.sefaria.org/Sulam_on_Zohar" target="_blank" rel="noopener" class="joya">✦ Sulam sobre el Zohar · Sefaria</a>
+    </div>
+  </section>
+
+  <section class="seccion" id="obras">
+    <h2>Las obras que hacen falta alrededor</h2>
+    <p>El Zohar no se sostiene solo. Estas son las obras que la tradición pone a su alrededor, en orden cronológico.</p>
+
+    <div class="hito">
+      <h3>Séfer Yetzirá — El Libro de la Formación</h3>
+      <p class="meta">Antiguo · fecha discutida · ספר יצירה</p>
+      <p>El texto fundacional, y el más breve de todos: unas pocas páginas. Establece el vocabulario que todo lo demás dará por supuesto — las diez <em>sefirot</em>, las veintidós letras, los treinta y dos senderos. Se lee en una tarde y se entiende en años.</p>
+      <a class="accion" href="https://www.sefaria.org/Sefer_Yetzirah" target="_blank" rel="noopener">Abrir el Séfer Yetzirá →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Pardés Rimonim — El Huerto de los Granados</h3>
+      <p class="meta">Moshé Cordovero (Ramak), Safed, siglo XVI · פרדס רימונים</p>
+      <p>Cordovero hizo con la Cabalá lo que nadie: ordenarla. Tomó un cuerpo disperso y contradictorio y lo convirtió en un sistema con estructura. Si el Zohar es el bosque, el Pardés es el primer mapa serio del bosque — y sigue siendo el mejor puente para una mente que necesita orden antes que vértigo.</p>
+      <a class="accion" href="https://www.sefaria.org/Pardes_Rimmonim" target="_blank" rel="noopener">Abrir el Pardés Rimonim →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Etz Jaim — El Árbol de la Vida</h3>
+      <p class="meta">Isaac Luria (el Arí, 1534–1572), redactado por Jaim Vital · עץ חיים</p>
+      <p>El Arí no escribió: enseñó, y <strong>Jaim Vital</strong> anotó. Lo que sale de ahí no es una versión mejorada de Cordovero — es otra cosa. El <em>tzimtzum</em> (la contracción), la <em>shevirat hakelim</em> (la rotura de los recipientes), el <em>tikún</em> (la reparación): un relato en el que el mundo está roto por dentro y la tarea humana es repararlo. Toda la Cabalá posterior discute con este libro, incluso cuando no lo cita.</p>
+      <a class="accion" href="https://www.sefaria.org/Sefer_Etz_Chaim" target="_blank" rel="noopener">Abrir el Etz Jaim →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Ramjal — Moshé Jaim Luzzatto</h3>
+      <p class="meta">1707–1746 · רמח״ל</p>
+      <p>El más claro de todos los escritores de la Cabalá, y el que más problemas tuvo por escribir. <em>Derej Hashem</em> expone el propósito de la creación con una limpieza casi geométrica; <em>Kalaj Pitjei Jojmá</em> —138 puertas— explica el sistema del Arí a quien no puede con el Etz Jaim directamente. Si un solo autor puede evitarte años de confusión, es este.</p>
+      <a class="accion" href="https://www.sefaria.org/Derekh_Hashem" target="_blank" rel="noopener">Abrir el Derej Hashem →</a>
+    </div>
+
+    <div class="hito">
+      <h3>Tanya</h3>
+      <p class="meta">Shneur Zalman de Liadí, 1797 · תניא</p>
+      <p>La Cabalá vuelta psicología operativa. No pregunta cómo está hecho el mundo de arriba sino qué haces mañana con las dos almas que pelean dentro de ti. Es la obra fundacional de Jabad y el texto cabalístico con más traducciones y comentarios disponibles en español.</p>
+      <a class="accion" href="https://www.sefaria.org/Tanya" target="_blank" rel="noopener">Abrir el Tanya →</a>
+      <a class="accion" href="https://es.chabad.org/library/article_cdo/aid/2266958/jewish/Tor-con-Rash.htm" target="_blank" rel="noopener" style="display:block;margin-top:.35rem;">Jabad en español →</a>
     </div>
   </section>
 
   <section class="seccion" id="fuentes">
-    <h2>Tanaj, Midrash, Talmud y obras cabalísticas</h2>
-    <p class="heb">תנ״ך · מדרש · תלמוד · קבלה</p>
+    <h2>El suelo: Tanaj, Talmud, Midrash</h2>
+    <p class="heb">תנ״ך · תלמוד · מדרש</p>
+    <p>El Zohar no explica la Torá a quien no la ha leído. Da por supuesto el texto bíblico, el midrash y buena parte del Talmud — cuando cita medio versículo, espera que completes la otra mitad de memoria. Estas son las fuentes de las que parte.</p>
     <div class="tarjetas">
       <div class="tarjeta">
-        <h3>📜 Tanaj completo</h3>
-        <p>Torá, Neviím y Ketuvim — hebreo con traducciones. Sefaria incluye traducciones al español en varios libros.</p>
-        <a href="https://www.sefaria.org/texts/Tanakh" target="_blank" rel="noopener">Abrir el Tanaj en Sefaria →</a>
+        <h3>📜 Tanaj</h3>
+        <p>Torá, Neviím y Ketuvim. En Sefaria, hebreo con traducción; Mechon Mamre da el texto hebreo puntuado con los signos de cantilación.</p>
+        <a href="https://www.sefaria.org/texts/Tanakh" target="_blank" rel="noopener">Tanaj en Sefaria →</a>
         <a href="https://mechon-mamre.org/i/t/t0.htm" target="_blank" rel="noopener">Hebreo · Mechon Mamre →</a>
       </div>
       <div class="tarjeta">
-        <h3>🕎 Talmud Bavli</h3>
-        <p>Los 37 tratados del Talmud de Babilonia, con la traducción William Davidson de acceso libre y comentarios enlazados.</p>
-        <a href="https://www.sefaria.org/texts/Talmud" target="_blank" rel="noopener">Abrir el Talmud en Sefaria →</a>
+        <h3>🕎 Talmud Bavlí</h3>
+        <p>El Talmud de Babilonia con la traducción William Davidson, de acceso libre. El Zohar discute con él constantemente, a veces para apoyarse y a veces para desmarcarse.</p>
+        <a href="https://www.sefaria.org/texts/Talmud" target="_blank" rel="noopener">Talmud en Sefaria →</a>
       </div>
       <div class="tarjeta">
         <h3>✍️ Midrash</h3>
-        <p>Midrash Rabá, Tanjuma, Pirkei DeRabí Eliezer y la literatura midráshica completa, organizada por obra.</p>
-        <a href="https://www.sefaria.org/texts/Midrash" target="_blank" rel="noopener">Abrir el Midrash en Sefaria →</a>
+        <p>Midrash Rabá, Tanjumá, Pirkei DeRabí Eliezer. El eslabón entre el versículo y el Zohar: muchas imágenes que parecen zohráricas ya estaban aquí, siglos antes.</p>
+        <a href="https://www.sefaria.org/texts/Midrash" target="_blank" rel="noopener">Midrash en Sefaria →</a>
       </div>
       <div class="tarjeta">
-        <h3>🌳 Obras cabalísticas</h3>
-        <p>Séfer Yetzirá, Etz Jaim del Arí, Pardés Rimonim, Tanya, las obras de Ramjal y del Rav Ashlag (HaSulam).</p>
-        <a href="https://www.sefaria.org/texts/Kabbalah" target="_blank" rel="noopener">Sección Cabalá en Sefaria →</a>
-        <a href="https://www.chabad.org/library/tanya/tanya_cdo/aid/1028862/jewish/Lessons-in-Tanya.htm" target="_blank" rel="noopener">Tanya (Chabad) →</a>
-      </div>
-      <div class="tarjeta">
-        <h3>🇪🇸 Fuentes en español</h3>
-        <p>Torá con Rashi y estudios en español: Chabad en español y la biblioteca de Sefaria filtrada por traducciones castellanas.</p>
-        <a href="https://es.chabad.org/library/article_cdo/aid/2266958/jewish/Tor-con-Rash.htm" target="_blank" rel="noopener">Torá en español · Chabad →</a>
+        <h3>🇪🇸 En español</h3>
+        <p>Lo que hay en castellano, sin exagerar lo que hay: Torá con Rashi en Jabad, y el filtro de idioma de Sefaria, que cubre bastante menos de lo que uno querría.</p>
+        <a href="https://es.chabad.org/library/article_cdo/aid/2266958/jewish/Tor-con-Rash.htm" target="_blank" rel="noopener">Torá con Rashi · Jabad →</a>
         <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria (elige «Español») →</a>
       </div>
       <div class="tarjeta">
-        <h3>📅 Parashá de la semana</h3>
-        <p>Calendario de lecturas: qué parashá corresponde a cada Shabat, con fechas hebreas y gregorianas.</p>
-        <a href="https://www.hebcal.com/sedrot/" target="_blank" rel="noopener">Ciclo de lecturas · Hebcal →</a>
+        <h3>📅 El calendario</h3>
+        <p>Qué parashá corresponde a cada Shabat. Nuestro Gran Ciclo Hebreo cubre del AM 1 al 6004 — 2.192.942 días, con fases lunares y ciclos de intercalación.</p>
         <a href="https://calendar-app-eight-eta.vercel.app" target="_blank" rel="noopener">Gran Ciclo Hebreo →</a>
+        <a href="https://www.hebcal.com/sedrot/" target="_blank" rel="noopener">Ciclo de lecturas · Hebcal →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>🔍 Índice del Zohar</h3>
+        <p>El árbol completo del Zohar en Sefaria, si prefieres navegarlo por tu cuenta en vez de seguir este mapa.</p>
+        <a href="https://www.sefaria.org/texts/Kabbalah/Zohar" target="_blank" rel="noopener">Índice completo →</a>
       </div>
     </div>
+  </section>
 
-    <div class="aviso">
-      <strong>Nota sobre las ediciones en español</strong>
-      Las traducciones completas del Zohar al español (ediciones del Centro de Cabalá, Bnei Baruj y otras) están protegidas por derechos de autor y no pueden reproducirse aquí. Esta biblioteca enlaza a las fuentes originales de acceso libre (arameo/hebreo y traducciones abiertas). Las traducciones y comentarios propios de Zohar Latinoamérica se publicarán en esta sección, parashá por parashá, como material original de la escuela.
+  <section class="seccion" id="preguntas">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details>
+        <summary>¿En qué idioma está escrito el Zohar?</summary>
+        <p>En arameo — pero no en el arameo del Talmud ni en ningún dialecto hablado que se conozca con precisión. Es un arameo literario, con vocabulario propio, que en ocasiones acuña palabras. Los estratos tardíos, como el Ra'aya Meheimna y el Tikunei Zohar, mezclan hebreo con arameo.</p>
+      </details>
+      <details>
+        <summary>¿Hace falta saber hebreo para empezar?</summary>
+        <p>Para empezar, no. Para llegar lejos, sí. Las traducciones te dan el argumento pero no el juego: el Zohar razona con las letras, con la <em>guematría</em> y con raíces que en traducción simplemente desaparecen. Nuestro consejo: empieza en español y aprende el alefato en paralelo, sin esperar a dominarlo.</p>
+      </details>
+      <details>
+        <summary>¿Es verdad que no se puede estudiar antes de los 40 años?</summary>
+        <p>Es una costumbre extendida, no una ley del Talmud. Su lógica era proteger de una lectura sin base — sin Tanaj, sin Talmud, sin vida hecha. Ashlag y la mayoría de las corrientes contemporáneas la rechazan explícitamente. Nuestra posición: la edad no es el requisito, el suelo sí. Lee el Midrash primero.</p>
+      </details>
+      <details>
+        <summary>¿Por qué no está aquí el Zohar completo en español?</summary>
+        <p>Porque no podemos: las traducciones completas al castellano que circulan (Centro de Cabalá, Bnei Baruj y otras) están protegidas por derechos de autor, y reproducirlas sería robarlas. Enlazamos a las fuentes de acceso libre y publicamos lo nuestro. Preferimos una biblioteca honesta y pequeña a una grande y pirateada.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo lleva leer el Zohar entero?</summary>
+        <p>Es la pregunta equivocada, dicha con cariño. El Zohar no se termina: se frecuenta. Hay quien lleva cuarenta años en la Hakdamá. Una medida más útil que las páginas: si un pasaje te cambió algo, ese pasaje ya rindió más que cien leídos de corrido.</p>
+      </details>
     </div>
   </section>
+
+  <div class="aviso">
+    <strong>Sobre esta biblioteca</strong>
+    Los textos enlazados viven en <a href="https://www.sefaria.org" target="_blank" rel="noopener">Sefaria</a>, biblioteca judía abierta, y en otras fuentes de acceso libre; el mérito de digitalizarlos es suyo. Lo que es nuestro es el mapa: la guía de lectura, la ordenación por estratos y el criterio. Las traducciones y comentarios propios de Zohar Latinoamérica se publican en <a href="/parasha/">la parashá de la semana</a>, y se irán reuniendo aquí. Si encuentras un error —una parashá mal ubicada, un enlace roto, una afirmación discutible— <a href="mailto:zoharlatinoamerica@gmail.com">escríbenos</a>: se corrige y se agradece.
+  </div>
 
 </main>
 
