@@ -78,12 +78,19 @@ Lo que sí es alcanzable y se parece a lo que buscas: un **Knowledge Panel de Go
 que no depende de Wikipedia sino de que la entidad sea consistente y verificable —
 exactamente lo que construye el `sameAs` del JSON-LD, más Search Console verificado.
 
+## Actualización 19 julio 2026
+
+**`/biblioteca/` ya está indexada** ("La URL está en Google"). En dos días desde que
+solicitamos indexación, Google la aceptó. Es una señal buena: el sitio no está
+penalizado ni bloqueado — entra. Tras reescribir la biblioteca con contenido propio
+se pidió re-indexación para que Google actualice a la versión nueva. El informe
+agregado de "Páginas" aún procesa datos (va con retraso de ~1 día).
+
 ## Expectativas realistas
 
-- **Indexación**: días o semanas. Pero ojo — solicitar indexación **pide** una revisión,
-  no la garantiza. Como la home ya estaba en "Rastreada: actualmente sin indexar",
-  Google ya la evaluó una vez y dijo que no. Si en 2-3 semanas sigue fuera, el problema
-  no es técnico y no se arregla reenviando: es de autoridad y contenido.
+- **Indexación**: ya está ocurriendo (biblioteca dentro en 2 días). La home y las otras
+  pueden tardar algo más; solicitar indexación pide revisión, no la garantiza, pero el
+  hecho de que la biblioteca entrara confirma que el sitio es indexable sin problemas.
 - **"Zohar Latinoamérica"** → primer puesto es muy alcanzable: es tu marca.
 - **"Zohar", "Cábala en español"** → competencia real y establecida. No hay atajo:
   eso se gana con contenido sostenido (la parashá semanal es la mejor apuesta) y
