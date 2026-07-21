@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archivo de Parashiot — Zohar Latinoamérica</title>
+<meta name="description" content="Todas las entregas semanales de la parashá comentadas por Zohar Latinoamérica: Zohar, Rashi y Midrash, en español. El archivo completo, semana por semana.">
+<link rel="icon" href="/assets/logo.png" type="image/png">
+<link rel="canonical" href="https://zoharlatinoamerica.site/parasha/archivo/">
+<meta property="og:title" content="Archivo de Parashiot — Zohar Latinoamérica">
+<meta property="og:description" content="Todas las entregas semanales de la parashá, comentadas desde el Zohar, Rashi y el Midrash, en español.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zoharlatinoamerica.site/parasha/archivo/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://zoharlatinoamerica.site/parasha/archivo/#archivo",
+      "name": "Archivo de Parashiot",
+      "description": "Todas las entregas semanales de la parashá comentadas por Zohar Latinoamérica.",
+      "url": "https://zoharlatinoamerica.site/parasha/archivo/",
+      "inLanguage": "es",
+      "isPartOf": { "@id": "https://zoharlatinoamerica.site/#sitio" },
+      "publisher": { "@id": "https://zoharlatinoamerica.site/#organizacion" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://zoharlatinoamerica.site/parasha/archivo/#lista",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://zoharlatinoamerica.site/parasha/",
+          "name": "Vaetchanan — Shabat Najamu (5786)"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://zoharlatinoamerica.site/parasha/devarim-5786/",
+          "name": "Devarim — Shabat Jazón (5786)"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600&display=swap');
+
+:root {
+  --tinta:      #0e0b07;
+  --pergamino:  #f7f2e8;
+  --oro:        #b8922a;
+  --oro-claro:  #d4aa4a;
+  --carmesi:    #7a1e1e;
+  --azul:       #1a2340;
+  --azul-osc:   #12182e;
+  --hueso:      #ede8dc;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--pergamino); color: var(--tinta);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(17px, 2vw, 19px); line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--carmesi); }
+
+.barra {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: .7rem clamp(1rem, 4vw, 2.5rem);
+  background: rgba(18,24,46,.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,146,42,.25);
+  font-family: 'Source Sans 3', sans-serif;
+}
+.barra a { color: rgba(255,255,255,.8); text-decoration: none; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+.barra a:hover { color: var(--oro-claro); }
+.barra .marca { font-family: 'Cinzel', serif; font-weight: 700; color: #fff; letter-spacing: .12em; font-size: .9rem; }
+.barra .marca span { color: var(--oro-claro); }
+
+header {
+  background: var(--azul); text-align: center;
+  padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
+}
+header::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(184,146,42,.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.kicker {
+  font-family: 'Source Sans 3', sans-serif; font-size: .72rem; font-weight: 600;
+  letter-spacing: .26em; text-transform: uppercase; color: var(--oro-claro);
+  margin-bottom: 1rem;
+}
+header h1 {
+  font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 5vw, 3rem);
+  color: #fff; font-weight: 700; margin-bottom: .8rem;
+}
+header p.sub {
+  font-style: italic; color: rgba(255,255,255,.65); max-width: 620px; margin: 0 auto;
+}
+
+main { max-width: 780px; margin: 0 auto; padding: clamp(2.5rem, 6vw, 4rem) clamp(1.2rem, 5vw, 2rem); }
+
+.entrada {
+  display: block; text-decoration: none; color: inherit;
+  background: #fffdf8; border: 1px solid rgba(184,146,42,.3);
+  border-left: 3px solid var(--oro); padding: 1.6rem 1.8rem; margin-bottom: 1.2rem;
+  transition: transform .2s, box-shadow .2s;
+}
+.entrada:hover { transform: translateX(4px); box-shadow: 0 10px 30px rgba(14,11,7,.1); }
+.entrada .heb { font-size: 1.1em; color: var(--carmesi); margin-bottom: .3rem; }
+.entrada h2 {
+  font-family: 'Cinzel', serif; font-size: 1.2rem; margin-bottom: .4rem; color: var(--tinta);
+}
+.entrada .meta {
+  font-family: 'Source Sans 3', sans-serif; font-size: .72rem; letter-spacing: .1em;
+  text-transform: uppercase; color: #8a7a55; margin-bottom: .7rem;
+}
+.entrada p.resumen { font-size: .95em; }
+.entrada .flecha {
+  display: inline-block; margin-top: .8rem;
+  font-family: 'Source Sans 3', sans-serif; font-weight: 600;
+  font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--carmesi);
+}
+.entrada:hover .flecha { color: var(--oro); }
+
+.actual { border-left-color: var(--carmesi); background: #fff8f2; }
+.actual .etiqueta-actual {
+  display: inline-block; font-family: 'Source Sans 3', sans-serif; font-size: .68rem;
+  font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #fff;
+  background: var(--carmesi); padding: .2rem .6rem; margin-bottom: .6rem;
+}
+
+footer {
+  background: var(--azul-osc); color: rgba(255,255,255,.5);
+  font-family: 'Source Sans 3', sans-serif; font-size: .78rem;
+  text-align: center; padding: 2.2rem 1.5rem; margin-top: 2rem;
+}
+footer a { color: rgba(212,170,74,.8); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <a class="marca" href="/">ZOHAR <span>LATINOAMÉRICA</span></a>
+  <div style="display:flex;gap:1.4rem;flex-wrap:wrap;">
+    <a href="/parasha/">Parashá actual</a>
+    <a href="/biblioteca/">Biblioteca</a>
+    <a href="/#sosten">Sostén</a>
+  </div>
+</div>
+
+<header>
+  <p class="kicker">Archivo</p>
+  <h1>Archivo de Parashiot</h1>
+  <p class="sub">Cada entrega semanal, comentada desde el Zohar, Rashi y el Midrash, en español — reunidas aquí para quedarse.</p>
+</header>
+
+<main>
+
+  <a class="entrada actual" href="/parasha/">
+    <span class="etiqueta-actual">Esta semana</span>
+    <p class="heb">פָּרָשַׁת וָאֶתְחַנַּן</p>
+    <h2>Vaetchanan: cuando el «basta» de Dios quiso decir «de sobra»</h2>
+    <p class="meta">Shabat Najamu · 11 de Av 5786 · 25 de julio 2026</p>
+    <p class="resumen">La súplica negada de Moshé, el doble sentido de «rav lach», el Shemá como ensayo nocturno de unidad, y el primer consuelo después del 9 de Av.</p>
+    <span class="flecha">Leer →</span>
+  </a>
+
+  <a class="entrada" href="/parasha/devarim-5786/">
+    <p class="heb">פָּרָשַׁת דְּבָרִים</p>
+    <h2>Devarim: cuando el que no tenía palabras se convirtió en la palabra</h2>
+    <p class="meta">Shabat Jazón · 4 de Av 5786 · 18 de julio 2026</p>
+    <p class="resumen">El defecto de Moshé transformado en instrumento de revelación, la reprensión que no humilla, y la visión de Shabat Jazón antes de la ruina. Incluye el video de la escuela.</p>
+    <span class="flecha">Leer →</span>
+  </a>
+
+</main>
+
+<footer>
+  <p>Zohar Latinoamérica · <a href="https://zoharlatinoamerica.site">zoharlatinoamerica.site</a> · 5786</p>
+  <p style="margin-top:.4rem;"><a href="/">Portal</a> · <a href="/parasha/">Parashá actual</a> · <a href="/biblioteca/">Biblioteca</a> · <a href="/#sosten">Sostén</a></p>
+</footer>
+
+</body>
+</html>
