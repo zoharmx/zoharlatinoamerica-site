@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
+    { "source": "/parasha", "destination": "/parasha/ekev-5786/", "permanent": false },
+    { "source": "/parasha/", "destination": "/parasha/ekev-5786/", "permanent": false },
     { "source": "/sefarad", "destination": "/ensayo/", "permanent": true },
     { "source": "/sefarad/", "destination": "/ensayo/", "permanent": true },
     { "source": "/sefarad-pardes-invertido", "destination": "/ensayo/", "permanent": true },
