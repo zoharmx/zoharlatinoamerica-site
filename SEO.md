@@ -52,15 +52,70 @@ Ninguno compite por ese nombre exacto: es tu marca, y una vez indexado es muy ga
 Crea la propiedad en analytics.google.com, sustituye el ID y descomenta.
 Vercel Web Analytics ya está activo y no necesita nada.
 
+## Publicar la parashá de la semana
+
+Desde agosto de 2026 cada entrega tiene **URL permanente propia** desde el primer día:
+`/parasha/<slug>-<año>/`. `/parasha/` ya no contiene HTML — es un **redirect 302** a la
+entrega vigente, y por eso **no aparece en el sitemap**.
+
+Por qué importa: mientras `/parasha/` sirvió el contenido de la semana, cada parashá
+perdía su historial de indexación a los siete días y luego competía consigo misma con
+el permalink que se creaba después. Un 302 (no 301) es lo correcto aquí porque el
+destino cambia cada semana y un 301 se cachearía en el navegador y en Google.
+
+### El comando
+
+```bash
+./nueva-parasha.sh <slug> <año> --nombre "Reé" --titulo "Reé: <subtítulo>"
+```
+
+En un solo paso crea el permalink nuevo a partir de la entrega vigente (canonical,
+`og:url` y JSON-LD ya apuntando al permalink), marca la saliente como archivada,
+mueve el redirect de `/parasha/` en `vercel.json`, añade la ficha y el `ItemList` en
+`/parasha/archivo/` y regenera el sitemap.
+
+**No redacta el comentario**: deja marcadores `TODO` y avisa de cuántos quedan. La
+página no se publica hasta que estén todos sustituidos.
+
+### El orden, sin saltarse pasos
+
+```bash
+./nueva-parasha.sh ree 5786 --nombre "Reé" --titulo "Reé: ..."
+grep -n TODO parasha/ree-5786/index.html parasha/archivo/index.html   # redactar
+git add -A && git commit -m "content(parasha): archiva Ékev y publica Reé 5786"
+git push origin main                       # dispara el deploy en Vercel
+# esperar ~1 min a que termine el deploy, y sólo entonces:
+curl -sSI https://zoharlatinoamerica.site/parasha/          # 307 → /parasha/ree-5786/
+curl -sSI https://zoharlatinoamerica.site/parasha/ree-5786/ # 200
+./generar-sitemap.sh --check                                # sin diferencias
+./indexnow.sh                                               # Bing / Yandex
+```
+
+Y al final, en Search Console: **Inspección de URL** → `https://zoharlatinoamerica.site/parasha/<slug>-<año>/`
+→ *Solicitar indexación*. IndexNow no llega a Google; ese paso es manual y no lo cubre
+ningún script.
+
 ## Contenido nuevo → notificar a Bing
 
 ```bash
-./indexnow.sh              # todas las URLs del sitemap
-./indexnow.sh /parasha/    # solo una ruta
+./indexnow.sh                          # todas las URLs del sitemap
+./indexnow.sh /parasha/ekev-5786/      # solo una ruta
 ```
 
 Ejecútalo tras desplegar la parashá de cada semana. Para Google, el equivalente es
 "Solicitar indexación" en Search Console.
+
+## El sitemap no se edita a mano
+
+```bash
+./generar-sitemap.sh          # regenera sitemap.xml
+./generar-sitemap.sh --check  # falla si quedó desincronizado
+```
+
+`lastmod` sale de `git log -1 --format=%cs` sobre cada `index.html`: es la única fecha
+que no puede mentir. Un sitemap con fechas inventadas enseña a Google a ignorar los
+`lastmod` y a bajar la frecuencia de rastreo — justo lo contrario de lo que necesita un
+sitio con entrega semanal.
 
 ## Wikipedia — la respuesta honesta
 
