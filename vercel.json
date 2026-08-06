@@ -2,6 +2,12 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.zoharlatinoamerica.site" }],
+      "destination": "https://zoharlatinoamerica.site/:path*",
+      "permanent": true
+    },
     { "source": "/parasha", "destination": "/parasha/ekev-5786/", "permanent": false },
     { "source": "/parasha/", "destination": "/parasha/ekev-5786/", "permanent": false },
     { "source": "/sefarad", "destination": "/ensayo/", "permanent": true },
@@ -27,6 +33,11 @@
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "zoharlatinoamerica-site.vercel.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
     }
   ]
 }
