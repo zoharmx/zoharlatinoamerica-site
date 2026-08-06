@@ -71,27 +71,35 @@ son la marca. Un redirect 307 no transfiere autoridad: la deja en el destino.
 > proyecto del calendario, que es a donde ya apunta el redirect de `vercel.json`.
 > Comprobado el 5 de agosto de 2026. Ver la nota al final de esta sección.
 
-### 3.1 — En el panel de Vercel (proyecto `calendar-app-eight-eta`)
+### 3.1 — En el panel de Vercel (proyecto `calendar-app`) — ✅ HECHO el 6 agosto 2026
 
-Settings → Domains → **Add** → `calendario.zoharlatinoamerica.site` → *Add*.
-Vercel mostrará el registro DNS que espera y quedará en estado *Invalid Configuration*
-hasta que el DNS propague. Es normal.
+`calendario.zoharlatinoamerica.site` ya está añadido al proyecto `calendar-app`
+(el que sirve `calendar-app-eight-eta.vercel.app`). Queda en *Invalid Configuration*
+hasta que exista el registro DNS del paso siguiente. Es normal.
+
+El proyecto se conectó además al repositorio privado
+[`zoharmx/calendar-app`](https://github.com/zoharmx/calendar-app), extraído del
+monorepo local con `git subtree split`. Hasta ese día el Gran Ciclo Hebreo sólo existía
+en el portátil y en un deploy de Vercel, sin copia remota.
 
 ### 3.2 — En Hostinger (hpanel.hostinger.com → Dominios → zoharlatinoamerica.site → DNS)
 
 Crear **un** registro nuevo. No tocar ni borrar nada de lo existente (en particular,
-no tocar el registro `A @` que apunta a `76.76.21.21` ni ningún MX):
+no tocar el registro `A @` ni ningún MX):
 
 | Tipo | Nombre | Valor | TTL |
 |---|---|---|---|
-| `CNAME` | `calendario` | `cname.vercel-dns.com` | 3600 (o el que ofrezca por defecto) |
+| `A` | `calendario` | `76.76.21.21` | 3600 (o el que ofrezca por defecto) |
+
+Es un registro **`A`, no `CNAME`**: es lo que pide literalmente
+`vercel domains inspect calendario.zoharlatinoamerica.site`. La alternativa que ofrece
+Vercel —mover los nameservers del dominio de `ns1/ns2.dns-parking.com` a
+`ns1/ns2.vercel-dns.com`— **no conviene**: entregaría toda la zona DNS a Vercel, incluidos
+los registros de correo, para resolver un solo subdominio.
 
 Si más adelante Zivug se separa a su propio proyecto de Vercel, entonces — y sólo
-entonces — añadir además:
-
-| Tipo | Nombre | Valor | TTL |
-|---|---|---|---|
-| `CNAME` | `zivug` | `cname.vercel-dns.com` | 3600 |
+entonces — añadir además `A zivug → 76.76.21.21` (confirmando antes el valor con
+`vercel domains inspect`).
 
 ### 3.3 — Comprobar antes de cambiar nada en el código
 
@@ -119,9 +127,26 @@ Cuando los subdominios lleven semanas estables, esos redirects pueden pasar de 3
 
 - Search Console: añadir `calendario.zoharlatinoamerica.site` como propiedad y enviar
   su sitemap, si el proyecto del calendario lo tiene.
-- Revisar que `calendar-app-eight-eta.vercel.app` deje de indexarse: en su repo, el
-  mismo `X-Robots-Tag: noindex, nofollow` condicionado a ese host que este repo ya
-  aplica a `zoharlatinoamerica-site.vercel.app`.
+- `calendar-app-eight-eta.vercel.app` ya tiene escrito su `X-Robots-Tag: noindex,
+  nofollow` condicionado a ese host, en `vercel.json` de `zoharmx/calendar-app`. Se
+  activa en el primer deploy que corra desde el repo (ver 3.6).
+
+### 3.6 — Deploy automático del calendario: falta un permiso
+
+El push a `zoharmx/calendar-app` **no disparó deploy**. La conexión Vercel↔Git está
+hecha, pero la GitHub App de Vercel todavía no tiene acceso al repositorio, que es
+nuevo y privado. Se arregla una sola vez:
+
+GitHub → Settings → Applications → **Vercel** → Configure → *Repository access* →
+añadir `zoharmx/calendar-app` → Save.
+
+Después, un `git subtree push --prefix=calendar-app https://github.com/zoharmx/calendar-app.git main`
+desde el monorepo despliega solo.
+
+> **Ojo con el flujo de trabajo**: `calendar-app/` sigue viviendo dentro del monorepo
+> local `C:\Users\diosd\zivug\Zivug` (que no tiene remote). El repo de GitHub se
+> alimenta por `git subtree push`. No clones `zoharmx/calendar-app` aparte y edites ahí
+> también, o tendrás dos fuentes de verdad divergiendo.
 
 Mientras tanto, `/calendario` y `/zivug` siguen redirigiendo a las URLs actuales de
 Vercel, así que `zoharlatinoamerica.site/calendario` se puede compartir desde hoy.
