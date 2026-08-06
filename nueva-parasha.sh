@@ -155,6 +155,14 @@ NUEVO="$NUEVO" perl -0pi -e '
 ' vercel.json
 echo "  vercel.json: /parasha/ -> $NUEVO"
 
+# El bloque "Sigue leyendo" del ensayo apunta al permalink vigente, no a
+# /parasha/: asi el enlace no gasta un salto de redireccion y no se pudre.
+NUEVO="$NUEVO" perl -0pi -e '
+  s{<a href="/parasha/[^"]*">La parashá de esta semana</a>}
+   {<a href="$ENV{NUEVO}">La parashá de esta semana</a>};
+' ensayo/index.html
+echo "  ensayo/index.html: 'Sigue leyendo' apunta a $NUEVO"
+
 # ------------------------------- 4. archivo: ItemList + listado visible
 ARCHIVO="parasha/archivo/index.html"
 NUEVO="$NUEVO" HOST="$HOST" NOMBRE="$NOMBRE" ANIO="$ANIO" TITULO="$TITULO" perl -0pi -e '
