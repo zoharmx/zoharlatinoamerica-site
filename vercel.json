@@ -6,7 +6,7 @@
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.zoharlatinoamerica.site" }],
       "destination": "https://zoharlatinoamerica.site/$1",
-      "permanent": true
+      "statusCode": 301
     },
     { "source": "/parasha", "destination": "/parasha/ekev-5786/", "permanent": false },
     { "source": "/parasha/", "destination": "/parasha/ekev-5786/", "permanent": false },
