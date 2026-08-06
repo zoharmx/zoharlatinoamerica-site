@@ -54,24 +54,77 @@ npx vercel --prod
 
 ## Paso 3 — Un solo dominio para todo (subdominios)
 
-Las apps ya desplegadas se integran bajo el mismo dominio:
+**Estado: pendiente de ejecutar.** Se contempló en julio de 2026 y nunca se hizo. Es la
+tarea con más valor SEO sin hacer del proyecto: hoy `/calendario` y `/zivug` son
+redirects 307 hacia `*.vercel.app`, así que el Gran Ciclo Hebreo y Zivug — los dos
+activos que nadie más tiene en español — acumulan toda su autoridad en dominios que no
+son la marca. Un redirect 307 no transfiere autoridad: la deja en el destino.
 
-| App | Proyecto Vercel actual | Dominio final sugerido |
-|---|---|---|
-| Portal (esta carpeta) | nuevo | `zoharlatinoamerica.site` |
-| Gran Ciclo Hebreo | calendar-app-eight-eta | `calendario.zoharlatinoamerica.site` |
-| Zivug | frontend-beige-phi-95 | `zivug.zoharlatinoamerica.site` |
+| App | Proyecto Vercel | Host actual | Subdominio destino |
+|---|---|---|---|
+| Portal (esta carpeta) | `zoharlatinoamerica-site` | `zoharlatinoamerica.site` | — |
+| Gran Ciclo Hebreo | `calendar-app-eight-eta` | `calendar-app-eight-eta.vercel.app` | `calendario.zoharlatinoamerica.site` |
+| Zivug (`/mazal`) | `calendar-app-eight-eta` | `calendar-app-eight-eta.vercel.app/mazal` | `calendario.zoharlatinoamerica.site/mazal` |
 
-Para cada una: en su proyecto de Vercel → Domains → añade el subdominio, y en el DNS
-añade `CNAME calendario → cname.vercel-dns.com` (igual para `zivug`).
+> Zivug **no** vive en `frontend-beige-phi-95.vercel.app`. Ese deploy sirve hoy otra
+> cosa (*Tikun Olam — Ethical AI Reasoning*). Zivug es la ruta `/mazal` dentro del
+> proyecto del calendario, que es a donde ya apunta el redirect de `vercel.json`.
+> Comprobado el 5 de agosto de 2026. Ver la nota al final de esta sección.
 
-Cuando los subdominios estén activos, actualiza los enlaces en `index.html`,
-`biblioteca/index.html` y `vercel.json` (busca `calendar-app-eight-eta` y
-`frontend-beige-phi-95` y reemplaza por los subdominios).
+### 3.1 — En el panel de Vercel (proyecto `calendar-app-eight-eta`)
 
-Mientras tanto, `/calendario` y `/zivug` ya redirigen a las URLs actuales de Vercel
-(configurado en `vercel.json`), así que puedes compartir
-`zoharlatinoamerica.site/calendario` desde hoy.
+Settings → Domains → **Add** → `calendario.zoharlatinoamerica.site` → *Add*.
+Vercel mostrará el registro DNS que espera y quedará en estado *Invalid Configuration*
+hasta que el DNS propague. Es normal.
+
+### 3.2 — En Hostinger (hpanel.hostinger.com → Dominios → zoharlatinoamerica.site → DNS)
+
+Crear **un** registro nuevo. No tocar ni borrar nada de lo existente (en particular,
+no tocar el registro `A @` que apunta a `76.76.21.21` ni ningún MX):
+
+| Tipo | Nombre | Valor | TTL |
+|---|---|---|---|
+| `CNAME` | `calendario` | `cname.vercel-dns.com` | 3600 (o el que ofrezca por defecto) |
+
+Si más adelante Zivug se separa a su propio proyecto de Vercel, entonces — y sólo
+entonces — añadir además:
+
+| Tipo | Nombre | Valor | TTL |
+|---|---|---|---|
+| `CNAME` | `zivug` | `cname.vercel-dns.com` | 3600 |
+
+### 3.3 — Comprobar antes de cambiar nada en el código
+
+```bash
+curl -sSI https://calendario.zoharlatinoamerica.site/       # debe dar 200
+curl -sSI https://calendario.zoharlatinoamerica.site/mazal  # debe dar 200
+```
+
+**Mientras estas dos comprobaciones no den 200, no toques `vercel.json`**: activar los
+redirects antes de tiempo rompe dos enlaces que hoy funcionan.
+
+### 3.4 — Activar los redirects
+
+Los redirects ya están escritos y listos para copiar en
+[`vercel.subdominios.json.ejemplo`](vercel.subdominios.json.ejemplo). `vercel.json` es
+JSON estricto y no admite comentarios, por eso viven en un archivo aparte que Vercel
+ignora. Sustituye en `vercel.json` los cuatro redirects de `/calendario` y `/zivug` por
+los de ese archivo, y actualiza también los enlaces visibles en `index.html` y
+`biblioteca/index.html` (busca `calendar-app-eight-eta`).
+
+Cuando los subdominios lleven semanas estables, esos redirects pueden pasar de 307 a
+301 (`"permanent": true`) para que transfieran autoridad. No antes: un 301 se cachea.
+
+### 3.5 — Después de activar
+
+- Search Console: añadir `calendario.zoharlatinoamerica.site` como propiedad y enviar
+  su sitemap, si el proyecto del calendario lo tiene.
+- Revisar que `calendar-app-eight-eta.vercel.app` deje de indexarse: en su repo, el
+  mismo `X-Robots-Tag: noindex, nofollow` condicionado a ese host que este repo ya
+  aplica a `zoharlatinoamerica-site.vercel.app`.
+
+Mientras tanto, `/calendario` y `/zivug` siguen redirigiendo a las URLs actuales de
+Vercel, así que `zoharlatinoamerica.site/calendario` se puede compartir desde hoy.
 
 ## El video
 

@@ -15,7 +15,8 @@ Un portal de captación construido alrededor de un video de YouTube con tráfico
 | Ensayo | `/ensayo/` | *Sefarad como Pardés Invertido* completo, 14 capítulos |
 | Biblioteca | `/biblioteca/` | Índice curado de parashiot del Zohar, Tanaj, Talmud y Midrash — enlaza a Sefaria, no aloja contenido con copyright |
 | Gran Ciclo Hebreo | `/calendario` (redirect) | Calendario interactivo de 6.004 años — proyecto Vercel separado (`calendar-app-eight-eta`) |
-| Zivug | `/zivug` (redirect) | Carta personal hebrea — proyecto Vercel separado (`frontend-beige-phi-95`) |
+| Parashá | `/parasha/<slug>-<año>/` | Comentario semanal, una URL permanente por entrega. `/parasha/` es un redirect 302 a la vigente; el índice está en `/parasha/archivo/` |
+| Zivug | `/zivug` (redirect) | Carta personal hebrea — ruta `/mazal` del mismo proyecto Vercel del calendario (`calendar-app-eight-eta`) |
 
 ## Por qué no tiene build
 
@@ -63,7 +64,7 @@ Push a `main` en GitHub también dispara el deploy automático (integración Git
 ## Integraciones externas (no viven en este repo)
 
 - **Gran Ciclo Hebreo** (calendario) — Next.js, repo `calendar-app`, backend FastAPI + SQLite de 2.19M días. Ver `CLAUDE.md` en la raíz del proyecto Zivug.
-- **Zivug** (carta personal) — Vite/React, repo `zoharmx/zivug`, deployado como proyecto Vercel `frontend`.
+- **Zivug** (carta personal) — vive como la ruta `/mazal` dentro del mismo deploy del calendario. (Hasta agosto de 2026 este README decía `frontend-beige-phi-95`; ese deploy sirve hoy otra cosa. Ver `DOCUMENTO_TECNICO.md`.)
 
 Ambas están enlazadas por redirect (`/calendario`, `/zivug` en `vercel.json`), no por subdominio, mientras se completa la unificación de dominio descrita en `DESPLIEGUE.md`.
 

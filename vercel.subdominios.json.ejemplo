@@ -1,0 +1,30 @@
+// NO ES CONFIGURACION ACTIVA. Vercel no lee este archivo (vercel.json es JSON
+// estricto y no admite comentarios; por eso los redirects preparados viven aqui).
+//
+// Que es: los redirects de /calendario y /zivug apuntando ya a los subdominios
+// de marca, listos para sustituir a los actuales en vercel.json.
+//
+// CUANDO activarlos: solo cuando estas dos comprobaciones den 200.
+//
+//   curl -sSI https://calendario.zoharlatinoamerica.site/
+//   curl -sSI https://calendario.zoharlatinoamerica.site/mazal
+//
+// Activarlos antes rompe dos enlaces que hoy funcionan. El procedimiento
+// completo (Vercel + DNS de Hostinger) esta en DESPLIEGUE.md, paso 3.
+//
+// Se mantienen en 307 (permanent: false) igual que hoy. Pasarlos a 301
+// (permanent: true) solo cuando los subdominios lleven semanas estables: un
+// 301 se cachea en navegadores y buscadores y es dificil de revertir.
+//
+// Zivug es la ruta /mazal del proyecto calendar-app-eight-eta, no un deploy
+// aparte. Si algun dia se separa a su propio proyecto de Vercel, el destino
+// pasa a https://zivug.zoharlatinoamerica.site (y hace falta el CNAME zivug).
+
+{
+  "redirects": [
+    { "source": "/calendario", "destination": "https://calendario.zoharlatinoamerica.site", "permanent": false },
+    { "source": "/calendario/", "destination": "https://calendario.zoharlatinoamerica.site", "permanent": false },
+    { "source": "/zivug", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false },
+    { "source": "/zivug/", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false }
+  ]
+}

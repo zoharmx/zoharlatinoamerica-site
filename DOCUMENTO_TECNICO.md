@@ -25,15 +25,21 @@ No es una aplicación — es un portal de captación estático que orquesta enla
      redirect 307          redirect 307       YouTube iframe
               │                 │             youtube-nocookie.com
               ▼                 ▼
-  calendar-app-eight-eta   frontend-beige-phi-95
-  .vercel.app              .vercel.app
+  calendar-app-eight-eta   calendar-app-eight-eta
+  .vercel.app              .vercel.app/mazal
   ─────────────────────    ─────────────────────
-  Next.js 14                Vite + React
-  Proxy API → backend        Vercel project: frontend
-  FastAPI (calendario        (repo zoharmx/zivug)
+  Next.js 14                Misma app, ruta /mazal
+  Proxy API → backend
+  FastAPI (calendario
   hebreo, SQLite 2.19M
   filas)
 ```
+
+> **Corregido el 5 de agosto de 2026.** Este documento decía que Zivug vivía en
+> `frontend-beige-phi-95.vercel.app`. Ya no: ese deploy sirve hoy *Tikun Olam — Ethical
+> AI Reasoning*, no Zivug. El redirect `/zivug` de `vercel.json` apunta a
+> `calendar-app-eight-eta.vercel.app/mazal`, que **sí** sirve la carta personal, así que
+> el redirect era correcto y la documentación era la desactualizada.
 
 **Tres repos de GitHub distintos, tres proyectos de Vercel distintos, un solo dominio público.** La unión ocurre únicamente a nivel de `redirects` en `vercel.json` — no hay compartición de código, estado, ni sesión entre las tres piezas.
 
@@ -54,7 +60,7 @@ No es una aplicación — es un portal de captación estático que orquesta enla
 Este portal es la **capa de distribución** de un ecosistema más grande documentado en `CLAUDE.md` (raíz del proyecto `C:\Users\diosd\zivug\Zivug`):
 
 - **Gran Ciclo Hebreo** — el activo de datos más diferenciado del proyecto (base SQLite de 2.192.942 filas, años AM 1–6004). El portal no contiene ninguna lógica del calendario; solo enlaza (`/calendario`) al deploy independiente en `calendar-app-eight-eta.vercel.app`.
-- **Zivug** — el motor de alineación personal de 10 dimensiones (mapeo Sefirot). El portal enlaza (`/zivug`) al deploy en `frontend-beige-phi-95.vercel.app`, que a su vez vive en el repo `zoharmx/zivug` (confusingly distinto del repo de este portal).
+- **Zivug** — el motor de alineación personal de 10 dimensiones (mapeo Sefirot). El portal enlaza (`/zivug`) a la ruta `/mazal` del mismo deploy del calendario (`calendar-app-eight-eta.vercel.app/mazal`), no a un proyecto de Vercel aparte.
 - **Biblioteca cabalística** — no reimplementa ninguna fuente; es un índice curado hacia Sefaria y otras fuentes públicas en español. Decisión deliberada para evitar problemas de copyright con traducciones existentes del Zohar.
 
 **Implicación operativa:** un cambio en el backend del calendario o en el frontend de Zivug (ver `HANDOFF.md` del proyecto raíz para el estado más reciente de esos deploys) **no requiere ningún cambio en este repo**, salvo que cambie la URL de destino — en cuyo caso se actualiza únicamente `vercel.json` → `redirects`.
@@ -74,7 +80,7 @@ Este portal es la **capa de distribución** de un ecosistema más grande documen
 
 ## 7. Puntos de fragilidad conocidos
 
-1. **Dependencia de 3 dominios `.vercel.app` distintos** para las herramientas — si Vercel cambia el hash de deploy o el proyecto se relinkea, los redirects en `vercel.json` quedan apuntando a una URL muerta silenciosamente (esto ya pasó una vez con un error de Firebase en el proyecto `frontend`, corregido el 4 de julio de 2026 — ver `HANDOFF.md` raíz).
+1. **Dependencia de dominios `.vercel.app` ajenos a la marca** para las herramientas — si Vercel cambia el hash de deploy o el proyecto se relinkea, los redirects en `vercel.json` quedan apuntando a una URL muerta silenciosamente (esto ya pasó una vez con un error de Firebase en el proyecto `frontend`, corregido el 4 de julio de 2026 — ver `HANDOFF.md` raíz). El 5 de agosto de 2026 se detectó una variante más silenciosa todavía: el destino no muere, **cambia de contenido** — `frontend-beige-phi-95.vercel.app` dejó de servir Zivug sin que nada lo avisara. La cura es el paso 3 de `DESPLIEGUE.md`: subdominios propios en vez de redirects a hosts de terceros.
 2. **Sin monitoreo cruzado** — al ser 3 proyectos de Vercel separados, un error en uno no es visible desde la analítica de los otros dos.
 3. **GA4 a medias** — el snippet existe pero el ID (`G-XXXXXXXXXX`) nunca se reemplazó, así que no está recolectando datos reales pese a estar "presente" en el HTML.
 
