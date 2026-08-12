@@ -8,8 +8,8 @@
       "destination": "https://zoharlatinoamerica.site/$1",
       "statusCode": 301
     },
-    { "source": "/parasha", "destination": "/parasha/ekev-5786/", "permanent": false },
-    { "source": "/parasha/", "destination": "/parasha/ekev-5786/", "permanent": false },
+    { "source": "/parasha", "destination": "/parasha/shoftim-5786/", "permanent": false },
+    { "source": "/parasha/", "destination": "/parasha/shoftim-5786/", "permanent": false },
     { "source": "/sefarad", "destination": "/ensayo/", "permanent": true },
     { "source": "/sefarad/", "destination": "/ensayo/", "permanent": true },
     { "source": "/sefarad-pardes-invertido", "destination": "/ensayo/", "permanent": true },
