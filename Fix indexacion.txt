@@ -1,0 +1,236 @@
+# Master prompt — Corrección de indexación de `zoharlatinoamerica.site`
+
+> Pega todo lo que sigue (desde `---` hasta el final) en Claude Code, dentro del repo
+> `zoharmx/zoharlatinoamerica-site`.
+
+---
+
+Eres el ingeniero a cargo de `zoharlatinoamerica.site` — un sitio estático de HTML puro
+(sin build, sin framework, sin `npm install`) desplegado en Vercel, proyecto
+`zoharlatinoamerica-site`, deploy automático por push a `main`.
+
+Antes de tocar nada, lee `README.md`, `SEO.md`, `DOCUMENTO_TECNICO.md`, `DESPLIEGUE.md`
+y `vercel.json`. Contienen decisiones deliberadas que debes respetar.
+
+## Objetivo
+
+Ejecutar las correcciones de una auditoría de indexación realizada el 5 de agosto de 2026.
+El sitio **es indexable y no está penalizado** — no hay que "arreglar el SEO" en abstracto.
+Hay que resolver problemas concretos y verificables de arquitectura de URLs, sitemap y
+dominios espejo, listados abajo en orden de prioridad.
+
+## Reglas que no puedes romper
+
+1. **Cero build step.** No introduzcas `package.json` como dependencia de despliegue, ni
+   frameworks, ni generadores de sitios. Los scripts auxiliares en Bash o Node standalone
+   están bien, pero el sitio debe seguir sirviéndose como HTML plano.
+2. **No cambies el diseño ni el copy.** Esta tarea es estructural. Si un cambio técnico
+   exige tocar contenido visible, dímelo antes en vez de decidirlo tú.
+3. **No inventes contenido.** Si falta el texto de una parashá, créala como tarea pendiente
+   documentada, no la redactes.
+4. **Verifica en producción, no en tu cabeza.** Después de cada despliegue, comprueba con
+   `curl` los códigos HTTP, cabeceras y canonicals reales. Un cambio no está hecho hasta que
+   la respuesta HTTP lo confirma.
+5. **Un commit por tarea**, con mensaje descriptivo en español. No agrupes.
+6. **Marca claramente lo que no puedes hacer tú.** Hay pasos que requieren el panel de
+   Vercel, el DNS de Hostinger o Google Search Console. No los simules: enuméralos al final
+   como acciones humanas, con los valores exactos que debo introducir.
+
+---
+
+## Tarea 1 — 🔴 Eliminar la URL rotativa de la parashá
+
+**El problema.** `/parasha/` sirve el contenido de la semana actual y se sobrescribe cada
+semana. Hoy sirve *Ékev*, pero:
+
+- `sitemap.xml` la declara con `lastmod 2026-07-28` (ya obsoleto).
+- `/parasha/archivo/` la lista en posición 1 con el nombre **"Vaetchanan"**.
+- Su JSON-LD es un `Article` con `headline: "Parashat Ékev"`, `datePublished: "2026-07-28"`
+  y `url: "https://zoharlatinoamerica.site/parasha/"`.
+- **`/parasha/ekev-5786/` devuelve 404.** Ékev no tiene URL permanente, no está en el
+  sitemap y no está en el archivo.
+- Cuando termine la semana y se cree el permalink, habrá un duplicado exacto del contenido
+  que Google ya indexó bajo `/parasha/`.
+
+Resultado: cada parashá pierde su historial de indexación a los 7 días y compite consigo
+misma.
+
+**Lo que debes hacer.**
+
+1. Crear `/parasha/ekev-5786/index.html` con el contenido actual de `/parasha/`, ajustando:
+   - `<link rel="canonical" href="https://zoharlatinoamerica.site/parasha/ekev-5786/">`
+   - `og:url` al permalink
+   - JSON-LD: `@id`, `url` y `mainEntityOfPage` al permalink, y `datePublished` con la fecha
+     real de publicación de Ékev (no `2026-07-28`, que es la de Vaetchanan)
+2. Convertir `/parasha/` en un **redirect 302** al permalink de la semana, vía `vercel.json`:
+   ```json
+   { "source": "/parasha/", "destination": "/parasha/ekev-5786/", "permanent": false }
+   ```
+   Debe ser **302 / `permanent: false`**, porque el destino cambia cada semana. Verifica que
+   `/parasha/archivo/` y `/parasha/<slug>-5786/` siguen respondiendo 200 — la regla debe
+   afectar solo a la ruta exacta.
+3. Eliminar `/parasha/index.html` del repo, o dejarlo únicamente si decides convertirlo en un
+   hub con listado (en ese caso, **sin** schema `Article`, con `CollectionPage`, y sin
+   redirect). Elige una de las dos opciones y explícame por qué.
+4. Corregir el `ItemList` de `/parasha/archivo/`: la posición 1 debe apuntar a
+   `/parasha/vaetchanan-5786/`, nunca a `/parasha/`. Añadir Ékev como nueva posición 1 y
+   añadir su enlace visible en la página.
+
+**Criterio de aceptación**
+```
+curl -sSI https://zoharlatinoamerica.site/parasha/          # → 307/302 a /parasha/ekev-5786/
+curl -sSI https://zoharlatinoamerica.site/parasha/ekev-5786/ # → 200
+curl -sSI https://zoharlatinoamerica.site/parasha/archivo/   # → 200
+curl -sS  https://zoharlatinoamerica.site/parasha/archivo/ | grep -c '"url": "https://zoharlatinoamerica.site/parasha/"'  # → 0
+```
+
+---
+
+## Tarea 2 — 🔴 Automatizar el ritual semanal de publicación
+
+El problema anterior volverá a aparecer la semana que viene si el proceso sigue siendo manual.
+
+Crea `nueva-parasha.sh` (o `.mjs`, tú eliges) que, dado un slug y un año hebreo, haga en un
+solo paso:
+
+1. Crear `/parasha/<slug>-<año>/index.html` a partir de una plantilla, con canonical, OG y
+   JSON-LD ya apuntando al permalink correcto.
+2. Actualizar el redirect de `/parasha/` en `vercel.json` al nuevo permalink.
+3. Añadir la entrada al `ItemList` y al listado visible de `/parasha/archivo/`.
+4. Regenerar `sitemap.xml` (ver Tarea 3).
+5. Imprimir el comando de IndexNow a ejecutar tras el deploy.
+
+Documenta el flujo en `SEO.md`, en una sección **"Publicar la parashá de la semana"**, con el
+comando exacto y el orden: `script → commit → push → esperar deploy → ./indexnow.sh →
+solicitar indexación en GSC`.
+
+---
+
+## Tarea 3 — 🟠 Sitemap generado, nunca escrito a mano
+
+`sitemap.xml` está desincronizado: falta Ékev y los `lastmod` no corresponden al contenido
+real. Un sitemap con fechas falsas enseña a Google a ignorar tus `lastmod` y a bajar la
+frecuencia de rastreo — lo peor posible para un sitio con contenido semanal.
+
+Crea `generar-sitemap.sh` que recorra el repo, encuentre cada `index.html`, derive la URL
+(respetando `cleanUrls: true` y `trailingSlash: true`) y tome el `lastmod` de la **fecha del
+último commit de git que tocó ese archivo** (`git log -1 --format=%cs -- <ruta>`). Nada de
+fechas escritas a mano.
+
+Reglas:
+- Incluir: `/`, `/ensayo/`, `/biblioteca/`, `/parasha/archivo/` y todos los
+  `/parasha/<slug>-<año>/`.
+- **Excluir `/parasha/`** — ahora es un redirect y no debe estar en el sitemap.
+- Mantener `changefreq` y `priority` con los valores actuales por tipo de página.
+
+**Criterio de aceptación:** cada `<loc>` del sitemap generado responde 200 (ni 3xx ni 404).
+Verifícalo en bucle con `curl` y muéstrame la tabla.
+
+---
+
+## Tarea 4 — 🟠 Cerrar los dominios espejo
+
+Cuatro hosts sirven contenido duplicado con HTTP 200:
+
+| Host | Estado actual |
+|---|---|
+| `www.zoharlatinoamerica.site` | 200, sin 301 al apex (solo lo salva el canonical) |
+| `zoharlatinoamerica-site.vercel.app` | 200 con `robots.txt` que permite todo |
+| `calendar-app-eight-eta.vercel.app` | 200, sin `robots.txt` |
+| `frontend-beige-phi-95.vercel.app` | 200, sin `robots.txt` |
+
+En **este** repo, en `vercel.json`:
+
+1. Redirect **301** de `www` al apex, preservando la ruta:
+   ```json
+   {
+     "source": "/:path*",
+     "has": [{ "type": "host", "value": "www.zoharlatinoamerica.site" }],
+     "destination": "https://zoharlatinoamerica.site/:path*",
+     "permanent": true
+   }
+   ```
+2. Cabecera `X-Robots-Tag: noindex, nofollow` condicionada al host `*.vercel.app`, para que
+   el clon de despliegue no compita con el dominio de marca:
+   ```json
+   {
+     "source": "/(.*)",
+     "has": [{ "type": "host", "value": "(?<sub>.*)\\.vercel\\.app" }],
+     "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+   }
+   ```
+
+**Comprueba que no rompes nada**: el apex debe seguir devolviendo 200 **sin** cabecera
+`X-Robots-Tag`. Si la sintaxis de `has` con host no se comporta como esperas en Vercel,
+consúltalo en la documentación oficial antes de improvisar, y si no hay forma limpia,
+dímelo en vez de dejar el sitio con `noindex`. **Un `noindex` accidental en el apex sería
+peor que el problema original** — verifícalo explícitamente tras el deploy.
+
+Los dos proyectos de las apps (`calendar-app-eight-eta`, `frontend-beige-phi-95`) viven en
+otros repos: no los toques, solo anótalos en las acciones humanas del final.
+
+---
+
+## Tarea 5 — 🟠 Recuperar el valor SEO de calendario y Zivug
+
+`/calendario` y `/zivug` son redirects 307 hacia `*.vercel.app`. El Gran Ciclo Hebreo y
+Zivug —los dos activos que nadie más tiene en español— acumulan toda su autoridad en
+dominios que no son la marca.
+
+`DESPLIEGUE.md` ya contemplaba `calendario.zoharlatinoamerica.site` y
+`zivug.zoharlatinoamerica.site`, pero nunca se ejecutó.
+
+Tú no puedes configurar dominios en Vercel ni DNS en Hostinger. Lo que sí debes hacer:
+
+1. Actualizar `DESPLIEGUE.md` con los pasos exactos y los valores concretos de los registros
+   DNS que debo crear.
+2. Dejar preparados en `vercel.json` los redirects hacia los subdominios, **comentados o en
+   una rama aparte**, listos para activar cuando los subdominios respondan. No los actives
+   antes: romperías dos enlaces que hoy funcionan.
+3. Señalar una inconsistencia que encontré: `/zivug/` redirige a
+   `calendar-app-eight-eta.vercel.app/mazal`, pero `DOCUMENTO_TECNICO.md` dice que Zivug vive
+   en `frontend-beige-phi-95.vercel.app`. Averigua cuál es el destino correcto — **pregúntame
+   si no puedes determinarlo** — y corrige la documentación o el redirect según corresponda.
+
+---
+
+## Tarea 6 — 🟡 Enlazado interno
+
+- `/ensayo/` tiene 6.637 palabras y solo **3 enlaces internos salientes**; recibe enlaces solo
+  desde la home. Es la mejor pieza del sitio y Google la lee como periférica.
+- Los permalinks de parashá reciben un único enlace, desde el archivo.
+
+Añade enlaces contextuales, **sin tocar el copy existente**: bloques de "sigue leyendo" al
+final de cada pieza y enlaces cruzados parashá ↔ sección correspondiente de la biblioteca.
+Si un enlace requiere redactar una frase nueva, propónmela antes de escribirla.
+
+---
+
+## Tarea 7 — 🟡 Cadenas de redirección dobles
+
+`/youtube` → 308 `/youtube/` → 307 destino. Igual con `/pelicula` y `/facebook`. Cada salto
+extra desperdicia presupuesto de rastreo.
+
+Investiga si `trailingSlash: true` puede convivir con reglas que resuelvan en un solo salto.
+**Si la solución exige desactivar `trailingSlash` o `cleanUrls`, no la apliques** — esas
+opciones son una decisión de arquitectura documentada y cambiarlas invalidaría todas las URLs
+indexadas. En ese caso, documenta el hallazgo como aceptado y sigue.
+
+---
+
+## Al terminar
+
+Ejecuta `./indexnow.sh` y dime qué URLs enviaste y qué código devolvió.
+
+Después entrégame un informe con:
+
+1. **Tabla de verificación en producción** — para cada URL del sitio: código HTTP, canonical,
+   presencia de `X-Robots-Tag`, y si está o no en el sitemap.
+2. **Commits realizados**, uno por línea, con su propósito.
+3. **Acciones humanas pendientes**, con los valores exactos: qué configurar en el panel de
+   Vercel, qué registros DNS crear en Hostinger, y qué URLs enviar a indexar en Google Search
+   Console.
+4. **Lo que decidiste no hacer y por qué.** Esto me interesa tanto como lo que hiciste.
+
+Sé honesto si algo no funcionó. Prefiero un informe con tres tareas bien hechas y cuatro
+bloqueos explicados que siete tareas declaradas completas sin verificar.

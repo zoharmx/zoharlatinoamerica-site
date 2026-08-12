@@ -154,6 +154,36 @@ agregado de "Páginas" aún procesa datos (va con retraso de ~1 día).
   enlaza al sitio, que es correcto. Los enlaces de YouTube son `nofollow` (no pasan
   autoridad de posicionamiento) pero sí traen tráfico real y sirven de vía de descubrimiento.
 
+## Actualización 12 agosto 2026
+
+Se publicaron dos entregas nuevas con URL permanente propia — **Reé 5786**
+(`/parasha/ree-5786/`) y **Shoftim 5786** (`/parasha/shoftim-5786/`) — con
+el flujo de `nueva-parasha.sh`: redirect 302 de `/parasha/` → Shoftim,
+archivo y `ItemList` actualizados, y sitemap regenerado. El sitemap tiene
+**9 URLs** y `generar-sitemap.sh --check` está en verde.
+
+Estado de indexación conocido (verificación más reciente): **indexadas** `/`,
+`/biblioteca/`, `/parasha/archivo/`; **pendientes** `/ensayo/`, los
+permalinks de parashá y las dos entregas nuevas. Google descubre el sitio por
+sitemap y canonical sin problemas — lo que falta es solicitud de indexación y
+tiempo de rastreo.
+
+### Acciones humanas en Search Console (cuenta `zoharlatinoamerica@`)
+
+Inspección de URL → **Solicitar indexación** para:
+- `https://zoharlatinoamerica.site/parasha/ree-5786/` (nuevo)
+- `https://zoharlatinoamerica.site/parasha/shoftim-5786/` (nuevo)
+- Re-solicitar: `/ensayo/`, `/parasha/devarim-5786/`,
+  `/parasha/ekev-5786/`, `/parasha/vaetchanan-5786/`
+
+Y el resto del ritual tras el deploy: `./indexnow.sh` (Bing/Yandex) +
+verificación de las URLs con `curl`.
+
+### Sigue pendiente de la auditoría de agosto
+- **GA4**: reemplazar `G-XXXXXXXXXX` en `index.html` y descomentar el bloque.
+- **DNS en Hostinger**: registro `A calendario → 76.76.21.21` (paso 3.2 de
+  `DESPLIEGUE.md`) para activar los subdominios del Gran Ciclo y Zivug.
+
 ## Lo que de verdad movería la aguja ahora
 
 El techo ya no es técnico — el andamiaje está puesto. Lo que falta es lo que Google
