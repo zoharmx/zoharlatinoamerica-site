@@ -60,9 +60,10 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
 | 1 ago 2026 | **Ékev** ✅ | 18 de Av — archivada en `/parasha/ekev-5786/`; video pendiente del humano |
 | 8 ago 2026 | **Reé** ✅ | 25 de Av — entregada el 12 ago (4 días tarde) en `/parasha/ree-5786/`; video pendiente |
 | 15 ago 2026 | **Shoftim** ✅ | 2 de Elul — entregada el 12 ago en `/parasha/shoftim-5786/`; arranca la serie de teshuvá; video pendiente |
-| 22 ago 2026 | **Ki Teitzei** | 9 de Elul — Devarim 21:10–25:19 · Haftará Yeshayahu 54:1–10 (quinta de consuelo) |
+| 22 ago 2026 | **Ki Teitzei** ✅ | 9 de Elul — entregada el 20 ago (2 días antes) en `/parasha/ki-teitzei-5786/`; video pendiente |
 | 29 ago 2026 | **Ki Tavo** | 16 de Elul — Devarim 26:1–29:8 · Haftará Yeshayahu 60:1–22 (sexta de consuelo) |
 | 5 sep 2026 | **Nitzavim-Vayeilej** | 23 de Elul — Devarim 29:9–31:30 · Haftará Yeshayahu 61:10–63:9 (séptima de consuelo) |
+| 12 sep 2026 | **Rosh Hashaná 5787** | 1 de Tishrei — cierre del año; la entrega de Nitzavim-Vayeilej es la última del ciclo 5786 |
 
 > **Lección de Reé (atrasada):** publicar **antes** del Shabat de la lectura.
 > Si una entrega se atrasa, publicarla igual en cuanto se pueda — `datePublished`

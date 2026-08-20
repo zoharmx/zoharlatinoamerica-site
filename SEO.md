@@ -184,6 +184,85 @@ verificación de las URLs con `curl`.
 - **DNS en Hostinger**: registro `A calendario → 76.76.21.21` (paso 3.2 de
   `DESPLIEGUE.md`) para activar los subdominios del Gran Ciclo y Zivug.
 
+## Actualización 20 agosto 2026 — auditoría medida, no supuesta
+
+Publicada **Ki Teitzei 5786** (`/parasha/ki-teitzei-5786/`) con el flujo de
+`nueva-parasha.sh`: Shoftim archivada, redirect 302 de `/parasha/` movido,
+archivo e `ItemList` actualizados, sitemap regenerado con **10 URLs** y
+`generar-sitemap.sh --check` en verde.
+
+### Lo que Google tiene indexado hoy (comprobado en vivo)
+
+`site:zoharlatinoamerica.site` devuelve **exactamente 3 resultados**:
+
+| URL | Estado |
+|---|---|
+| `/` | indexada |
+| `/biblioteca/` | indexada |
+| `/parasha/archivo/` | indexada |
+
+Son **las mismas tres del 12 de agosto**. En ocho días no entró ni un
+permalink de parashá, y `/ensayo/` — el activo más fuerte del sitio — sigue
+fuera. La causa no es técnica: es que **el paso manual de «Solicitar
+indexación» en Search Console no se ejecutó**. Ningún script lo cubre,
+IndexNow no llega a Google, y sin él un dominio joven tarda semanas o meses
+en rastrear por su cuenta.
+
+**Este es el cuello de botella de todo el SEO del sitio.** Se está
+produciendo una página original por semana — exactamente lo que la sección
+de abajo pide — y Google no está viendo ninguna.
+
+### La buena noticia: el objetivo de marca está cumplido
+
+Buscar **«Zohar Latinoamérica»** devuelve hoy `zoharlatinoamerica.site`
+como **resultado #1**, por encima del canal de YouTube y de la página de
+Facebook. El pronóstico de julio («es tu marca, y una vez indexado es muy
+ganable») se cumplió. Kabbalah.info y Kabbalah Centre ya no aparecen para
+el nombre exacto.
+
+Ojo con una confusión de entidad: existe una app Android llamada «Zohar
+Latinoamerica» (de Gerardo Saborio, registra los Zohar entregados por
+Kabbalah Center en Latam) que compite por el mismo nombre. Es un argumento
+más para reforzar el `sameAs` del JSON-LD y la consistencia de la entidad.
+
+### Bing / DuckDuckGo va por delante de Google
+
+El índice de Bing (vía DuckDuckGo) trae bastante más superficie: home,
+`/biblioteca/`, `/ensayo/`, `/parasha/`, `/parasha/archivo/`,
+`/parasha/devarim-5786/` y `/parasha/ekev-5786/`. Eso es IndexNow rindiendo:
+el script funciona y vale la pena seguir corriéndolo.
+
+### Basura heredada en el índice
+
+Bing conserva tres URLs del builder viejo de Hostinger que hoy dan **404**:
+`/contacto`, `/mistica` y `/sabiduria`. No son urgentes — caen solas —,
+pero si se quiere limpiar, lo correcto es servirlas como **410 Gone** desde
+`vercel.json`, no redirigirlas a la home (una redirección masiva a `/` se
+lee como *soft 404* y es peor).
+
+### Infraestructura verificada hoy
+
+Las 12 rutas públicas responden lo que deben: `200` en las páginas, `307`
+en `/parasha/` hacia la entrega vigente, `sitemap.xml` y `robots.txt`
+servidos. No hay nada roto.
+
+### Acciones humanas, por orden de impacto
+
+1. **Search Console → Inspección de URL → Solicitar indexación** (cuenta
+   `zoharlatinoamerica@`), para: `/parasha/ki-teitzei-5786/` (nuevo),
+   `/ensayo/`, `/parasha/shoftim-5786/`, `/parasha/ree-5786/`,
+   `/parasha/ekev-5786/`, `/parasha/vaetchanan-5786/`,
+   `/parasha/devarim-5786/`. Es un cupo de ~10 URLs/día: entran todas en una
+   sesión. **Sin esto, lo demás no sirve de mucho.**
+2. `./indexnow.sh` tras cada deploy (Bing/Yandex) — esto sí está
+   automatizado y sí funciona.
+3. **GA4**: sigue pendiente reemplazar `G-XXXXXXXXXX` en `index.html`.
+4. **DNS en Hostinger**: sigue pendiente `A calendario → 76.76.21.21`
+   (paso 3.2 de `DESPLIEGUE.md`).
+5. **`og:image`**: las entregas sin video propio heredan la miniatura de
+   YouTube de Shoftim. Al publicar cada video, actualizar el `og:image` de su
+   parashá.
+
 ## Lo que de verdad movería la aguja ahora
 
 El techo ya no es técnico — el andamiaje está puesto. Lo que falta es lo que Google

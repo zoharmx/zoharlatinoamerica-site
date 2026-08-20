@@ -249,3 +249,63 @@ URLs); cero TODOs pendientes; `generar-sitemap.sh --check` en verde.
 3. Enviar la newsletter y la guía a los miembros.
 4. Tras el deploy: `./indexnow.sh`; y en Search Console, solicitar
    indexación de `/parasha/ree-5786/` y `/parasha/shoftim-5786/`.
+
+## FASE 4 — ENTREGA 6: PARASHAT KI TEITZEI 5786 (2026-08-20)
+
+Entregada el jueves 20 de agosto, **dos días antes** del Shabat del 22 (9 de
+Elul). Se recupera la regla de publicar antes de la lectura; la cadencia
+había quedado en pausa desde el 12 de agosto por indisponibilidad del humano.
+
+**Página pública** `/parasha/ki-teitzei-5786/` — «la guerra que se gana por
+los que se quedan atrás». Tesis de la entrega: las 74 mitzvot de Ki Teitzei
+(la mayor concentración de la Torá, cuenta del Séfer HaJinuj) no son un cajón
+de sastre sino un solo mapa — el plural/singular de 21:10 («tus enemigos» /
+«lo entregue»), leído con el Zohar como la salida del alma al cuerpo, define
+el campo de batalla como el trato con el que está en desventaja. Recorrido:
+la cautiva y *lo dibrá Torá elá kenégued yétzer hará* (Rashi 21:11;
+Kidushín 21b) con el encadenamiento cautiva → esposa aborrecida → hijo
+rebelde; *lo tujal lehitalem*, «no **puedes** desentenderte» (22:3) y *hakem
+takim imó* (22:4); el nido (22:6–7) con la prohibición de explicarlo
+(Berajot 5:3) y la discusión abierta de Julín 142a; el pretil y *hanofel*
+con artículo (22:8); el molino en prenda (24:6), el jornal antes del ocaso
+(24:15) y la gavilla olvidada (24:19); y el cierre: las pesas íntegras
+(25:13–15) pegadas a Amalek (25:17–18), con Rashi 25:17 sobre la
+yuxtaposición (Tanjumá) y Rashi 25:18 sobre *asher karjá* como enfriamiento
+— «Amalek no vence: entibia». Haftará (quinta de consuelo): «canta,
+estéril» antes de que nazca nadie, «ensancha el lugar de tu tienda» y «mi
+bondad no se apartará de ti» (Is 54:1, 54:2, 54:7, 54:10).
+
+**Gran Ciclo** (verificado vía Hebcal el 20 ago): 9 de Elul 5786; año en
+posición **10/19** del ciclo **#305**; la posición 10 **no** es embolismal
+— 5786 es año regular de 12 meses, sin Adar II, así que Elul corre directo
+al juicio. Rosh Hashaná 5787 = **12 de septiembre de 2026**: faltan 21 días.
+Luna a un tercio de la crecida (Rosh Jodesh fue el 14 ago), plenilunio en
+seis días.
+
+**Paquete editorial completo** (guía de miembros + guion de video +
+newsletter) en `Fable 5/parasha/ki-teitzei-5786/`. Se añaden además al
+repositorio los paquetes de Devarim y Ékev, que estaban sin versionar.
+Redirect de `/parasha/` → `/parasha/ki-teitzei-5786/`; Shoftim archivada;
+sitemap regenerado (10 URLs); cero TODOs; `generar-sitemap.sh --check` en
+verde.
+
+**Auditoría de indexación (20 ago, medida sobre Google en vivo).** Ocho días
+después de publicar Reé y Shoftim, Google sigue con **3 URLs indexadas** —
+`/`, `/biblioteca/` y `/parasha/archivo/` — las mismas del 12 de agosto.
+Ningún permalink de parashá ha entrado. La causa es identificable: el paso
+manual de «Solicitar indexación» en Search Console no se ejecutó. Bing/DDG
+sí trae más superficie (home, biblioteca, ensayo, archivo, devarim, ékev),
+que es lo que rinde IndexNow. **Hallazgo positivo**: el sitio es hoy el
+**resultado #1 de Google para «Zohar Latinoamérica»** — el objetivo de marca
+declarado en `SEO.md` está cumplido.
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Ki Teitzei (doctrina y fuentes).
+2. `git push origin main` para desplegar, y después `./indexnow.sh`.
+3. **Search Console (cuenta `zoharlatinoamerica@`) — el cuello de botella
+   real**: solicitar indexación de `/parasha/ki-teitzei-5786/` y de los cinco
+   permalinks anteriores + `/ensayo/`. Sin este paso el contenido semanal no
+   entra a Google.
+4. Producir y publicar el video de Ki Teitzei (guion listo); siguen sin video
+   Ékev, Reé y Shoftim.
+5. Enviar la newsletter y la guía a los miembros.
