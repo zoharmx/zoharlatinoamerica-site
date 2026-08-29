@@ -27,6 +27,10 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
      CTA, título A/B, miniatura, descripción y comentario fijado.
    - **Newsletter** (`NEWSLETTER_...md`): asunto + cuerpo corto con enlaces.
 3. Commit + push a `main` (deploy automático) + verificación con curl.
+   Después del deploy, en este orden: `./generar-sitemap.sh` (el propio
+   commit mueve los `lastmod`), `./indexnow.sh`, y **reenviar el sitemap en
+   Search Console** — Google no lo relee solo: el 28-ago-2026 llevaba 41
+   días sin releerse y había descubierto 4 de 11 URLs.
 4. Registrar la entrega en EXPERIMENT_LOG.md.
 
 ### Lo que hace el HUMANO (~45 min — checkpoint editorial OBLIGATORIO)

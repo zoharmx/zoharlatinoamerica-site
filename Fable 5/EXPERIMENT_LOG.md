@@ -406,3 +406,51 @@ segunda mitad de Elul, luego siempre en luna menguante, y siempre trae
 5. Enviar la newsletter y la guía a los miembros.
 6. **Preparar el cierre del ciclo**: Nitzavim-Vayeilej (5 sep, 23 de Elul) es
    la última entrega de 5786.
+
+### Search Console, 28 ago — se encontró la causa real del estancamiento
+
+El cuello de botella **no era** «nadie pulsa Solicitar indexación». Era el
+sitemap.
+
+**Estado al entrar** (propiedad `sc-domain:zoharlatinoamerica.site`, cuenta
+`zoharlatinoamerica@gmail.com`): 3 páginas indexadas, 4 no indexadas, 15 clics.
+
+**El hallazgo.** `sitemap.xml` figuraba **enviado el 17 jul 2026** y **leído
+por última vez el 18 jul 2026** — 41 días sin releerse — con **4 páginas
+descubiertas**. El sitemap desplegado tenía 11 URLs. Es decir: Ékev, Reé,
+Shoftim, Ki Teitzei y Ki Tavó **nunca estuvieron en un sitemap que Google
+hubiera leído**. Cada inspección de URL lo confirmaba con la línea «No se ha
+detectado ningún sitemap de referencia» y el diagnóstico «Google no reconoce
+esta URL». Regenerar el sitemap en cada commit no sirve de nada por sí solo:
+Google no vuelve a buscarlo, y `robots.txt` declarándolo tampoco bastó.
+
+**La corrección.** Reenviar `https://zoharlatinoamerica.site/sitemap.xml`
+desde Search Console → Sitemaps. Google lo releí **en el acto**: la fila pasó
+a «28 ago 2026 / 28 ago 2026 / **11 páginas descubiertas**». El efecto fue
+inmediato y verificable en la inspección: Shoftim, Reé, Ékev y Vaetjanán
+pasaron de «Google no reconoce esta URL» a **«Descubierta: actualmente sin
+indexar»**, ya con `sitemap.xml` como fuente de detección.
+
+**Indexación solicitada (8 URLs, todas confirmadas «Se ha solicitado la
+indexación»):** ki-tavo, ki-teitzei, shoftim, reé, ékev, vaetjanán, devarim y
+`/ensayo/`. Estado previo de cada una: las cinco recientes «no reconocida» o
+«descubierta»; devarim y `/ensayo/` **«Rastreada: actualmente sin indexar»**
+(rastreadas el 22 y el 17 de julio y descartadas por Google, que es un
+problema distinto — de señal, no de descubrimiento).
+
+**Deuda detectada, no tocada:** sigue registrado un `sitemap.rss` enviado el
+30 ene 2025 y leído por última vez el 2 mar 2025. Hoy `https://zoharlatinoamerica.site/sitemap.rss`
+**responde 404**. Conviene eliminarlo de Search Console (decisión del humano).
+
+**Nota de acceso, para no repetir la búsqueda:** la propiedad vive en
+`zoharlatinoamerica@gmail.com`, que **ya está en la sesión del mismo perfil de
+Chrome** como cuenta secundaria — se llega por el conmutador de cuentas
+(termina en `/u/1/`), sin cambiar de perfil ni volver a iniciar sesión. Y el
+enlace profundo `search-console/inspect?resource_id=...&id=...` **devuelve
+404**: hay que abrir la propiedad y usar la barra superior «Inspeccionar las
+URL de…».
+
+### Añadir al paso 3 del pipeline
+Tras cada publicación, además de `./indexnow.sh`: **reenviar el sitemap en
+Search Console**. Es un solo campo y arregla el descubrimiento de toda la
+semana; pedir indexación URL por URL es el complemento, no el mecanismo.
