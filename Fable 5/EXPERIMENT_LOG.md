@@ -309,3 +309,100 @@ declarado en `SEO.md` está cumplido.
 4. Producir y publicar el video de Ki Teitzei (guion listo); siguen sin video
    Ékev, Reé y Shoftim.
 5. Enviar la newsletter y la guía a los miembros.
+
+---
+
+## FASE 4 — ENTREGA 7: PARASHAT KI TAVÓ 5786 (2026-08-28)
+
+### Entrega
+Séptima entrega del pipeline semanal, y **la primera publicada en la
+víspera misma del Shabat de la lectura** (viernes 28 para el Shabat 29) —
+dentro de plazo, aunque más ajustado que Ki Teitzei, que salió con dos días
+de margen.
+
+**Fecha y lectura** (Hebcal, geonameid 3995465): 16 de Elul 5786 = **sábado
+29 de agosto de 2026**, Parashat Ki Tavó, Devarim 26:1–29:8, Haftará
+Yeshayahu 60:1–22 (sexta de consuelo). Velas en Monterrey 18:46 del
+viernes 28; havdalá 19:38 del sábado 29.
+
+**Título:** «Ki Tavó: lo que faltó no fue obediencia, fue alegría».
+
+**Tesis.** La parashá abre con el canasto de primicias —cuya mitzvá no es
+entregar sino **recitar** (Devarim 26:5–10)— y desemboca en la *tojejá*.
+El propio texto declara la causa dos veces, y no coinciden: 28:45 dice
+«porque no escuchaste», pero **28:47** dice «por cuanto no serviste al
+Eterno tu Dios con alegría y con bondad de corazón, *meróv kol*». No acusa
+al rebelde: acusa al que cumplió sin alegría teniéndolo todo. El arco cierra
+en 29:3–4 — cuarenta años de ropa que no se gastó y «no os dio… ojos para
+ver»: la abundancia tan constante que deja de percibirse. De ahí que el
+canasto sea el remedio exacto del capítulo 28.
+
+### Hallazgo de fuentes (el bueno de esta semana)
+Sefaria **no tiene sección «Zohar, Ki Tavó»** — el índice salta de Ki Teitzei
+a Vayeilej. Citarla habría sido inventar. En su lugar, la API de *links* de
+Devarim 28:47 devolvió dos pasajes zoháricos reales que comentan el versículo,
+y uno es exactamente lo que la entrega necesitaba (**Zohar, Vayishláj**):
+
+> «¿Qué es *meróv kol*? Aquí, *de tanto tenerlo todo*; y allí, *con falta de
+> todo*.»
+
+La misma palabra puesta frente a sí misma — la medida por medida del
+castigo en una sola palabra repetida. En el mismo pasaje: desde que se
+destruyó el Templo «se apartó la alegría de arriba y de abajo».
+**Método confirmado:** cuando la sección zohárica homónima no existe, buscar
+el versículo por `api/links` en vez de forzar la referencia.
+
+### Fuentes verificadas contra Sefaria (28 ago, una por una)
+Devarim 26:1–11, 26:16–19, 27:1–8, 28:45–48, 28:66–69, 29:1–8 (numeración
+hebrea confirmada: 28:69 existe, y 29:1 es «Vayikrá Moshé») · Rashi sobre
+26:5 (Laván, de Sifrei Devarim 301), 26:16 («cada día nuevos ante tus ojos»,
+Tanjumá Ki Tavó 1), 27:8 («*baer heitev*» = setenta lenguas), 28:47
+(«mientras tenías todos los bienes») y 29:3 · Mishná Bikurim 3:2–4 (buey de
+cuernos dorados, flauta, artesanos de pie, «hasta el rey Agripas» cargando
+el canasto) y 3:8 (oro vs. mimbre de sauce) · Sotá 32a (Guerizim/Ebal y las
+setenta lenguas) · Meguilá 31b (Ezrá: las maldiciones de Devarim antes de
+Rosh Hashaná, «para que termine el año con sus maldiciones»; Leví bar Butí
+tartamudeando ante Rav Huná) · Shabat 30b (la Presencia sólo desde la
+alegría de una mitzvá; Elishá y el músico, Melajim II 3:15) · Zohar,
+Vayishláj · Yeshayahu 60:1–5 y 60:19–22.
+**Descartado por no verificable:** la cuenta tradicional de 98 maldiciones
+(Baal HaTurim sobre Devarim 28:15 no está en Sefaria) — se escribió «una
+lista que no se termina nunca» en vez de dar un número.
+
+### Gran Ciclo (leído de `gran_ciclo_hebreo.db`, no estimado)
+Fila real para 16 Elul 5786: `cycle 305`, `pos_cycle 10`, `quadrant 4`,
+`year_type Comun`, `mazal ♍ Betulá`, `moon_phase gibosa menguante`.
+El dato que hizo la entrega: **el plenilunio de Elul fue el día 15**, así que
+esta lectura cae justo cuando la luna empieza a menguar y sigue menguando
+hasta Rosh Hashaná — la única fiesta que cae con la luna oculta. Y la
+haftará de esta misma semana dice «ni tu luna menguará» (Yeshayahu 60:20).
+La coincidencia es estructural, no anecdótica: Ki Tavó se lee siempre en la
+segunda mitad de Elul, luego siempre en luna menguante, y siempre trae
+«levántate, resplandece». Rosh Hashaná 5787 = 12 sep 2026: **faltan 14 días**.
+
+### Plataforma
+- `/parasha/ki-tavo-5786/` publicada; Ki Teitzei archivada con su banda de
+  aviso; redirect 302 de `/parasha/` reapuntado; `ensayo/index.html`
+  actualizado; ficha e ItemList en `/parasha/archivo/`; `sitemap.xml`
+  regenerado (11 URLs). **Cero TODOs**, JSON-LD válido en las tres páginas
+  tocadas y etiquetas HTML balanceadas.
+- Paquete editorial completo (guía de miembros + guion de video +
+  newsletter) en `Fable 5/parasha/ki-tavo-5786/`.
+- **Deuda conocida, no introducida esta semana:** `og:image` y el `image` del
+  JSON-LD de todos los permalinks apuntan al thumbnail del video de la
+  película (`pfRQjh97G7o`). Es la convención vigente del sitio y se corrige
+  por página cuando llega el video propio; no se tocó para no divergir.
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Ki Tavó (doctrina y fuentes) — hoy, antes de las
+   velas (18:46).
+2. `git push origin main` para desplegar, y después `./indexnow.sh`.
+3. **Search Console (cuenta `zoharlatinoamerica@`) — sigue siendo el cuello
+   de botella real**: solicitar indexación de `/parasha/ki-tavo-5786/` y de
+   los seis permalinks anteriores + `/ensayo/`. La auditoría del 20 de agosto
+   dejó claro que sin este paso el contenido semanal no entra a Google.
+4. Producir y publicar el video de Ki Tavó (guion listo); siguen sin video
+   Ékev, Reé, Shoftim y Ki Teitzei.
+5. Enviar la newsletter y la guía a los miembros.
+6. **Preparar el cierre del ciclo**: Nitzavim-Vayeilej (5 sep, 23 de Elul) es
+   la última entrega de 5786.
