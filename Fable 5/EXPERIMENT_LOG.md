@@ -454,3 +454,34 @@ URL de…».
 Tras cada publicación, además de `./indexnow.sh`: **reenviar el sitemap en
 Search Console**. Es un solo campo y arregla el descubrimiento de toda la
 semana; pedir indexación URL por URL es el complemento, no el mecanismo.
+
+### Medición del 31 ago 2026 — tres días después del reenvío del sitemap
+
+**El informe «Indexación → Páginas» no sirve para medir esto todavía**: marca
+«Última actualización 20/8/26», o sea que su 3 indexadas / 4 sin indexar es
+anterior al trabajo del 28. Hay que leer la inspección de URL (consulta el
+índice en vivo) y el `site:` público.
+
+**Rastreo — funcionó.** Google rastreó las URLs solicitadas **la misma noche
+del 28**, horas después de pedirlo:
+- `/parasha/ki-tavo-5786/` → último rastreo **28 ago 2026, 19:26:08**
+- `/parasha/ki-teitzei-5786/` → último rastreo **28 ago 2026, 19:30:54**
+
+Ambas con Robot de Google para smartphones, «Obtención de página: Correcto»,
+rastreo e indexación permitidos. Estado actual: **«Rastreada: actualmente sin
+indexar»** — que es el escalón siguiente a «Google no reconoce esta URL», donde
+estaban el 28.
+
+**Indexación — primer resultado.** `site:zoharlatinoamerica.site` devuelve hoy
+**4 URLs**, una más que el 20 y el 28 de agosto:
+1. `/` · 2. `/biblioteca/` · 3. `/parasha/archivo/` · 4. **`/parasha/ree-5786/` ← nueva**
+
+**Reé es la primera parashá individual que entra al índice.** El 28 de agosto su
+inspección decía expresamente «Descubierta: actualmente sin indexar», así que
+entró en estos tres días. La coincidencia temporal con el reenvío del sitemap y
+la solicitud es fuerte, pero es correlación: Google no explica sus decisiones.
+
+**Lectura:** el problema de **descubrimiento** está resuelto y demostrado — se
+rastrea lo que se pide, en horas. El de **valoración** sigue abierto: seis URLs
+rastreadas y aún sin indexar. Ahí no hay palanca técnica; son enlaces y
+contenido. Próxima medición útil: cuando «Páginas» refresque su fecha.
