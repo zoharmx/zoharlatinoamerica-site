@@ -81,6 +81,10 @@ mkdir -p "$DIR"
 SLUG="$SLUG" ANIO="$ANIO" NOMBRE="$NOMBRE" TITULO="$TITULO" NUEVO="$NUEVO" \
 HOST="$HOST" HOY="$HOY" ACTUAL="$ACTUAL" NOMBRE_ACTUAL="$NOMBRE_ACTUAL" \
 perl -0pe '
+  # La saliente puede estar en CRLF (Windows). Todas las anclas de abajo son
+  # \n: si no se normaliza primero, el vaciado del cuerpo falla en silencio y
+  # la pagina nueva se publica con el texto de la semana pasada.
+  s{\r\n}{\n}g;
   my ($nuevo,$host,$hoy)   = (@ENV{qw(NUEVO HOST HOY)});
   my ($nombre,$titulo)     = (@ENV{qw(NOMBRE TITULO)});
   my ($actual,$nomactual)  = (@ENV{qw(ACTUAL NOMBRE_ACTUAL)});
@@ -142,7 +146,7 @@ if ! grep -q 'class="archivo-aviso"' "$FUENTE"; then
   NOMBRE_ACTUAL="$NOMBRE_ACTUAL" ANIO_ACTUAL="$ANIO_ACTUAL" perl -0pi -e '
     # CSS de la banda, si la pagina no la traia (era la entrega vigente)
     s{(\.archivo \{)}{.archivo-aviso {\n  background: var(--hueso); border-bottom: 1px solid rgba(184,146,42,.35);\n  text-align: center; padding: .8rem 1.2rem;\n  font-family: '"'"'Source Sans 3'"'"', sans-serif; font-size: .82rem; letter-spacing: .03em;\n}\n.archivo-aviso a { font-weight: 600; }\n$1};
-    s{(\n<header class="cabecera">)}{\n<p class="archivo-aviso">Esta es la entrega archivada de $ENV{NOMBRE_ACTUAL} ($ENV{ANIO_ACTUAL}). <a href="/parasha/">Lee la parashá de esta semana &rarr;</a></p>\n$1};
+    s{(\r?\n<header class="cabecera">)}{\n<p class="archivo-aviso">Esta es la entrega archivada de $ENV{NOMBRE_ACTUAL} ($ENV{ANIO_ACTUAL}). <a href="/parasha/">Lee la parashá de esta semana &rarr;</a></p>$1};
   ' "$FUENTE"
   echo "  archivada $ACTUAL (banda de aviso anadida)"
 else
@@ -169,20 +173,44 @@ NUEVO="$NUEVO" HOST="$HOST" NOMBRE="$NOMBRE" ANIO="$ANIO" TITULO="$TITULO" perl 
   my ($nuevo,$host,$nombre,$anio,$titulo) = (@ENV{qw(NUEVO HOST NOMBRE ANIO TITULO)});
 
   # ItemList: entra en posicion 1 y se renumera todo el bloque.
-  s{("itemListElement":\s*\[\n)}
+  s{("itemListElement":\s*\[\r?\n)}
    {$1        {\n          "\@type": "ListItem",\n          "position": 1,\n          "url": "$host$nuevo",\n          "name": "$nombre ($anio)"\n        },\n};
   my $n = 0;
   s{("position":\s*)\d+}{$1 . ++$n}ge;
 
   # Listado visible: la ficha anterior deja de ser "esta semana".
-  s{<a class="entrada actual" href="([^"]+)">\s*\n\s*<span class="etiqueta-actual">[^<]*</span>\n}
-   {<a class="entrada" href="$1">\n}s;
+  s{<a class="entrada actual" href="([^"]+)">\s*<span class="etiqueta-actual">[^<]*</span>\s*}
+   {<a class="entrada" href="$1">\n    }s;
 
   # Ficha nueva al principio del listado.
-  s{(<main>\n\n)}
+  s{(<main>\r?\n\r?\n)}
    {$1  <a class="entrada actual" href="$nuevo">\n    <span class="etiqueta-actual">Esta semana</span>\n    <p class="heb">TODO — nombre en hebreo</p>\n    <h2>$titulo</h2>\n    <p class="meta">TODO — fecha hebrea · fecha civil</p>\n    <p class="resumen">TODO — resumen de dos lineas.</p>\n    <span class="flecha">Leer &rarr;</span>\n  </a>\n\n};
 ' "$ARCHIVO"
 echo "  $ARCHIVO: ficha e ItemList actualizados"
+
+# ------------------------------------------- 4b. verificacion de los pasos
+# Toda edicion de arriba es un perl -0pi que no falla si la regex no casa.
+# Sin este bloque, un final de linea distinto convierte el script en un
+# no-op silencioso y la entrega sale con el texto de la semana pasada.
+fallos=0
+verifica() {  # verifica <descripcion> <patron> <fichero>
+  grep -qF "$2" "$3" || { echo "  ERROR: $1" >&2; fallos=$((fallos+1)); }
+}
+verifica "el cuerpo de $DIR/index.html no se vacio (quedo el texto de $NOMBRE_ACTUAL)" \
+         'TODO — comentario de la semana' "$DIR/index.html"
+verifica "$FUENTE no quedo marcada como archivada" \
+         'class="archivo-aviso"' "$FUENTE"
+verifica "vercel.json no apunta a $NUEVO" "$NUEVO" vercel.json
+verifica "ensayo/index.html no apunta a $NUEVO" "$NUEVO" ensayo/index.html
+verifica "$ARCHIVO no recibio la ficha nueva" "$NUEVO" "$ARCHIVO"
+verifica "$ARCHIVO no recibio los marcadores TODO de la ficha" \
+         'TODO — resumen de dos lineas.' "$ARCHIVO"
+if [ "$fallos" -gt 0 ]; then
+  echo >&2
+  echo "$fallos paso(s) no se aplicaron. Revisa los finales de linea (CRLF vs LF)" >&2
+  echo "de los ficheros afectados y vuelve a correr con el arbol limpio." >&2
+  exit 1
+fi
 
 # ------------------------------------------------------- 5. sitemap
 echo

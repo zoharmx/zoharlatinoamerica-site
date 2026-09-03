@@ -66,8 +66,18 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
 | 15 ago 2026 | **Shoftim** ✅ | 2 de Elul — entregada el 12 ago en `/parasha/shoftim-5786/`; arranca la serie de teshuvá; video pendiente |
 | 22 ago 2026 | **Ki Teitzei** ✅ | 9 de Elul — entregada el 20 ago (2 días antes) en `/parasha/ki-teitzei-5786/`; video pendiente |
 | 29 ago 2026 | **Ki Tavó** ✅ | 16 de Elul — entregada el 28 ago (víspera del Shabat) en `/parasha/ki-tavo-5786/`; Devarim 26:1–29:8 · Haftará Yeshayahu 60:1–22 (sexta de consuelo); video pendiente |
-| 5 sep 2026 | **Nitzavim-Vayeilej** | 23 de Elul — Devarim 29:9–31:30 · Haftará Yeshayahu 61:10–63:9 (séptima de consuelo) |
-| 12 sep 2026 | **Rosh Hashaná 5787** | 1 de Tishrei — cierre del año; la entrega de Nitzavim-Vayeilej es la última del ciclo 5786 |
+| 5 sep 2026 | **Nitzavim-Vayeilej** ✅ | 23 de Elul — entregada el 2 sep (3 días antes) en `/parasha/nitzavim-vayelech-5786/`; Devarim 29:9–31:30 · Haftará Yeshayahu 61:10–63:9 (séptima de consuelo); **última entrega del ciclo 5786**; video pendiente |
+| 12 sep 2026 | **Rosh Hashaná 5787** | 1 de Tishrei — **cae en Shabat**: por eso Nitzavim y Vayeilej se leen juntas (SA OJ 428:4) y el primer día no se toca el shofar (SA OJ 588:5). Empieza el ciclo 5787: posición 11/19, **año bisiesto** |
+
+> **Lección de Nitzavim-Vayeilej (2 sep 2026):** `nueva-parasha.sh` usa `perl
+> -0pi`, que **no falla cuando la regex no casa**. Con ficheros en CRLF, las
+> anclas `\n` convertían pasos enteros en no-ops silenciosos — la página nueva
+> salió una vez con el texto completo de la semana anterior y el script dijo
+> «hecho». Ya está corregido (normalización a LF + anclas `\r?\n` + bloque de
+> verificación 4b que sale con error). Regla general: **el gate `grep -n TODO`
+> sólo prueba que se rellenaron los huecos que el script logró abrir, no que
+> el script haya hecho su trabajo.** Antes de commitear, leer siempre el
+> `git diff` de los ficheros que el script dice haber tocado.
 
 > **Lección de Reé (atrasada):** publicar **antes** del Shabat de la lectura.
 > Si una entrega se atrasa, publicarla igual en cuanto se pueda — `datePublished`

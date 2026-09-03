@@ -485,3 +485,68 @@ la solicitud es fuerte, pero es correlación: Google no explica sus decisiones.
 rastrea lo que se pide, en horas. El de **valoración** sigue abierto: seis URLs
 rastreadas y aún sin indexar. Ahí no hay palanca técnica; son enlaces y
 contenido. Próxima medición útil: cuando «Páginas» refresque su fecha.
+
+---
+
+## Entrega del 2 sep 2026 — Nitzavim-Vayeilej 5786 (última del ciclo)
+
+**Publicada tres días antes del Shabat de la lectura** (5 sep 2026, 23 de
+Elul). Permalink: `/parasha/nitzavim-vayelech-5786/`. Cierra la serie de Elul
+y el año 5786: el Shabat siguiente es Rosh Hashaná 5787.
+
+**Verificación previa (regla de la casa: ninguna cita de memoria).** Lecturas
+y fechas por Hebcal (geonameid 3995465, Monterrey): Devarim 29:9–31:30,
+haftará Yeshayahu 61:10–63:9, séptima de consuelo; Leil Selijot al salir ese
+mismo Shabat. Posición del Gran Ciclo **leída** de `gran_ciclo_hebreo.db`:
+ciclo 305, posición 10/19, cuadrante 4, año común, mazal ♍ Betulá, luna
+menguante; y la fila de Rosh Hashaná 5787 (12 sep 2026) confirma **Shabat**,
+posición 11/19 y **año bisiesto**. Todas las citas contra la API de Sefaria
+antes de escribir: Rashi 29:9 / 29:12 / 29:14 / 30:3 / 31:2 / 31:12, Tanjumá
+Nitzavim 1, Bavá Metziá 59b, Jaguigá 3a, Meguilá 29a, Sotá 13b, Mishná Rosh
+Hashaná 4:1, Shulján Aruj OJ 428:4 y 588:5, Mishná Berurá 428:8 y 428:10,
+Zohar Vayeilej, Yeshayahu 61:10 / 62:4–5 / 63:9.
+
+**Trampa del Zohar, otra vez.** El índice de Sefaria **no tiene sección
+Nitzavim** — sí tiene **Vayeilej**, y ahí está el pasaje que da la clave
+astronómica de la semana («se recogió el cuerpo del sol y salió el cuerpo de
+la luna»). No se forzó la referencia: se citó la sección que existe.
+
+**Hallazgo de calendario que se usó como diferenciador.** Por qué este año son
+*dos* parashiot y no una: Nitzavim se lee siempre antes de Rosh Hashaná; si el
+año nuevo cae lunes o martes hay dos Shabatot entre Rosh Hashaná y Sukot y hay
+que partirlas, si cae más tarde se unen (SA OJ 428:4; MB 428:8). Rosh Hashaná
+5787 cae en **Shabat** → se leen juntas. Y como cae en Shabat, **el primer día
+no se toca el shofar** (Mishná RH 4:1; SA OJ 588:5), justo cuando la
+nemotecnia de la lectura es *kumu utkú*, «levántense y toquen» (MB 428:10).
+Es el tipo de dato que sólo sale cruzando la halajá con la fila de la base —
+exactamente el activo que el sitio no estaba explotando.
+
+### Bug del motor encontrado y corregido: `nueva-parasha.sh` era un no-op silencioso en CRLF
+
+`parasha/archivo/index.html` y `parasha/ki-tavo-5786/index.html` están en el
+árbol de trabajo con **CRLF** (autocrlf), y todas las regex del script anclan
+en `\n`. Consecuencias en la primera corrida:
+
+1. **El vaciado del cuerpo no se aplicó**: la página nueva se generó con el
+   **texto íntegro de Ki Tavó** bajo el título de Nitzavim, y el script
+   reportó «7 marcadores TODO» — ninguno en el cuerpo. Un humano que hubiera
+   rellenado esos 7 TODO habría publicado la parashá pasada como si fuera la
+   nueva.
+2. **El paso 4 no tocó `parasha/archivo/index.html`**: ni ficha nueva, ni
+   ItemList, ni quitar «Esta semana» de la entrega saliente. El script imprimió
+   «ficha e ItemList actualizados» igual, y «0 TODO» en el archivo — el gate de
+   TODO daba verde justamente porque el paso había fallado.
+
+`perl -0pi` no falla cuando la regex no casa, así que todo esto era invisible.
+
+**Corregido en el script:** (a) la saliente se normaliza a LF (`s{\r\n}{\n}g`)
+antes de generar la página nueva; (b) las anclas de las ediciones in situ
+pasan a `\r?\n`; (c) se añade un **bloque de verificación 4b** que comprueba
+las seis marcas esperadas (cuerpo vaciado, banda de archivado, vercel.json,
+ensayo, ficha del archivo y sus TODO) y **sale con código 1** enumerando los
+pasos que no se aplicaron. La corrida limpia posterior dio 11 TODO en la
+página y 3 en el archivo, que es el número correcto.
+
+**Lección para el pipeline:** el gate `grep -n TODO` sólo prueba que se
+rellenaron los huecos que el script *logró* abrir. No prueba que el script
+haya hecho su trabajo. De ahí el bloque 4b.
