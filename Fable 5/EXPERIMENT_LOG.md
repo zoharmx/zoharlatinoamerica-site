@@ -550,3 +550,50 @@ página y 3 en el archivo, que es el número correcto.
 **Lección para el pipeline:** el gate `grep -n TODO` sólo prueba que se
 rellenaron los huecos que el script *logró* abrir. No prueba que el script
 haya hecho su trabajo. De ahí el bloque 4b.
+
+---
+
+## Haazinu 5787 — entregada el 13 sep 2026 (Rosh Hashaná II), 6 días antes del Shabat
+
+**Qué semana era.** Rosh Hashaná 5787 cayó en Shabat (12 sep), así que la
+«parashá de la semana de Rosh Hashaná» no es una lectura del propio Rosh
+Hashaná sino la del Shabat siguiente: **Haazinu, 8 de Tishrei, Shabat Shuvá**
+(Hebcal leyning: Devarim 32:1–52; haftará Hoshea 14:2–10 + Yoel 2:15–27,
+sefaradí Hoshea + Mijá 7:18–20). Primera entrega del año 5787 y primera con
+slug de año nuevo: `/parasha/haazinu-5787/`.
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Haazinu 19 sep; Tzom Guedaliá lunes 14 sep (no
+  desplazado); Yom Kipur lunes 21 sep; Sukot I Shabat 26 sep; Bereshit 10 oct.
+- `gran_ciclo_hebreo.db` (leído): 8 Tishrei 5787 → ciclo 305 (AM 5777–5795),
+  posición 11/19, cuadrante 4, bisiesto, 385 días; mazal ♎ Moznáim (derivado
+  de am_month 7); luna gibosa creciente; 15 Tishrei Shabat luna llena; 15 Nisán
+  5787 = jueves 22 abr 2027.
+- **Dato «sólo aquí» calculado sobre la base completa:** años que empiezan en
+  Shabat y duran 385 días = **283 de 6.004**; el anterior AM 5763 (sáb 7 sep
+  2002), el siguiente AM 5814 (sáb 13 sep 2053). 385 es la duración máxima de
+  la base (conjunto de longitudes: 353, 354, 355, 383, 384, 385).
+- Sefaria: Devarim 32 (JPS + Masorá); Rashi 32:1, 2, 4, 7, 11, 15, 44, 47, 48,
+  52; Sifrei Devarim 306 (incluido «los mandamientos dados desde el cielo: el
+  cálculo de los bisiestos y la fijación de los meses») y 336; Zohar Haazinu
+  (arameo + Soncino) e Idrá Zutá (arameo); Rosh Hashaná 8a, 8b, 16b, 18a;
+  Yomá 86a–b; Yerushalmi Peá 1:1 (Rabí Maná: «y si está vacía, es de ustedes»);
+  Rambam Hiljot Teshuvá 3:4; Hoshea 14, Yoel 2, Mijá 7.
+
+**Correcciones hechas en la relectura contra las fuentes (antes del commit):**
+1. «El único Shabat que cae dentro de los diez días» — falso *este* año: el
+   1 de Tishrei también fue Shabat. Retirado.
+2. «Ocho siglos después, sin citar el Zohar, el Rambam…» — cronología que la
+   entrega no tiene por qué afirmar (y discutible en ambos sentidos). Retirado.
+3. «A tres días de Yom Kipur» → dos (Shabat 19 → lunes 21).
+4. Rashi 32:11: «la flecha que viene de abajo» y 32:47 «Timná, hija de
+   príncipes» no están en Rashi. Reformulados a lo que el texto dice.
+5. og:image heredado apuntaba al thumbnail del video de *otra* semana (el mismo
+   `pfRQjh97G7o` estaba en 6 entregas). Esta entrega usa `/assets/logo.png`
+   hasta que el humano suba el video. Las 6 anteriores no se tocaron.
+
+**Trampa del Zohar, esta vez al revés:** Sefaria sí tiene sección Ha'Azinu, y la
+Idrá Zutá es un nodo aparte del índice aunque en las ediciones impresas está
+dentro de la parashá. La traducción inglesa de la comunidad de la Idrá Zutá
+tiene vacíos los segmentos 1–4 (justo la escena de la muerte de Rabí Shimón):
+se tradujo del arameo y sólo lo que dice.

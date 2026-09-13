@@ -68,6 +68,8 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
 | 29 ago 2026 | **Ki Tavó** ✅ | 16 de Elul — entregada el 28 ago (víspera del Shabat) en `/parasha/ki-tavo-5786/`; Devarim 26:1–29:8 · Haftará Yeshayahu 60:1–22 (sexta de consuelo); video pendiente |
 | 5 sep 2026 | **Nitzavim-Vayeilej** ✅ | 23 de Elul — entregada el 2 sep (3 días antes) en `/parasha/nitzavim-vayelech-5786/`; Devarim 29:9–31:30 · Haftará Yeshayahu 61:10–63:9 (séptima de consuelo); **última entrega del ciclo 5786**; video pendiente |
 | 12 sep 2026 | **Rosh Hashaná 5787** | 1 de Tishrei — **cae en Shabat**: por eso Nitzavim y Vayeilej se leen juntas (SA OJ 428:4) y el primer día no se toca el shofar (SA OJ 588:5). Empieza el ciclo 5787: posición 11/19, **año bisiesto** |
+| 19 sep 2026 | **Haazinu** ✅ | 8 de Tishrei 5787, **Shabat Shuvá** — entregada el 13 sep (Rosh Hashaná II, 6 días antes) en `/parasha/haazinu-5787/`; Devarim 32:1–52 · Haftará Hoshea 14:2–10 + Yoel 2:15–27 (sefaradí: + Mijá 7:18–20); **primera entrega del ciclo 5787**; año de 385 días que empieza en Shabat (283/6004; anterior AM 5763, siguiente AM 5814); video pendiente |
+| 26 sep 2026 | *(Sukot I — sin parashá)* | 15 de Tishrei, Shabat con luna llena. La siguiente parashá ordinaria es **Bereshit**, 10 oct 2026 (Hebcal) |
 
 > **Lección de Nitzavim-Vayeilej (2 sep 2026):** `nueva-parasha.sh` usa `perl
 > -0pi`, que **no falla cuando la regex no casa**. Con ficheros en CRLF, las
