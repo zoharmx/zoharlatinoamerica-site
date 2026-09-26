@@ -597,3 +597,75 @@ Idrá Zutá es un nodo aparte del índice aunque en las ediciones impresas está
 dentro de la parashá. La traducción inglesa de la comunidad de la Idrá Zutá
 tiene vacíos los segmentos 1–4 (justo la escena de la muerte de Rabí Shimón):
 se tradujo del arameo y sólo lo que dice.
+
+---
+
+## Vezot HaBerajá 5787 — entregada el 26 sep 2026 (Sucot I), 8 días antes de Simjat Torá
+
+**Qué semana era, y por qué esta parashá y no Bereshit.** Entre Yom Kipur y
+Bereshit no hay Shabat con parashá ordinaria: Sukot I (26 sep) y Shminí Atzeret
+(3 oct) caen ambos en Shabat. La siguiente lectura de una parashá es
+**Vezot HaBerajá, en Simjat Torá, domingo 4 oct** (diáspora). Se eligió
+entregarla a ella y no adelantar Bereshit dos semanas: (a) es la lectura que
+viene de verdad, así que `/parasha/` vuelve a decir la verdad —llevaba una
+semana apuntando a Haazinu, ya leída—; (b) cierra la serie de Devarim, que el
+sitio comentó completa; (c) Bereshit conserva su semana (entrega siguiente,
+slug `bereshit-5787`).
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Sukot I–II 26–27 sep; Hoshaná Rabá 2 oct;
+  Shminí Atzeret Shabat 3 oct; Simjat Torá domingo 4 oct — Devarim 33:1–34:12,
+  Bereshit 1:1–2:3, Bamidbar 29:35–30:1; haftará Yehoshúa 1:1–18; Bereshit
+  10 oct (Shabat Majar Jódesh, haftará I Shmuel 20:18–42); Nóaj 17 oct.
+- `gran_ciclo_hebreo.db` (leído): 15/22/23/29 Tishrei 5787 → ciclo 305,
+  posición 11/19, cuadrante 4, bisiesto; lunas llena / cuarto menguante /
+  menguante / menguante; mazal ♎ Moznáim (am_month 7).
+- **Datos «sólo aquí» calculados sobre la base completa:** el 23 de Tishrei
+  cae viernes 1.915, domingo 1.715, martes 1.684, miércoles 690, **Shabat 0**
+  (efecto de *lo ADU Rosh*, SA OJ 428:1); el 22 de Tishrei cae en Shabat en
+  1.715 años. 385 es la única longitud de año divisible por 7 (967 años), así
+  que 5788 vuelve a empezar en Shabat (2 oct 2027; su Shminí Atzeret, 23 oct
+  2027). Pares consecutivos con Rosh Hashaná en Shabat: 283 — coincide con el
+  recuento de Haazinu (años de 385 días que empiezan en Shabat), como debe;
+  anterior 5763–5764, próximo 5814–5815.
+- Sefaria: Devarim 33–34 (JPS); Rashi 33:1, 2, 4, 7; 34:5, 6, 7, 8, 10, 12;
+  Rashi Vayikrá 23:36; Sotá 14a; Bavá Batrá 15a; Menajot 30a; Sucá 42a y 55b;
+  Meguilá 31a; Shabat 87a; Bereshit Rabá 1:10; SA OJ 428:1; Yehoshúa 1:1–9;
+  Zohar Vayejí 57:553–559 (arameo + Soncino) y Emor 43:270–284 (arameo +
+  Soncino).
+
+**Trampa del Zohar, tercera variante:** el índice de Sefaria no tiene sección
+Vezot HaBerakhah. Se buscó con `api/links` sobre Devarim 33:1, 33:4, 34:5,
+34:6, 34:10 y 34:12. Varios enlaces (Terumá 54, Ki Teitzei 17) no tienen
+traducción inglesa y son Raaya Mehemna; se descartaron. Se citó Vayejí 57, que
+comenta 33:1 y además resuelve 33:7 (Shimón escondido en Yehudá, lo mismo que
+Rashi), y Emor 43 para la sucá.
+
+**Correcciones hechas en la relectura (antes del commit):**
+1. «En el mismo rollo, sin cerrar la mano, se sigue con Bereshit» y «el mismo
+   lector enrolla el final y abre el principio» — falso: Bereshit se lee
+   habitualmente en un segundo rollo y por otro lector (el final y el principio
+   tienen cada uno su honor). Reformulado a «en la misma mañana».
+2. «Al día siguiente empieza Jeshván» (del Shabat 10 oct) — el 30 de Tishrei es
+   Rosh Jódesh pero sigue siendo Tishrei; en la base conserva mazal Moznáim.
+   Reformulado.
+3. «Rabí Meír» objeta en Rashi (vía Sifrei); en Bavá Batrá 15a quien objeta es
+   **Rabí Shimón**. Se cita la Guemará con su nombre y se aclara la diferencia.
+4. La haftará que prescribe Meguilá 31a («Y se paró Shlomó») no es la que hoy
+   se lee (Yehoshúa 1). Se dicen las dos cosas, sin inventar el porqué del cambio.
+
+### Deudas cerradas en la misma sesión
+- **og:image heredado** (deuda registrada desde Ki Tavó): las seis entregas
+  sin video (Ékev → Nitzavim-Vayeilej) pasan a `/assets/logo.png` en og:image y
+  en el `image` del JSON-LD. Commit aparte.
+- ItemList del archivo: «Haazinu (5787)» no tenía subtítulo como las demás; se
+  corrigió junto con la ficha nueva.
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Vezot HaBerajá (doctrina y fuentes).
+2. **Search Console** (cuenta `zoharlatinoamerica@`): reenviar
+   `sitemap.xml` y solicitar indexación de `/parasha/vezot-haberaja-5787/` y
+   de `/parasha/haazinu-5787/`. Quitar el `sitemap.rss` muerto (404).
+3. Video (guion listo) — publicar jueves 1 o viernes 2 oct. Siguen sin video
+   Ékev → Haazinu.
+4. Newsletter y guía a miembros, martes 29 o miércoles 30 sep.

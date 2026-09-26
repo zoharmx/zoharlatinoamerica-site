@@ -70,6 +70,9 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
 | 12 sep 2026 | **Rosh Hashaná 5787** | 1 de Tishrei — **cae en Shabat**: por eso Nitzavim y Vayeilej se leen juntas (SA OJ 428:4) y el primer día no se toca el shofar (SA OJ 588:5). Empieza el ciclo 5787: posición 11/19, **año bisiesto** |
 | 19 sep 2026 | **Haazinu** ✅ | 8 de Tishrei 5787, **Shabat Shuvá** — entregada el 13 sep (Rosh Hashaná II, 6 días antes) en `/parasha/haazinu-5787/`; Devarim 32:1–52 · Haftará Hoshea 14:2–10 + Yoel 2:15–27 (sefaradí: + Mijá 7:18–20); **primera entrega del ciclo 5787**; año de 385 días que empieza en Shabat (283/6004; anterior AM 5763, siguiente AM 5814); video pendiente |
 | 26 sep 2026 | *(Sukot I — sin parashá)* | 15 de Tishrei, Shabat con luna llena. La siguiente parashá ordinaria es **Bereshit**, 10 oct 2026 (Hebcal) |
+| 4 oct 2026 (domingo) | **Vezot HaBerajá** ✅ | 23 de Tishrei, **Simjat Torá** (diáspora) — entregada el 26 sep (Sucot I, 8 días antes) en `/parasha/vezot-haberaja-5787/`; Devarim 33:1–34:12 + Bereshit 1:1–2:3 · Haftará Yehoshúa 1:1–18; la única parashá sin Shabat propio (el 23 de Tishrei cae en Shabat 0 veces en 6.004 años); cierra la serie de Devarim; video pendiente |
+| 10 oct 2026 | **Bereshit** | 29 de Tishrei, Shabat Majar Jódesh — Bereshit 1:1–6:8 · Haftará I Shmuel 20:18–42. **Siguiente entrega.** Slug `bereshit-5787` |
+| 17 oct 2026 | **Nóaj** | 6 de Jeshván — Bereshit 6:9–11:32 · Haftará Yeshayahu 54:1–55:5 |
 
 > **Lección de Nitzavim-Vayeilej (2 sep 2026):** `nueva-parasha.sh` usa `perl
 > -0pi`, que **no falla cuando la regex no casa**. Con ficheros en CRLF, las
