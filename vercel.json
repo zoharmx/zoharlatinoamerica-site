@@ -20,10 +20,10 @@
     { "source": "/youtube/", "destination": "https://www.youtube.com/channel/UCxBItTOHMtkunnfBugXFtAg", "permanent": false },
     { "source": "/facebook", "destination": "https://www.facebook.com/Zoharlatinoamericaescuela", "permanent": false },
     { "source": "/facebook/", "destination": "https://www.facebook.com/Zoharlatinoamericaescuela", "permanent": false },
-    { "source": "/calendario", "destination": "https://calendar-app-eight-eta.vercel.app", "permanent": false },
-    { "source": "/calendario/", "destination": "https://calendar-app-eight-eta.vercel.app", "permanent": false },
-    { "source": "/zivug", "destination": "https://calendar-app-eight-eta.vercel.app/mazal", "permanent": false },
-    { "source": "/zivug/", "destination": "https://calendar-app-eight-eta.vercel.app/mazal", "permanent": false }
+    { "source": "/calendario", "destination": "https://calendario.zoharlatinoamerica.site", "permanent": false },
+    { "source": "/calendario/", "destination": "https://calendario.zoharlatinoamerica.site", "permanent": false },
+    { "source": "/zivug", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false },
+    { "source": "/zivug/", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false }
   ],
   "headers": [
     {

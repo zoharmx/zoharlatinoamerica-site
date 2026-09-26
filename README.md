@@ -14,9 +14,9 @@ Un portal de captación construido alrededor de un video de YouTube con tráfico
 | Portal | `/` | Hero, película embebida, índice del ensayo, acceso a las herramientas, captura de email |
 | Ensayo | `/ensayo/` | *Sefarad como Pardés Invertido* completo, 14 capítulos |
 | Biblioteca | `/biblioteca/` | Índice curado de parashiot del Zohar, Tanaj, Talmud y Midrash — enlaza a Sefaria, no aloja contenido con copyright |
-| Gran Ciclo Hebreo | `/calendario` (redirect) | Calendario interactivo de 6.004 años — proyecto Vercel separado (`calendar-app-eight-eta`) |
+| Gran Ciclo Hebreo | `/calendario` (redirect) | Calendario interactivo de 6.004 años en `calendario.zoharlatinoamerica.site` — proyecto Vercel separado (`calendar-app`); el espejo `calendar-app-eight-eta.vercel.app` lleva noindex |
 | Parashá | `/parasha/<slug>-<año>/` | Comentario semanal, una URL permanente por entrega. `/parasha/` es un redirect 302 a la vigente; el índice está en `/parasha/archivo/` |
-| Zivug | `/zivug` (redirect) | Carta personal hebrea — ruta `/mazal` del mismo proyecto Vercel del calendario (`calendar-app-eight-eta`) |
+| Zivug | `/zivug` (redirect) | Carta personal hebrea — `calendario.zoharlatinoamerica.site/mazal`, mismo proyecto Vercel del calendario |
 
 ## Por qué no tiene build
 

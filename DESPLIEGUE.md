@@ -54,7 +54,18 @@ npx vercel --prod
 
 ## Paso 3 — Un solo dominio para todo (subdominios)
 
-**Estado: pendiente de ejecutar.** Se contempló en julio de 2026 y nunca se hizo. Es la
+**Estado: ✅ ACTIVO desde el 26 sep 2026.** Registro `A calendario → 76.76.21.21`
+creado en Hostinger; certificado emitido con `vercel certs issue` (Vercel no lo
+emitió solo en los primeros 5 minutos); `/`, `/mazal`, `/zivug`, `/metodologia`
+y `/api/calendar/today` dan 200 en el subdominio. Redirects del portal y los
+enlaces de `index.html` y `biblioteca/index.html` —incluidos el iframe de
+`/mazal?embed=1`, el `fetch` de «hoy» y el origen permitido del `postMessage`—
+apuntan ya al subdominio. La app tiene canonical por ruta, `robots.txt`,
+`sitemap.xml`, GTM y `/privacidad`. **Pendiente:** pasar los redirects a 301
+cuando lleven semanas estables (3.4) y enviar el sitemap del subdominio en
+Search Console (3.5). Lo que sigue queda como registro de cómo se planeó.
+
+**Estado original (julio 2026): pendiente de ejecutar.** Es la
 tarea con más valor SEO sin hacer del proyecto: hoy `/calendario` y `/zivug` son
 redirects 307 hacia `*.vercel.app`, así que el Gran Ciclo Hebreo y Zivug — los dos
 activos que nadie más tiene en español — acumulan toda su autoridad en dominios que no
