@@ -131,7 +131,15 @@ Cuando los subdominios lleven semanas estables, esos redirects pueden pasar de 3
   nofollow` condicionado a ese host, en `vercel.json` de `zoharmx/calendar-app`. Se
   activa en el primer deploy que corra desde el repo (ver 3.6).
 
-### 3.6 — Deploy automático del calendario: falta un permiso
+### 3.6 — Deploy automático del calendario — ✅ FUNCIONA (verificado el 26 sep 2026)
+
+El `git subtree push` del 26 de septiembre (9e00145..50334bf) disparó solo el
+deploy de producción `calendar-ke9omgh09`, READY en 50 s: la GitHub App de
+Vercel ya tiene acceso al repo. Antes de empujar, correr las cuatro suites
+(`npm run test:golden|test:zivug|test:tz|test:coherence`). Lo que sigue queda
+como historia de cómo se resolvió.
+
+#### (histórico) Falta un permiso
 
 El push a `zoharmx/calendar-app` **no disparó deploy**. La conexión Vercel↔Git está
 hecha, pero la GitHub App de Vercel todavía no tiene acceso al repositorio, que es
