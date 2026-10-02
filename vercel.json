@@ -22,8 +22,12 @@
     { "source": "/facebook/", "destination": "https://www.facebook.com/Zoharlatinoamericaescuela", "permanent": false },
     { "source": "/calendario", "destination": "https://calendario.zoharlatinoamerica.site", "permanent": false },
     { "source": "/calendario/", "destination": "https://calendario.zoharlatinoamerica.site", "permanent": false },
-    { "source": "/zivug", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false },
-    { "source": "/zivug/", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false }
+    { "source": "/zivug", "destination": "https://calendario.zoharlatinoamerica.site/zivug", "permanent": false },
+    { "source": "/zivug/", "destination": "https://calendario.zoharlatinoamerica.site/zivug", "permanent": false },
+    { "source": "/carta", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false },
+    { "source": "/carta/", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false },
+    { "source": "/mazal", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false },
+    { "source": "/mazal/", "destination": "https://calendario.zoharlatinoamerica.site/mazal", "permanent": false }
   ],
   "headers": [
     {
