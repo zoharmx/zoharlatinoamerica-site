@@ -669,3 +669,46 @@ Rashi), y Emor 43 para la sucá.
 3. Video (guion listo) — publicar jueves 1 o viernes 2 oct. Siguen sin video
    Ékev → Haazinu.
 4. Newsletter y guía a miembros, martes 29 o miércoles 30 sep.
+
+---
+
+## Bereshit 5787 — entregada el 2 oct 2026 (Hoshaná Rabá), 8 días antes del Shabat
+
+Primera parashá del ciclo de lectura nuevo. Shabat 10 oct = 29 de Tishrei,
+**Shabat Majar Jódesh** (Rosh Jódesh Jeshván domingo 11 y lunes 12).
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Bereshit 1:1–6:8; haftará I Shmuel 20:18–42;
+  molad de Jeshván domingo 9:43 + 2 jalakim; Rosh Jódesh 11–12 oct; Nóaj 17 oct.
+- `gran_ciclo_hebreo.db` (leído): 29–30 Tishrei menguante, 1 Jeshván nueva;
+  mazal ♎ Moznáim hasta el 30, ♏ Akráv el 1 de Jeshván; 5787 con 55 Shabatot.
+- **Dato «sólo aquí»:** el Shabat de Bereshit (primer Shabat desde el 24 de
+  Tishrei) cae el 24 (1.915), 26 (690), 27 (1.684) o 29 (1.715). Sólo el 29 es
+  víspera de Rosh Jódesh, y coincide uno a uno con los años de Rosh Hashaná en
+  Shabat (1.715, el mismo número de Vezot HaBerajá). La distribución es igual
+  en Israel y en la diáspora.
+- Sefaria: Rashi 1:1, 1:14, 1:16, 2:2, 3:9, 4:10; Julín 60b (Davidson);
+  Mishná Sanhedrín 4:5; Zohar Bereshit 1:1–2 (arameo + traducción de la
+  comunidad) y 10:111–116 (arameo + Soncino); I Shmuel 20:18.
+
+**Correcciones en la relectura:**
+1. «Niebla» por *kutra* → «humo»: el propio texto vocalizado glosa קוטרא como
+   humo (פירוש עשן).
+2. Retirada la afirmación «la lectura de 5787 tiene sitio para todas sus
+   parashiot»: 55 Shabatot no lo garantiza (fiestas en Shabat, uniones en la
+   diáspora) y no se verificó.
+3. De Sanhedrín 4:5 se citó la razón de la paz y «las sangres», no la frase
+   «quien destruye un alma…»: la versión de Sefaria trae «de Israel», que es
+   variante textual discutida; no se fuerza.
+
+### Portal, en la misma sesión
+- `/zivug` → `calendario.zoharlatinoamerica.site/zivug` (la herramienta de
+  la unión de dos almas); `/carta` y `/mazal` → la carta natal. La tarjeta
+  del portal que llamaba «Zivug» a la carta (con la descripción de 10
+  dimensiones de v1) pasa a «Carta Natal Hebrea» y Zivug tiene la suya.
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Bereshit.
+2. Search Console: reenviar `sitemap.xml` del portal y enviar el del
+   subdominio; pedir indexación de `/parasha/bereshit-5787/`.
+3. Video (guion listo) jueves 8 o viernes 9; newsletter martes 6 o miércoles 7.
