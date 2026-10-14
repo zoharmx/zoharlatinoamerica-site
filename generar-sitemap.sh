@@ -26,6 +26,7 @@ metadatos() {
     /)                      echo "weekly 1.0" ;;
     /ensayo/)               echo "monthly 0.9" ;;
     /biblioteca/)           echo "weekly 0.8" ;;
+    /acerca/)               echo "monthly 0.8" ;;
     /parasha/archivo/)      echo "weekly 0.7" ;;
     /parasha/*/)            echo "yearly 0.6" ;;
     *)                      echo "monthly 0.5" ;;
@@ -79,13 +80,22 @@ for ruta in "${archivos[@]}"; do
   entradas+=("$url	$(fecha_de "$ruta")	$freq	$prio")
 done
 
-# Orden: portada, ensayo, biblioteca, archivo, y despues los permalinks de
-# parasha de mas reciente a mas antiguo.
+# Orden: portada, ensayo, biblioteca, acerca, archivo; despues cualquier otra
+# pagina (antes se descartaba EN SILENCIO todo lo que no fuera una de las fijas
+# o una parasha — asi se perdio /acerca/ el 14 oct 2026); y al final los
+# permalinks de parasha de mas reciente a mas antiguo.
+FIJAS=("/" "/ensayo/" "/biblioteca/" "/acerca/" "/parasha/archivo/")
 ordenadas=()
-for fijo in "/" "/ensayo/" "/biblioteca/" "/parasha/archivo/"; do
+for fijo in "${FIJAS[@]}"; do
   for e in "${entradas[@]}"; do
     [ "${e%%	*}" = "$fijo" ] && ordenadas+=("$e")
   done
+done
+for e in "${entradas[@]}"; do
+  u="${e%%	*}"
+  case " ${FIJAS[*]} " in *" $u "*) continue ;; esac
+  case "$u" in /parasha/*/) continue ;; esac
+  ordenadas+=("$e")
 done
 while IFS= read -r e; do
   [ -n "$e" ] && ordenadas+=("$e")
