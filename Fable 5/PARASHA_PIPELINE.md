@@ -26,7 +26,9 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
    - **Guion de video** (`GUION_VIDEO_...md`): gancho, 4 bloques, cierre con
      CTA, título A/B, miniatura, descripción y comentario fijado.
    - **Newsletter** (`NEWSLETTER_...md`): asunto + cuerpo corto con enlaces.
-3. Commit + push a `main` (deploy automático) + verificación con curl.
+3. Añadir la entrega a la lista de `/acerca/#parasha` (la página de
+   referencia para buscadores e IA; ver SEO.md).
+   Commit + push a `main` (deploy automático) + verificación con curl.
    Después del deploy, en este orden: `./generar-sitemap.sh` (el propio
    commit mueve los `lastmod`), `./indexnow.sh`, y **reenviar el sitemap en
    Search Console** — Google no lo relee solo: el 28-ago-2026 llevaba 41
