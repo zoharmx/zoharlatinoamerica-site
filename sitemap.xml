@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://zoharlatinoamerica.site/ensayo/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -20,19 +20,37 @@
   </url>
   <url>
     <loc>https://zoharlatinoamerica.site/parasha/archivo/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zoharlatinoamerica.site/parasha/noach-5787/</loc>
+    <loc>https://zoharlatinoamerica.site/parasha/bereshit-5787/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zoharlatinoamerica.site/parasha/bereshit-5787/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://zoharlatinoamerica.site/parasha/haazinu-5787/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zoharlatinoamerica.site/parasha/ki-tavo-5786/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zoharlatinoamerica.site/parasha/nitzavim-vayelech-5786/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zoharlatinoamerica.site/parasha/noach-5787/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -49,25 +67,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zoharlatinoamerica.site/parasha/haazinu-5787/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://zoharlatinoamerica.site/parasha/ki-tavo-5786/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://zoharlatinoamerica.site/parasha/ki-teitzei-5786/</loc>
-    <lastmod>2026-09-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://zoharlatinoamerica.site/parasha/nitzavim-vayelech-5786/</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
