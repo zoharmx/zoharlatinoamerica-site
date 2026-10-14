@@ -249,8 +249,9 @@ del año + 11:
 
 Exactamente 365 sólo en los años de 354 días: el año lunar con que Rashi hace
 la cuenta. Proyectado hacia atrás, el calendario fijo pone el comienzo del
-Diluvio el **miércoles 17 de Marjeshván de AM 1656** (9 oct 2105 AEC, fecha
-proléptica), en un año bisiesto de 385 días. **Es una proyección**: el
+Diluvio el **miércoles 17 de Marjeshván de AM 1656** (27 oct 2106 AEC en el
+calendario juliano; 9 oct en el gregoriano proléptico), en un año bisiesto de
+385 días. **Es una proyección**: el
 calendario calculado no regía entonces y, según Rashi, durante ese año los
 astros ni siquiera sirvieron. La base lo presenta como dato de contraste, no
 como fecha histórica.

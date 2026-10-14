@@ -762,13 +762,22 @@ Regla: con números, mandar siempre el texto hebreo, no la traducción.
    corregidas. El enlace a la Biblioteca de Bereshit y Nóaj apuntaba a
    `#zohar-devarim` (heredado de la plantilla): ahora `#zohar-bereshit`.
 
-### Defecto de datos hallado (no corregido en la base)
+### Defecto de datos hallado — corregido el mismo día en la capa de lectura
 `eventos_historicos` id 4 — «la Tierra se seca · Noé sale del Arca (27 Jeshvan
 AM 1657)» — está guardado en **17 de Tishrei** de 1657 (`am_month=7`), y la
 columna `dias.historical` lo repite en esa fila. El 27 de Jeshván de 1657 está
 vacío. 40 días de error. No se citó en la página. Registrado en `CLAUDE.md`
 (raíz de Zivug) como deuda: auditar las 70 filas de `eventos_historicos`
 contra sus propios textos antes de exponerlas como «historia».
+
+**Actualización 14 oct (misma sesión):** auditadas las 70 filas; 24 estaban en
+un día equivocado y 14 tenían texto falso o impreciso (la Primera Cruzada no
+cayó en Tishá BeAv sino el 23 de Tamuz; el eclipse de 2024 fue el 29 de Adar
+II, no el 1 de Nisán). De paso, `greg_str` etiquetaba mal todo año anterior a
+la era común (un año corrido). Corregido en lectura (`hebrew_historicos.py`,
+`hebrew_civil.py`), auditado (`auditoria_calendario.py`, parte 3) y desplegado
+al backend. La guía de Nóaj llevaba esa fecha mal («9 oct 2105 AEC»):
+corregida a 27 oct 2106 AEC juliano / 9 oct gregoriano proléptico.
 
 ### Pendiente del humano esta semana
 1. Checkpoint editorial de Nóaj (doctrina y fuentes).
