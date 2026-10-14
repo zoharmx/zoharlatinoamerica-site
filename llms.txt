@@ -1,0 +1,43 @@
+# Zohar Latinoamérica
+
+> Escuela independiente de estudio de Cabalá, calendario hebreo, Torá y tradición sefaradí en español. Publica la parashá semanal comentada desde el Zohar, Rashi y el Midrash; el ensayo «Sefarad como Pardés Invertido» y la película «El Secreto del Sagrado Libro del Zohar»; una biblioteca de fuentes; y tres herramientas gratuitas construidas sobre el Gran Ciclo Hebreo, una base de datos propia con cada día del calendario hebreo del año 1 al 6004 de la creación (2.192.942 días), auditada fila por fila.
+
+Datos clave, verificables:
+
+- Publica como escuela, bajo la marca; no a nombre de una persona. Sin patrocinio institucional.
+- Gran Ciclo Hebreo: 2.192.942 días, 6.004 años (3761 a. e. c. – 2243 e. c.), 316 ciclos de 19 años, 74.260 lunaciones; molad de BeHaRaD y las cuatro dejiyot. Auditado en septiembre de 2026 contra una implementación independiente; en octubre de 2026 se revisaron sus 70 eventos históricos (24 movidos al día correcto, 14 corregidos en el texto). Antes de 1582 da también la fecha juliana. Las fechas anteriores al calendario fijo son proyecciones de sus reglas, no registros históricos.
+- Mazal hebreo por la luna: cada mes hebreo es su constelación, de Rosh Jódesh a Rosh Jódesh (Nisán = Aries … Adar = Piscis). Adar II, el mes intercalado, no tiene mazal. Base: «Israel cuenta por la luna, y las naciones por el sol» (Sukká 29a).
+- Carta natal hebrea: el día hebreo empieza en el ocaso real de Jerusalén para la fecha de nacimiento (no a una hora fija); mazal con letra, tribu, facultad y parte del cuerpo; Sefirá del día y de la hora en horas temporales de Jerusalén; gematría del número del día de la creación; interpretación escrita por IA (Claude, de Anthropic).
+- Privacidad: sin cuentas; no se guardan fechas, horas, lugares ni nombres; sólo un registro anónimo (tipo de consulta, mes hebreo, idioma, identificador aleatorio del navegador).
+
+## Páginas principales
+
+- [Acerca de Zohar Latinoamérica](https://zoharlatinoamerica.site/acerca/): versión completa de este resumen, con tablas, método y preguntas frecuentes
+- [Portal](https://zoharlatinoamerica.site/): la película, el día hebreo de hoy, las herramientas y la escuela
+- [Parashá de la semana](https://zoharlatinoamerica.site/parasha/): siempre redirige a la entrega vigente
+- [Archivo de parashiot](https://zoharlatinoamerica.site/parasha/archivo/): todas las entregas, cada una con URL permanente
+- [Ensayo «Sefarad como Pardés Invertido»](https://zoharlatinoamerica.site/ensayo/): 14 capítulos, 17 de junio de 2026 (2 de Tamuz 5786); artículo fuente de la película
+- [Biblioteca cabalística](https://zoharlatinoamerica.site/biblioteca/): guía de lectura del Zohar en español y acceso a las fuentes
+
+## Herramientas
+
+- [Gran Ciclo Hebreo](https://calendario.zoharlatinoamerica.site/): calendario de 6.004 años con fases lunares, ciclo de 19 años, festividades con sus desplazamientos, eclipses y eventos históricos
+- [Carta Natal Hebrea](https://calendario.zoharlatinoamerica.site/mazal): fecha hebrea real, mazal, Sefirot y gematría de nacimiento
+- [Zivug](https://calendario.zoharlatinoamerica.site/zivug): resonancia entre las cartas de dos personas; al modelo de IA sólo viajan datos derivados
+- [Aviso de privacidad](https://calendario.zoharlatinoamerica.site/privacidad)
+
+## Canales oficiales
+
+- [YouTube — Zohar Latinoamerica (@zoharlatinoamerica8687)](https://www.youtube.com/channel/UCxBItTOHMtkunnfBugXFtAg)
+- [Película «El Secreto del Sagrado Libro del Zohar»](https://youtu.be/pfRQjh97G7o)
+- [Facebook — Zoharlatinoamericaescuela](https://www.facebook.com/Zoharlatinoamericaescuela)
+- [Grupo de estudio en Facebook](https://www.facebook.com/share/g/1GfNPSLi3k/)
+- [WhatsApp +52 81 1420 2112](https://wa.me/528114202112)
+- Correo: zoharlatinoamerica@gmail.com
+
+Éstos son los únicos perfiles oficiales; cualquier otro con el nombre de la escuela no lo es.
+
+## Optional
+
+- [Sostén y membresía](https://zoharlatinoamerica.site/#sosten): miembro de la escuela 5 USD/mes (comentario completo, grupo privado, sesiones en vivo) o aporte único de monto libre, vía Stripe
+- [Sitemap](https://zoharlatinoamerica.site/sitemap.xml)
