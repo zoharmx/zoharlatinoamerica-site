@@ -127,7 +127,7 @@ perl -0pe '
   </div>
 
   <div class="dato-ciclo">
-    <p class="etiqueta">La posicion en el Gran Ciclo · solo aqui</p>
+    <p class="etiqueta">La posición en el Gran Ciclo · sólo aquí</p>
     <p>TODO — posicion del anio en el ciclo metonico y lectura del calendario.</p>
   </div>
 
@@ -135,7 +135,7 @@ perl -0pe '
 $2}s;
 
   # --- CTA y linea de fuentes
-  s{(<h3>)[^<]*(</h3>)}{$1La guia completa de $nombre, en tu correo$2};
+  s{(<h3>)[^<]*(</h3>)}{$1La guía completa de $nombre, en tu correo$2};
   s{(Fuentes de esta entrega:)[^·]*·[^<]*}{$1 TODO — listado de fuentes citadas.\n    };
 ' "$FUENTE" > "$DIR/index.html"
 

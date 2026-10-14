@@ -712,3 +712,67 @@ Primera parashá del ciclo de lectura nuevo. Shabat 10 oct = 29 de Tishrei,
 2. Search Console: reenviar `sitemap.xml` del portal y enviar el del
    subdominio; pedir indexación de `/parasha/bereshit-5787/`.
 3. Video (guion listo) jueves 8 o viernes 9; newsletter martes 6 o miércoles 7.
+
+---
+
+## Nóaj 5787 — entregada el 14 oct 2026 (3 de Marjeshván), 3 días antes del Shabat
+
+Shabat 17 oct = 6 de Marjeshván, primer Shabat del mes. La salida del Shabat
+abre la noche del 7 de Marjeshván: en Israel empieza la petición de la lluvia.
+Título: «el año en que se detuvo el calendario» (Rashi sobre 8:22: durante el
+Diluvio «no sirvieron los astros»).
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Bereshit 6:9–11:32; haftará Yeshayahu 54:1–55:5,
+  sefaradí 54:1–10; Lej Lejá el 24 oct (Yeshayahu 40:27–41:16). Hebcal **no**
+  publica la fecha de *Tal uMatar* en la diáspora: se describió la regla
+  (SA OJ 117:1) sin dar fecha civil.
+- `gran_ciclo_hebreo.db` (leído): ciclo 305, 11/19, cuarto cuadrante, bisiesto
+  de 385; 6 de Marjeshván creciente, cuarto creciente el 7; ♏ Akráv todo el
+  mes; 17 de Marjeshván = miércoles 28 oct.
+- **Dato «sólo aquí» (1):** Nóaj es siempre el primer Shabat de Marjeshván:
+  el 1 (1.915), 3 (690), 4 (1.684) o 6 (1.715). Sólo con el 6 la salida del
+  Shabat es la noche del 7 — y son exactamente los años de Rosh Hashaná en
+  Shabat (la misma partición que Bereshit y Vezot HaBerajá). Pasó en 5784;
+  pasa en 5787 y 5788 (5787 = 55 semanas exactas).
+- **Dato «sólo aquí» (2):** del 17 de Marjeshván al 27 del año siguiente,
+  inclusive, el calendario fijo da siempre `dias_en_ano + 11`: 364 (602), 365
+  (1.459), 366 (1.731), 394 (929), 395 (315), 396 (967) sobre 6.003. Los 365
+  de Rashi sólo salen en años de 354 días. 5787 daría 396.
+- Sefaria: Bereshit 5:3–28 (suma 1.056) y 7:6; Rashi 6:9, 6:14, 6:16, 7:11,
+  8:14, 8:22, 11:1; Rosh Hashaná 11b–12a (Davidson); Mishná Taanit 1:3; SA OJ
+  117:1; Avot 5:2; Zohar, Nóaj 9:59, 25:180–183 y 35:290–292 (arameo
+  vocalizado + Soncino); Yeshayahu 54:1, 54:9–10.
+
+**Trampa de traducción documentada:** la versión inglesa de Rashi sobre 8:14
+(Rosenbaum-Silbermann) dice «the **ten** days»; el hebreo dice **י"א** —
+once—. Del 17 al 27 son once días contando los extremos. Se tradujo del hebreo.
+Regla: con números, mandar siempre el texto hebreo, no la traducción.
+
+**Correcciones en la relectura (antes del commit):**
+1. «Cinco capítulos» → «casi seis»: la lectura va de 6:9 a 11:32.
+2. «Las dos cuentas del Diluvio» para la lluvia (luna en Israel, sol en la
+   diáspora) era impreciso: Rosh Hashaná 12a distingue la cuenta de los años
+   (Rabí Eliézer) y la de las *tekufot* (Rabí Yehoshúa). Reformulado.
+3. «Equinoccio de otoño» a secas → «la *tekufá* de Tishrei, el equinoccio
+   según el cómputo de los sabios»: el Shulján Aruj habla de la tekufá
+   calculada, no de la astronómica.
+4. Las 4 páginas con «La guia completa» sin tilde (Ki Tavó, Nitzavim-Vayeilej,
+   Haazinu y la nueva) y la plantilla de `nueva-parasha.sh` que lo producía,
+   corregidas. El enlace a la Biblioteca de Bereshit y Nóaj apuntaba a
+   `#zohar-devarim` (heredado de la plantilla): ahora `#zohar-bereshit`.
+
+### Defecto de datos hallado (no corregido en la base)
+`eventos_historicos` id 4 — «la Tierra se seca · Noé sale del Arca (27 Jeshvan
+AM 1657)» — está guardado en **17 de Tishrei** de 1657 (`am_month=7`), y la
+columna `dias.historical` lo repite en esa fila. El 27 de Jeshván de 1657 está
+vacío. 40 días de error. No se citó en la página. Registrado en `CLAUDE.md`
+(raíz de Zivug) como deuda: auditar las 70 filas de `eventos_historicos`
+contra sus propios textos antes de exponerlas como «historia».
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Nóaj (doctrina y fuentes).
+2. Search Console: reenviar `sitemap.xml` y solicitar indexación de
+   `/parasha/noach-5787/`.
+3. Video (guion listo) jueves 15 o viernes 16; newsletter hoy o mañana.
+4. Siguen sin video Ékev → Bereshit.
