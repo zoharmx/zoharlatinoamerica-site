@@ -44,6 +44,26 @@ Ninguno compite por ese nombre exacto: es tu marca, y una vez indexado es muy ga
   descubiertas; el anterior, del builder de Hostinger, era de enero 2025 y descubría 0).
   Las 4 URLs enviadas a la cola de rastreo prioritaria.
 
+## Contexto para buscadores e IA (14 octubre 2026)
+
+- **`/acerca/`**: página pública de referencia con todo el proyecto (escuela,
+  Gran Ciclo y sus auditorías, mazal lunar, herramientas, método y entregas de la
+  parashá, ensayo, película, biblioteca, escuela, privacidad, canales, FAQ, cómo
+  citar). JSON-LD `AboutPage` + organización con `sameAs` + tres `WebApplication`
+  + `FAQPage`. **No es oculta a propósito**: mostrar a los rastreadores algo que la
+  gente no ve (o texto con `display:none`) es *cloaking* y Google penaliza el dominio.
+- **`/llms.txt`** (formato llmstxt.org): el mismo contexto en Markdown para
+  modelos de lenguaje. Google no lo usa oficialmente; otros asistentes sí lo leen.
+- **`robots.txt`** nombra y permite los rastreadores de IA (GPTBot, ClaudeBot,
+  PerplexityBot, Google-Extended…).
+- El handle real de YouTube es **@zoharlatinoamerica8687** (`@zoharlatinoamerica`
+  da 404). Si se consigue el handle limpio en YouTube Studio, cambiarlo en la
+  portada, `/acerca/`, `llms.txt` y el `sameAs`.
+
+**Mantenimiento:** al publicar una parashá nueva, añadirla a la lista de
+`/acerca/#parasha`; si cambia cualquier cifra del Gran Ciclo o un canal, cambiar
+`/acerca/` y `/llms.txt` en el mismo commit.
+
 ## Pendiente
 
 ### 1. Google Analytics 4
