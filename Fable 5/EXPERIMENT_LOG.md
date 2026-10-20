@@ -785,3 +785,17 @@ corregida a 27 oct 2106 AEC juliano / 9 oct gregoriano proléptico.
    `/parasha/noach-5787/`.
 3. Video (guion listo) jueves 15 o viernes 16; newsletter hoy o mañana.
 4. Siguen sin video Ékev → Bereshit.
+
+### Video de Nóaj incorporado (20 oct 2026)
+`P7rQxzU-pi4` — «parashá NoajZohar Parashá Nóaj - El misterio del tiempo en el
+arca…», publicado el 17 oct 22:41 UTC (el archivo local dura 11:07). Mismo
+patrón: iframe *nocookie*, `VideoObject` en `@graph`, og:image al thumbnail.
+YouTube aún no genera `maxresdefault` ni `sddefault` (404): se usa
+`hqdefault`. Se corrigió de paso el handle «@zoharlatinoamerica» (404) por
+`@zoharlatinoamerica8687` en los enlaces de Devarim y Vaetchanan.
+
+Detectado en YouTube (paso del humano): el título lleva pegado
+«parashá NoajZohar…» y la descripción tiene dos enlaces rotos por el
+autocorrector (`#herramientasinalámbricas`, `#sostenitoridigiuseppeconte`);
+deben ser `/#herramientas` y `/#sosten`, y el del comentario conviene que
+apunte a la URL permanente `/parasha/noach-5787/`.
