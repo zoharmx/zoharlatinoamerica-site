@@ -8,7 +8,7 @@ Datos clave, verificables:
 - Gran Ciclo Hebreo: 2.192.942 días, 6.004 años (3761 a. e. c. – 2243 e. c.), 316 ciclos de 19 años, 74.260 lunaciones; molad de BeHaRaD y las cuatro dejiyot. Auditado en septiembre de 2026 contra una implementación independiente; en octubre de 2026 se revisaron sus 70 eventos históricos (24 movidos al día correcto, 14 corregidos en el texto). Antes de 1582 da también la fecha juliana. Las fechas anteriores al calendario fijo son proyecciones de sus reglas, no registros históricos.
 - Mazal hebreo por la luna: cada mes hebreo es su constelación, de Rosh Jódesh a Rosh Jódesh (Nisán = Aries … Adar = Piscis). Adar II, el mes intercalado, no tiene mazal. Base: «Israel cuenta por la luna, y las naciones por el sol» (Sukká 29a).
 - Carta natal hebrea: el día hebreo empieza en el ocaso real de Jerusalén para la fecha de nacimiento (no a una hora fija); mazal con letra, tribu, facultad y parte del cuerpo; Sefirá del día y de la hora en horas temporales de Jerusalén; gematría del número del día de la creación; interpretación escrita por IA (Claude, de Anthropic).
-- Privacidad: sin cuentas; no se guardan fechas, horas, lugares ni nombres; sólo un registro anónimo (tipo de consulta, mes hebreo, idioma, identificador aleatorio del navegador).
+- Privacidad: sin cuentas; no se guardan fechas, horas, lugares ni nombres; sólo un registro anónimo (tipo de consulta, mes hebreo, idioma, identificador aleatorio del navegador). Las visitas se cuentan con Vercel Web Analytics, sin cookies.
 
 ## Páginas principales
 
