@@ -799,3 +799,70 @@ Detectado en YouTube (paso del humano): el título lleva pegado
 autocorrector (`#herramientasinalámbricas`, `#sostenitoridigiuseppeconte`);
 deben ser `/#herramientas` y `/#sosten`, y el del comentario conviene que
 apunte a la URL permanente `/parasha/noach-5787/`.
+
+## Lej Lejá 5787 — entregada el 24 oct 2026 (13 de Marjeshván), el mismo Shabat de la lectura
+
+Shabat 24 oct = 13 de Marjeshván, segundo Shabat del mes. **Entrega atrasada:**
+se pidió y se publicó el mismo día de la lectura (lección de Reé: publicar igual
+en cuanto se pueda; `datePublished` lleva la fecha real). Título: «un nombre
+nuevo cambia el mazal» (Rashi sobre 15:5). Es la parashá que discute de frente
+la astrología, en un sitio que ofrece carta natal: la página lo dice y da el
+marco (Rabí Janiná y Rabí Yojanán, Rosh Hashaná 16b).
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Bereshit 12:1–17:27; haftará Yeshayahu
+  40:27–41:16 — Sefaria confirma que es **igual en el rito sefaradí**. Havdalá
+  Monterrey 18:40. Siguiente: Vayerá, 20 de Marjeshván (31 oct), Bereshit
+  18:1–22:24.
+- `gran_ciclo_hebreo.db` (leído): ciclo 305, 11/19, cuarto cuadrante, bisiesto
+  de 385; 13 de Marjeshván gibosa creciente, llena el 14–15; ♏ Akráv.
+- **Dato «sólo aquí» (1):** Lej Lejá es siempre el segundo Shabat de
+  Marjeshván: 8 (1.915, RH jueves), 10 (690, martes), 11 (1.684, lunes) o 13
+  (1.715, Shabat). Antes 5784; después 5788.
+- **Dato «sólo aquí» (2):** 15 Nisán AM 2018 (pacto entre las piezas, Seder
+  Olam: Avraham de 70) → 15 Nisán AM 2448 (Éxodo) = **157.045 días = 22.435
+  semanas exactas = 5.318 lunaciones**; los dos en martes. Yitzjak (15 Nisán
+  2048) cae en jueves; de ahí al Éxodo, 146.088 días.
+- **Contraste declarado en la página:** Shabat 87b dice que el día del Éxodo
+  fue jueves; la proyección da martes. Se publicó así, con la razón (meses por
+  observación; la misma página discute si Iyar se alargó).
+- Sefaria: Bereshit 12:1–5, 14:13, 15:1–6, 15:12–14, 16:16, 17:1, 17:5,
+  17:15–16, 17:24–27, 18:1–2, 21:5; Shemot 12:40–41; Rashi sobre Bereshit
+  12:1, 12:2, 12:5, 14:13, 15:5, 15:13 y sobre Shemot 12:40–41; Rashi sobre
+  Yeshayahu 41:2; Bereshit Rabá 39:1; Shabat 87b, 156a–b; Rosh Hashaná 11a,
+  16b; Bavá Batrá 16b; Seder Olam Rabá 1; Zohar, Lej Lejá 1:1–3, 3:13–16,
+  5:22–25, 7:35, 8:49, 9:62; Zohar, Vayerá 34:504; Avot 5:3; Yirmiyahu 10:2;
+  Tehilim 45:8; Yeshayahu 40:26–31, 41:1–16.
+
+**Trampas de traducción documentadas:**
+1. Zohar, Lej Lejá 3:14: la traducción comunitaria de Sefaria dice que las
+   «cien llaves de bendiciones» son *para cada día* y que equivalen al valor de
+   *lej lejá*. El arameo sólo dice **מאה מפתחאן דברכאן**. La guía lo advierte;
+   el cien de *lej lejá* se citó de 9:62, donde sí está.
+2. Bereshit Rabá 39:1, *birá dolékét*: la traducción de Sefaria pone «un
+   edificio con una vela encendida». El hebreo admite «iluminado» o «en
+   llamas»; la página da las dos.
+3. Sefaria cuelga de **Rashi sobre 12:2** los comentarios a «de tu tierra» y
+   «que te mostraré», que explican palabras de 12:1. Se citan como «12:1–2».
+
+**Bug del motor encontrado y corregido: `nueva-parasha.sh` heredaba el video.**
+La primera corrida dejó en la página nueva el `VideoObject` de Nóaj, la
+referencia `"video"` del Article, la miniatura de YouTube en `og:image` y el
+`dateModified` de la saliente. Habría publicado a Google un video de otra
+parashá. Ahora el script quita el `VideoObject` y la referencia, vuelve
+`og:image` al logo, pone `dateModified` = hoy, y el bloque 4b **falla** si
+queda `VideoObject`, `img.youtube.com` o `youtube-nocookie` en la página nueva.
+Probado con la entrega real (se deshizo la primera corrida y se repitió).
+Trampa al arreglarlo: en Perl, `[^}]` dentro de `s{…}{…}` rompe el
+delimitador; esas tres sustituciones usan `s#…#…#`.
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Lej Lejá (doctrina y fuentes), sobre todo la
+   sección de la carta natal: es la primera vez que la página habla de la
+   herramienta del propio sitio.
+2. Search Console: reenviar `sitemap.xml` y solicitar indexación de
+   `/parasha/lech-lecha-5787/`.
+3. Video (guion listo) cuando se pueda; newsletter al salir el Shabat o el
+   domingo.
+4. Siguen sin video Ékev → Bereshit, y Lej Lejá.
+5. Vayerá 5787 (31 oct): pedirla **a principios de semana**.

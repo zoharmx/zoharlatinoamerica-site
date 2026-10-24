@@ -106,6 +106,14 @@ perl -0pe '
   s{("datePublished":\s*")[^"]*}{$1$hoy};
   s{("url":\s*")https://zoharlatinoamerica\.site/parasha/[^"]*}{$1$perma};
   s{("mainEntityOfPage":\s*")[^"]*}{$1$perma};
+  s{("dateModified":\s*")[^"]*}{$1$hoy};
+
+  # --- el video es de la saliente, no de la nueva: fuera el VideoObject,
+  #     la referencia del Article y la miniatura de YouTube. Lej Lejá 5787
+  #     salio una vez con el video de Nóaj declarado en su JSON-LD.
+  s#,\n\s*"video":\s*\{[^\}]*\}##;
+  s#,\n\s*\{\n\s*"\@type":\s*"VideoObject".*?\n\s*\}(\n\s*\])#$1#s;
+  s#https://img\.youtube\.com/vi/[^"]*#$host/assets/logo.png#g;
 
   # --- cabecera visible
   s{(<p class="hebreo-grande">)[^<]*}{$1TODO — nombre en hebreo};
@@ -198,6 +206,9 @@ verifica() {  # verifica <descripcion> <patron> <fichero>
 }
 verifica "el cuerpo de $DIR/index.html no se vacio (quedo el texto de $NOMBRE_ACTUAL)" \
          'TODO — comentario de la semana' "$DIR/index.html"
+if grep -qE 'VideoObject|img\.youtube\.com|youtube-nocookie' "$DIR/index.html"; then
+  echo "  ERROR: $DIR/index.html heredo el video de $NOMBRE_ACTUAL" >&2; fallos=$((fallos+1))
+fi
 verifica "$FUENTE no quedo marcada como archivada" \
          'class="archivo-aviso"' "$FUENTE"
 verifica "vercel.json no apunta a $NUEVO" "$NUEVO" vercel.json
