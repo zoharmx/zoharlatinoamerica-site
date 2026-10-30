@@ -76,7 +76,8 @@ siguiente). Duración total del humano: **~45 min/semana**. Del agente: 1 sesió
 | 10 oct 2026 | **Bereshit** ✅ | 29 de Tishrei, Shabat Majar Jódesh — entregada el 2 oct (Hoshaná Rabá, 8 días antes) en `/parasha/bereshit-5787/`; Bereshit 1:1–6:8 · Haftará I Shmuel 20:18–42; molad de Jeshván domingo 9:43 + 2 jalakim; Bereshit cae en víspera de Rosh Jódesh sólo en 1.715/6.004 años (los de Rosh Hashaná en Shabat); video pendiente |
 | 17 oct 2026 | **Nóaj** ✅ | 6 de Marjeshván — entregada el 14 oct (3 días antes) en `/parasha/noach-5787/`; Bereshit 6:9–11:32 · Haftará Yeshayahu 54:1–55:5 (sefaradí 54:1–10); la salida del Shabat abre la noche del 7 de Marjeshván, inicio de la petición de lluvia en Israel (sólo cuando Nóaj cae el 6: 1.715/6.004 años, los de Rosh Hashaná en Shabat); video pendiente |
 | 24 oct 2026 | **Lej Lejá** ✅ | 13 de Marjeshván — entregada el 24 oct (**el mismo Shabat de la lectura**) en `/parasha/lech-lecha-5787/`; Bereshit 12:1–17:27 · Haftará Yeshayahu 40:27–41:16 (igual en ambos ritos); «sal de tu astrología» y el nombre que cambia el mazal; del pacto entre las piezas al Éxodo, 22.435 semanas exactas en el calendario fijo; video pendiente |
-| 31 oct 2026 | **Vayerá** | 20 de Marjeshván — Bereshit 18:1–22:24 (Hebcal) · **Siguiente entrega.** Slug `vayera-5787` |
+| 31 oct 2026 | **Vayerá** ✅ | 20 de Marjeshván — entregada el 30 oct (víspera) en `/parasha/vayera-5787/`; Bereshit 18:1–22:24 · Haftará Melajim II 4:1–37 (sefaradíes 4:1–23); «la hora señalada»; sólo aquí: el 2 de Tishrei nunca cae en Shabat (0/6.004) |
+| 7 nov 2026 | **Jayé Sará** | 27 de Marjeshván — Bereshit 23:1–25:18 (Hebcal) · **Siguiente entrega.** Slug `chayei-sara-5787` — verificar la haftará |
 
 > **Lección de Nitzavim-Vayeilej (2 sep 2026):** `nueva-parasha.sh` usa `perl
 > -0pi`, que **no falla cuando la regex no casa**. Con ficheros en CRLF, las

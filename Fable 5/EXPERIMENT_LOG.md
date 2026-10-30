@@ -866,3 +866,63 @@ delimitador; esas tres sustituciones usan `s#…#…#`.
    domingo.
 4. Siguen sin video Ékev → Bereshit, y Lej Lejá.
 5. Vayerá 5787 (31 oct): pedirla **a principios de semana**.
+
+## Vayerá 5787 — entregada el 30 oct 2026 (19 de Marjeshván), víspera del Shabat
+
+Shabat 31 oct = 20 de Marjeshván, tercer Shabat del mes. Pedida el viernes y
+publicada el mismo viernes, antes del encendido de velas (17:43 en Monterrey):
+un día antes de la lectura, mejor que Lej Lejá. Título: «la hora señalada»
+(*la-moed*, Bereshit 18:14). El eje de esta entrega es el tiempo: el sol sacado
+de su estuche, la fiesta del anuncio, la hora de Sedom y el día del shofar.
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Bereshit 18:1–22:24; haftará Melajim II
+  4:1–37, **sefaradíes 4:1–23** (Sefaria da 4:1–37). Velas 17:43, Havdalá
+  18:35. Siguiente: Jayé Sará, 27 de Marjeshván (7 nov), Bereshit 23:1–25:18.
+- `gran_ciclo_hebreo.db` (leído): ciclo 305, 11/19, cuarto cuadrante,
+  bisiesto de 385; 20 de Marjeshván gibosa menguante; ♏ Akráv. 1 Tishrei 5787
+  = Shabat 12 sep 2026.
+- **Dato «sólo aquí» (1):** Vayerá cae siempre en el tercer Shabat de
+  Marjeshván: 15 (1.915, RH jueves), 17 (690, martes), 18 (1.684, lunes) o 20
+  (1.715, Shabat).
+- **Dato «sólo aquí» (2), el central:** el 1 de Tishrei cae en Shabat en
+  1.715 años (sin shofar el día de Sará, Bereshit 21); el 2 de Tishrei
+  (atadura, Bereshit 22) **0 de 6.004** en Shabat: viernes 1.915, domingo
+  1.715, martes 1.684, miércoles 690. Lo garantiza *lo AD"U Rosh*. RH en
+  Shabat: 5781, 5784, 5787, 5788, 5791, 5794, 5801, 5808.
+- **Dato (3):** el 16 de Nisán es gibosa menguante en 6.004 de 6.004 años;
+  apoya la lectura astronómica de Bereshit Rabá 50:12 (sol y luna a la vez al
+  amanecer).
+- **Contraste declarado en la página:** Rosh Hashaná 11a: *otá shaná meubéret
+  haytá*. En la proyección AM 2048 (Yitzjak) es común (355 días; Sukot→Pésaj
+  178 días); el bisiesto es AM 2047 (384; 207 días). Pésaj 2047→2048 = 355.
+  `greg_str` de esas filas no se usó: es el campo legado, con un año de
+  desfase en AEC.
+- Sefaria (hebreo + inglés): Bereshit 18:1–2, 18:10–14, 18:25, 19:23–24,
+  20:17, 21:1–2, 22:1–2, 22:4, 22:7–8, 22:13–14; Rashi sobre Bereshit 18:1,
+  18:2, 18:4, 18:10, 18:13, 18:14, 19:3, 21:1, 22:4, 23:2; Bereshit Rabá 50:12;
+  Zohar, Vayerá 1:1–6; Rosh Hashaná 11a (segmentos 13–15) y 16a; Meguilá 31a
+  (segmentos 9–10); Mishná Rosh Hashaná 4:1; Sukká 29a (segmento 10); Melajim
+  II 4:8–23, 4:32–37.
+
+**Trampa de traducción documentada:** Zohar, Vayerá 1:6. La traducción
+inglesa de Sefaria dice «*The time of pruning (zamir) came*». El arameo sólo
+dice **בְּשַׁעֲתָא דְּאָמַר לֵיהּ קוּדְשָׁא בְּרִיךְ הוּא דְּיִתְגְּזָר**, «en
+la hora en que le dijo que se circuncidara». En 1:3 el mismo Zohar lee
+*zamir* como canto. La página da la lectura de la poda (Vayikrá 25:4) como
+nuestra.
+
+**El motor funcionó sin tocarlo:** `nueva-parasha.sh` no heredó video
+(4b en verde), `dateModified` = hoy; el diff de los 5 archivos se leyó
+completo. Se añadió a mano la entrada en `/acerca/` (y su `dateModified`),
+que el script no toca. Medición en iframe de 390 px: scrollWidth 375, sin
+desborde. Deploy comprobado con curl: `/parasha/` → 307 → vayera-5787 (200).
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Vayerá (doctrina y fuentes).
+2. Search Console: reenviar `sitemap.xml` y solicitar indexación de
+   `/parasha/vayera-5787/`.
+3. Newsletter **hoy antes de velas** (o el domingo, con «leímos»); video
+   cuando se pueda (guion listo).
+4. Siguen sin video Ékev → Bereshit, Lej Lejá y Vayerá.
+5. Jayé Sará 5787 (7 nov): pedirla **a principios de semana**.
