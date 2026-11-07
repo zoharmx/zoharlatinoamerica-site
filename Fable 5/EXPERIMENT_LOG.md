@@ -926,3 +926,55 @@ desborde. Deploy comprobado con curl: `/parasha/` → 307 → vayera-5787 (200).
    cuando se pueda (guion listo).
 4. Siguen sin video Ékev → Bereshit, Lej Lejá y Vayerá.
 5. Jayé Sará 5787 (7 nov): pedirla **a principios de semana**.
+
+## Jayé Sará 5787 — entregada el 6 nov 2026 (26 de Marjeshván), víspera del Shabat
+
+Shabat 7 nov = 27 de Marjeshván, último Shabat del mes, Shabat Mevarjim
+Kislev. Pedida y publicada el viernes antes del encendido de velas (17:38 en
+Monterrey). Título: «entrar en los días» (*ba bayamim*, Bereshit 24:1 =
+Melajim I 1:1). Eje: los años contados — los de Sará uno por uno, la entrada
+de Avraham en los días, la vela que dura de víspera a víspera.
+
+**Verificado antes de escribir, sin citas de memoria:**
+- Hebcal (geonameid 3995465): Bereshit 23:1–25:18; haftará Melajim I 1:1–31,
+  **igual en ambos ritos** (confirmado también en el calendario de Sefaria con
+  `custom=ashkenazi` y `custom=sephardi`). Velas 17:38, Havdalá 18:31. Molad
+  Kislev: lunes 22:27 y 3 jalakim. Rosh Jódesh Kislev martes 10 y miércoles 11.
+- `gran_ciclo_hebreo.db` (leído): ciclo 305, 11/19, bisiesto de 385
+  (Marjeshván de 30); 27 de Marjeshván menguante; ♏ Akráv. Toldot = 4 Kislev.
+- **Dato «sólo aquí» (1):** Jayé Sará = Bereshit + 28 días, sólo en 22
+  (1.915, RH jueves), 24 (690), 25 (1.684) o 27 (1.715) de Marjeshván.
+  Cuando cae el 22, el Shabat siguiente (29) sigue en Marjeshván: Toldot
+  bendice Kislev y es víspera de Rosh Jódesh. Jayé Sará = Mevarjim en
+  **4.089/6.004**.
+- **Dato (2), proyección declarada:** Sará AM 1958→2085 (127 años, de RH a
+  RH) = 46.363 días, 1.570 lunas, 46 bisiestos; Avraham AM 1948→2123 =
+  63.905 días, 2.164 lunas. Todas las ventanas de 127 años: 1.570 (1.238) o
+  1.571 (4.640) lunas, 46.361–46.394 días. AM 2085 y 2123 distan 38 años =
+  dos ciclos: ambos posición 14/19, bisiestos de 383.
+- Sefaria (hebreo + inglés): Bereshit 17:17, 22:19, 23:1–4, 23:15–16, 24:1,
+  24:10–14, 24:16, 24:42, 24:63–67, 25:5, 25:7–9; Rashi sobre Bereshit 23:1,
+  23:2, 23:9, 23:16, 24:1, 24:14, 24:39, 24:42, 24:63, 24:67, 25:1, 25:9, 25:20,
+  25:30; Bereshit Rabá 58:3; Zohar, Jayé Sará 16:118, 18:140, 19:151–154 y
+  Vayejí 22:177 (vía `api/links/Genesis 24:1`); Berajot 26b (segmento 6); Bavá
+  Batrá 16b (segmentos 11, 15–17); Sanhedrín 95a (segmento 16); Melajim I
+  1:1–6, 1:11–13, 1:28–31.
+
+**Nota de fuentes:** Zohar, Jayé Sará 19:151–154 (Midrash HaNeelam, en
+hebreo) **no tiene traducción inglesa en Sefaria**: la traducción es nuestra,
+directa del hebreo. Efrón: en 23:16 el mismo versículo trae עֶפְרוֹן (con vav)
+y לְעֶפְרֹן (sin vav); Rashi habla del segundo.
+
+**El motor funcionó sin tocarlo:** diff de los 5 archivos leído completo
+(archivo, vayera banner, vercel.json, ensayo, sitemap). `/acerca/` a mano.
+Medición en iframe de 390 px: scrollWidth 375, sin desborde. Deploy: 
+`/parasha/` → 307 → chayei-sara-5787 (200).
+
+### Pendiente del humano esta semana
+1. Checkpoint editorial de Jayé Sará (doctrina y fuentes).
+2. Search Console: reenviar `sitemap.xml` y solicitar indexación de
+   `/parasha/chayei-sara-5787/`.
+3. Newsletter **hoy antes de velas** (o el domingo, con «leímos»); video
+   cuando se pueda (guion listo).
+4. Siguen sin video Ékev → Bereshit, Lej Lejá, Vayerá y Jayé Sará.
+5. Toldot 5787 (14 nov, 4 de Kislev): pedirla **a principios de semana**.
